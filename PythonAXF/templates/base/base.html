@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'base' %}">
+    <link rel="stylesheet" href="{% static 'base/css/base.css' %}">
+    {% block extcss %}
+    {% endblock %}
+</head>
+<body>
+
+
+{% block body %}
+{# 导航#}
+    {% block header %}
+        <header>爱鲜蜂</header>
+    {% endblock %}
+
+{#主体内容#}
+    <div class="hidescroll">
+        <div id="content">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+
+
+
+{#底部 #}
+    {% block footer %}
+        <footer>底部</footer>
+    {% endblock %}
+
+{% endblock %}
+
+
+
+
+
+
+<script src="{% static 'base/js/base.js' %}"></script>
+{% block extjs %}
+{% endblock %}
+
+
+
+</body>
+</html>
