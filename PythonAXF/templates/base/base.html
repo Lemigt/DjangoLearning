@@ -3,52 +3,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>
-        {% block title %}
-        {% endblock %}
-    </title>
-    <link rel="stylesheet" href="{% static 'base' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'base/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'base/css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'base/css/base.css' %}">
-    {% block extcss %}
+    {#   标题#}
+    {% block title %}
+    {% endblock %}
+
+    {#   样式表#}
+    {% block EXTCSS %}
     {% endblock %}
 </head>
 <body>
 
+{# 头部#}
+{% block header %}
+    <header>爱鲜蜂</header>
+{% endblock %}
 
-{% block body %}
-{# 导航#}
-    {% block header %}
-        <header>爱鲜蜂</header>
-    {% endblock %}
 
-{#主体内容#}
-    <div class="hidescroll">
-        <div id="content">
-            {% block content %}
-
-            {% endblock %}
-        </div>
+{# 主体内容#}
+<div class="hidescroll">
+    <div id="content">
+        {% block content %}
+        {% endblock %}
     </div>
+</div>
 
+{# 尾部#}
+{% block footer %}
+    <footer>
 
+        <a href="{% url 'axf:home' %}" class="home">
+            <dl>
+                <dt><span></span></dt>
+                <dd> 首页</dd>
+            </dl>
+        </a>
 
-{#底部 #}
-    {% block footer %}
-        <footer>底部</footer>
-    {% endblock %}
+        <a href="{% url 'axf:market'%}" class="market">
+            <dl>
+                <dt><span></span></dt>
+                <dd> 闪购超市</dd>
+            </dl>
+        </a>
 
+        <a href="{% url 'axf:cart' %}" class="cart">
+            <dl>
+                <dt><span></span></dt>
+                <dd> 购物车</dd>
+            </dl>
+        </a>
+
+        <a href="{% url 'axf:mine' %}" class="mine">
+            <dl>
+                <dt><span></span></dt>
+                <dd> 我的</dd>
+            </dl>
+        </a>
+
+    </footer>
 {% endblock %}
 
 
-
-
-
-
+<script src="{% static 'base/js/jquery.js' %}"></script>
+<script src="{% static 'base/js/jquery.cookie.js' %}"></script>
+<script src="{% static 'base/js/bootstrap.js' %}"></script>
+<script src="{% static 'base/js/swiper.js' %}"></script>
 <script src="{% static 'base/js/base.js' %}"></script>
-{% block extjs %}
+{# JS#}
+{% block EXTJS %}
 {% endblock %}
-
-
-
 </body>
 </html>

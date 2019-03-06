@@ -1,0 +1,5 @@
+$(function () {
+    $('.login').width(innerWidth)
+})
+
+

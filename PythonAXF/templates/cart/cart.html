@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base/base.html' %}
 
-</body>
-</html>
+{% block title %}
+    <title>购物车</title>
+{% endblock %}
+
+{% block EXTCSS %}
+    <style>
+        footer .cart span {
+            background: url(/static/base/img/cart1.png) no-repeat center;
+            background-size: 1.25rem;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+购物车
+{% endblock %}

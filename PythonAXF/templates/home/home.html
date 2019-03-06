@@ -1,37 +1,20 @@
 {% extends 'base/base.html' %}
 
 {% block title %}
-
+    <title>首页</title>
 {% endblock %}
 
-{% block footer %}
-    <footer>
-        <a href="#" class="home">
-            <dl>
-                <dt><span></span></dt>
-                <dd>首页</dd>
-            </dl>
-        </a>
-
-        <a href="#" class="market">
-            <dl>
-                <dt><span></span></dt>
-                <dd>闪购超市</dd>
-            </dl>
-        </a>
-
-        <a href="#" class="market">
-            <dl>
-                <dt><span></span></dt>
-                <dd>购物车</dd>
-            </dl>
-        </a>
-
-        <a href="#" class="market">
-            <dl>
-                <dt><span></span></dt>
-                <dd>我的</dd>
-            </dl>
-        </a>
-    </footer>
+{% block EXTCSS %}
+    <style>
+        footer .home span {
+            background: url(/static/base/img/home1.png) no-repeat center;
+            background-size: 1.25rem;
+        }
+    </style>
 {% endblock %}
+
+
+{% block content %}
+    首页
+{% endblock %}
+
