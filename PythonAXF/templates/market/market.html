@@ -1,21 +1,90 @@
 {% extends 'base/base.html' %}
+{% load static %}
+
 
 {% block title %}
     <title>闪购超市</title>
 {% endblock %}
 
 {% block EXTCSS %}
-    <style>
-        footer .market span {
-            background: url(/static/base/img/market1.png) no-repeat center;
-            background-size: 1.25rem;
-        }
-        footer .market dd {
-            color: #ffd601;
-        }
-    </style>
+
+    <link rel="stylesheet" href="{% static 'market/css/market.css' %}">
 {% endblock %}
 
+
+
+
 {% block content %}
-山沟超市
+    <div class="market">
+        <div class="type-slider">
+            <ul>
+                 {% for foodtype in foodtypes %}
+                    <li>
+                        <a href="{% url 'axf:market' %}">
+                            {% if forloop.counter == foodtype.typesort %}
+                                {{ foodtype.typename }}
+                            {% endif %}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">
+                         <span>
+                        全部类型
+                        <i class="glyphicon glyphicon-chevron-up"></i>
+                        </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span>
+                        综合排序
+                        <i class="glyphicon glyphicon-chevron-down"></i>
+                    </span>
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="main-content">
+            <div class="content-wrapper">
+                <ul>
+                    {% for testgood in testgoods %}
+                        <li>
+                            <a href="#">
+                                <img src="{{ testgood.productimg }}" class="goods-img" alt="">
+                                <div class="goods-info">
+                                    <p class="name">{{ testgood.productlongname }}</p>
+
+
+                                    <div class="detailtag">
+                                        {% if testgood.isxf %}
+                                        <span class="xf">精选</span>
+                                        {% endif %}
+
+                                        <p class="specifics">{{ testgood.specifics }}</p>
+                                        <div class="price">
+                                            <span class="now-price">￥{{ testgood.price }}</span>
+                                            <span class="market-price">￥{{ testgood.marketprice }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+            </div>
+        </div>
+
+
+
+    </div>
 {% endblock %}
