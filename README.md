@@ -1,1 +1,1 @@
-fucking studip git and github
+perfect is shit
