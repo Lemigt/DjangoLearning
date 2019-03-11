@@ -77,23 +77,54 @@ class Foodtype(models.Model):
 
 
 class Goods(models.Model):
+    # 商品ID
     productid = models.CharField(max_length=255)
+    # 商品图片
     productimg = models.CharField(max_length=255)
+    # 商品名称
     productname = models.CharField(max_length=255)
+    # 商品长名称
     productlongname = models.CharField(max_length=255)
+    # 是否精选
     isxf = models.IntegerField()
+    # 是否买一送一
     pmdesc = models.IntegerField()
+    # 商品规格
     specifics = models.CharField(max_length=255)
+    # 商品价格
     price = models.FloatField()
+    # 商品超市价格
     marketprice = models.FloatField()
+    # 分类ID
     categoryid = models.IntegerField()
+    # 子类ID
     childcid = models.IntegerField()
+    # 子类名称
     childcidname = models.CharField(max_length=255)
+    # 详情页ID
     dealerid = models.CharField(max_length=255)
+    # 库存
     storenums = models.IntegerField()
+    # 销售量
     productnum = models.IntegerField()
 
     class Meta:
         db_table = 'axf_goods'
 
+
+
+class User(models.Model):
+    # 邮箱
+    email = models.CharField(max_length=40, unique=True)
+    # 密码
+    password = models.CharField(max_length=256)
+    # 昵称
+    name = models.CharField(max_length=100)
+    # 头像
+    img = models.CharField(max_length=40, default='axf.png')
+    # 等级
+    rank = models.IntegerField(default=1)
+
+    class Meta:
+         db_table = 'axf_user'
 

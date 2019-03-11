@@ -6,7 +6,7 @@
 footer .mine span {
     background-image: url(/static/base/img/mine1.png);
 }
-footer .mine dd {
+footer .mine .name {
     color: #ffd601;
 }
 

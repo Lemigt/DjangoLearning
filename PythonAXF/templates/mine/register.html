@@ -1,0 +1,53 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>注册</title>
+{% endblock %}
+
+
+
+{% block EXTCSS %}
+    <link rel="stylesheet" href="{% static 'mine/css/register.css' %}">
+{% endblock %}
+
+{% block EXTJS %}
+    <script src="{% static 'mine/js/registerr.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="register">
+        <div class="back">
+            <a href="{% url 'axf:mine' %}">
+                <span class=" glyphicon glyphicon-remove "></span>
+            </a>
+        </div>
+
+        <form action="{% url 'axf:register' %}" method="post">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <span class="input-group-addon">昵称</span>
+                <input type="text" class="form-control" placeholder="昵称" name="name">
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon">密码</span>
+                <input type="password" class="form-control" placeholder="6~10位数密码" name="password">
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon">确认</span>
+                <input type="password" class="form-control" placeholder="再次输入密码">
+            </div>
+            <span id="warning">两次输入的密码不一致</span>
+
+            <div class="input-group">
+                <span class="input-group-addon">邮箱</span>
+                <input type="text" class="form-control" placeholder="163邮箱/QQ邮箱.." name="email">
+            </div>
+
+            <input type="submit" value="注册" id="subButton">
+        </form>
+    </div>
+{% endblock %}

@@ -21,7 +21,7 @@
 
 {# 头部#}
 {% block header %}
-    <header>平天下</header>
+    <header style="font-family: {% static 'base/font/../../static/base/css/HYXingKaiF.ttf' %}">平天下</header>
 {% endblock %}
 
 
@@ -44,7 +44,7 @@
             </dl>
         </a>
 
-        <a href="{% url 'axf:market'%}" class="market">
+        <a href="{% url 'axf:marketbase'%}" class="market">
             <dl>
                 <dt><span></span></dt>
                 <dd> 闪购超市</dd>
@@ -70,7 +70,9 @@
 
 
 <script src="{% static 'base/js/jquery.js' %}"></script>
-<script src="{% static 'base/js/jquery.cookie.js' %}"></script>
+{#<script src="{% static 'base/js/jquery.cookie.js' %}"></script>#}
+<script src="https://cdn.bootcss.com/jquery-cookie/1.3.1/jquery.cookie.js"></script>
+{#<script href="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>#}
 <script src="{% static 'base/js/bootstrap.js' %}"></script>
 {#<script src="{% static 'base/js/swiper.js' %}"></script>#}
 <script src="{% static 'base/js/base.js' %}"></script>

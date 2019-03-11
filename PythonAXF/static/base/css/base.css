@@ -1,4 +1,5 @@
 html,
+
 body {
 	width: 100%;
 	height: 100%;
@@ -9,6 +10,19 @@ body {
 	padding: 0;
 	background: #eee;
 }
+
+
+
+
+
+
+@font-face
+{
+font-family: Kaishushu;
+src: local("HYXingKai.ttf");
+}
+
+
 
 header {
 	width: 100%;
@@ -23,6 +37,7 @@ header {
 	font-size: 1.5625rem;
 	text-align: center;
 	line-height: 2.75rem;
+	font-family: Kaishush;
 	position: fixed;
 	top: 0;
 	left: 0;

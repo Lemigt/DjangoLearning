@@ -18,12 +18,13 @@
     <div class="market">
         <div class="type-slider">
             <ul>
-                 {% for foodtype in foodtypes %}
+                {% for foodtype in foodtypes %}
                     <li>
-                        <a href="{% url 'axf:market' %}">
-                            {% if forloop.counter == foodtype.typesort %}
+                    <span></span>
+                        <a href="{% url 'axf:marketbase'%}">
+{#                            {% if forloop.counter == foodtype.typesort %}#}
                                 {{ foodtype.typename }}
-                            {% endif %}
+{#                            {% endif %}#}
                         </a>
                     </li>
                 {% endfor %}
@@ -34,18 +35,18 @@
             <ul>
                 <li>
                     <a href="#">
-                         <span>
+                         <span id="alltype">
                         全部类型
-                        <i class="glyphicon glyphicon-chevron-up"></i>
+                        <i class="glyphicon glyphicon-chevron-up" ></i>
                         </span>
                     </a>
                 </li>
 
                 <li>
                     <a href="#">
-                        <span>
+                        <span id="allsort">
                         综合排序
-                        <i class="glyphicon glyphicon-chevron-down"></i>
+                        <i class="glyphicon glyphicon-chevron-up" ></i>
                     </span>
                     </a>
                 </li>
@@ -56,7 +57,7 @@
         <div class="main-content">
             <div class="content-wrapper">
                 <ul>
-                    {% for testgood in testgoods %}
+                    {% for testgood in good_list %}
                         <li>
                             <a href="#">
                                 <img src="{{ testgood.productimg }}" class="goods-img" alt="">
@@ -70,22 +71,46 @@
                                         {% endif %}
 
                                         <p class="specifics">{{ testgood.specifics }}</p>
+{#                                        <p class="specifics">销量：{{ testgood.productnum }}</p>#}
                                         <div class="price">
                                             <span class="now-price">￥{{ testgood.price }}</span>
                                             <span class="market-price">￥{{ testgood.marketprice }}</span>
-                                            <i>+</i>
                                         </div>
                                     </div>
                                 </div>
                             </a>
                         </li>
                     {% endfor %}
-
                 </ul>
+                <div class="bounce-view category-view">
+                    <div class="bounce-wrapper">
+                        {% for childtypename in childtypenames %}
+
+                            <a href="{% url 'axf:market' childtypename.id 0 %}">{{ childtypename.name }}</a>
+
+                        {% endfor %}
+                    </div>
+                </div>
+            
+                <div class="bounce-view sort-view">
+                    <div class="bounce-wrapper">
+
+                        {# 排序传参时，应在视图函数中把childid 传回来  #}
+                        <a href="{% url 'axf:market' childid  0  %}">综合排序</a>
+                        <a href="{% url 'axf:market' childid  1  %}">销量排序</a>
+                        <a href="{% url 'axf:market' childid  2  %}">价格最低</a>
+                        <a href="{% url 'axf:market' childid  3  %}">价格最高</a>
+                    </div>
+                </div>
             </div>
-        </div>
 
 
 
     </div>
+{% endblock %}
+
+{% block EXTJS %}
+
+    <script src={% static 'market/js/market.js' %}></script>
+
 {% endblock %}
