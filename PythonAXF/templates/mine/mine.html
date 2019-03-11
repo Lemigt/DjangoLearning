@@ -24,7 +24,7 @@
                     {% if user %}
                         <span>{{ user.name }}</span>
                     {% else %}
-                        <a href="{% url 'axf:login' %}">未登录</a>
+                        <a id="login-i">登录</a>
 
                     {% endif %}
                 </p>
@@ -138,11 +138,15 @@
             </section>
 
 
+            {% if user %}
+
             <section>
                 <div class="quit">
                     <a href="{% url 'axf:logout' %}">退出登录</a>
                 </div>
             </section>
+            {% endif %}
+
         </div>
         </div>
     </div>

@@ -2,12 +2,13 @@ import hashlib
 import random
 import time
 
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.core.cache import cache
 
-from app.models import Wheel, Nav, Mustbuy, Shop, Main, Foodtype, Goods, User
+from app.models import Wheel, Nav, Mustbuy, Shop, Main, Foodtype, Goods, User, Cart
 
 
 def home(request):
@@ -96,6 +97,12 @@ def mine(request):
 
 def register(request):
     if request.method == 'GET':
+        email = request.GET.get('email')
+        print(email)
+        users = User.objects.filter(email=email)
+        if users.exists():
+            return JsonResponse
+
         return render(request, 'mine/register.html')
     elif request.method == 'POST':
         user = User()
@@ -116,14 +123,12 @@ def register(request):
 
 
 def login(request):
-
     if request.method == 'GET':
         return render(request, 'mine/login.html')
     elif request.method == 'POST':
-        username = request.POST.get('username')
+        username = request.POST.get('email')
         password = request.POST.get('password')
-
-        users = User.objects.filter(name=username)
+        users = User.objects.filter(email=username)
         if users.exists():
             user = users.first()
             if generate_password(password) == user.password:
@@ -131,7 +136,11 @@ def login(request):
 
                 cache.set(tokennum, user.id, 60*60*24*3)
                 request.session['token'] = tokennum
-                return redirect('axf:mine')
+                if request.COOKIES.get('bacck') == 'mine':
+                    return redirect('axf:mine')
+                else:
+                    return redirect('axf:marketbase')
+
             else:
                 print('传了参数')
                 return render(request, 'mine/login.html', context={'password_err':'密码错误！'})
@@ -154,5 +163,66 @@ def generate_password(param):
 
 def logout(request):
     request.session.flush()
-
     return redirect('axf:mine')
+
+
+def checkemail(request):
+    email = request.GET.get('email')
+    users = User.objects.filter(email=email)
+    if users.exists():
+        response_data = {
+            'status': 1,
+            'msg': '该邮箱已被注册'
+        }
+    else:
+        response_data = {
+            'status':0,
+            'msg':'该邮箱可以注册'
+        }
+
+    return JsonResponse(response_data)
+
+
+def addgoods(request):
+    response_data = {}
+    token = request.session.get('token')
+
+    if token:
+        userid = cache.get(token)
+
+        if userid:
+            user = User.objects.get(pk=userid)
+            productid = request.GET.get('productid')
+            if productid:
+                print('not none')
+            else:
+                print('none')
+
+            print('##################################')
+            print(type(productid))
+
+            goods = Goods.objects.get(pk=productid)
+
+
+            carts = Cart.objects.filter(user=user).filter(goods=goods)
+            if carts.exists():
+                cart = carts.first()
+                cart.number = cart.number + 1
+                cart.save()
+            else:
+                cart = Cart()
+                cart.user = user
+                cart.goods = goods
+                cart.number = 1
+                cart.save()
+
+            response_data['status'] = 1
+            response_data['msg'] = '添加 {} 购物车成功: {}'.format(cart.goods.productlongname, cart.number)
+            response_data['number'] = cart.number
+
+            return JsonResponse(response_data)
+
+    response_data['status'] = -1
+    response_data['msg'] = '请登录后操作'
+
+    return JsonResponse(response_data)

@@ -58,4 +58,35 @@ $(function () {
         categoryViewHide()
     })
 
+
+    $('.bt-wrapper>.glyphicon-minus').hide()
+    $('.bt-wrapper>.num').hide()
+    $('.bt-wrapper>.glyphicon-plus').click(function () {
+
+        request_data = {
+            'goodsid':$(this).attr('data-goodsid')
+        }
+        console.log(request_data)
+        $.get('/axf/addgoods/', request_data, function (response) {
+
+            console.log(response)
+            if (response.status == -1){
+
+                $.cookie('back', 'market', {expires: 3, path: '/'})
+                window.open('/axf/login/', '_self')
+            }else {
+                $('.bt-wrapper>.glyphicon-minus').show()
+                $('.bt-wrapper>.num').show()
+                $('.bt-wrapper>.num').html(response.number)
+            }
+
+        })
+    })
+    
+    
+    
+    
+    
+    
+
 })

@@ -25,29 +25,49 @@
 
         <form action="{% url 'axf:register' %}" method="post">
             {% csrf_token %}
+                                    {#输入框样式#}
+            <div class="form-group has-feedback" id="email-input">
+                <div class="input-group">
+                    <span class="input-group-addon">邮箱</span>
+                    <input type="text" class="form-control" id="email-btn" placeholder="163邮箱/QQ邮箱.." name="email"
+                     data-toggle="popover"  data-placement="bottom">
+                </div>
+                {#右边符号#}
+                <span class="glyphicon  form-control-feedback" aria-hidden="true"></span>
+            </div>
+
+
+            <div class="form-group has-feedback" id="password-input">
+                <div class="input-group">
+                    <span class="input-group-addon">密码</span>
+                    <input type="password" class="form-control" id="password-btn" placeholder="6~10位数密码" name="password"
+                     data-toggle="popover"  data-placement="bottom">
+                </div>
+                {#右边符号#}
+                <span class="glyphicon  form-control-feedback" aria-hidden="true"></span>
+            </div>
+
+
+            <div class="form-group has-feedback" id="password2-input">
+                <div class="input-group">
+                    <span class="input-group-addon">确认</span>
+                    <input type="password" class="form-control" id="password2-btn" placeholder="请再次输入密码"
+                     data-toggle="popover"  data-placement="bottom">
+                </div>
+                {#右边符号#}
+                <span class="glyphicon  form-control-feedback" aria-hidden="true"></span>
+            </div>
+
 
             <div class="input-group">
                 <span class="input-group-addon">昵称</span>
                 <input type="text" class="form-control" placeholder="昵称" name="name">
             </div>
 
-            <div class="input-group">
-                <span class="input-group-addon">密码</span>
-                <input type="password" class="form-control" placeholder="6~10位数密码" name="password">
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-addon">确认</span>
-                <input type="password" class="form-control" placeholder="再次输入密码">
-            </div>
-            <span id="warning">两次输入的密码不一致</span>
-
-            <div class="input-group">
-                <span class="input-group-addon">邮箱</span>
-                <input type="text" class="form-control" placeholder="163邮箱/QQ邮箱.." name="email">
-            </div>
-
-            <input type="submit" value="注册" id="subButton">
+            <button id="subButton">注册</button>
         </form>
     </div>
+
+
+
 {% endblock %}

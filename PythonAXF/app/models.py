@@ -128,3 +128,19 @@ class User(models.Model):
     class Meta:
          db_table = 'axf_user'
 
+
+
+class Cart(models.Model):
+
+    user = models.ForeignKey(User)
+
+    goods = models.ForeignKey(Goods)
+
+    number = models.IntegerField()
+
+    isselect = models.BooleanField(default=True)
+
+    isdelete = models.BooleanField(default=False)
+
+    class Meta:
+        db_table = 'axf_cart'
