@@ -8,8 +8,10 @@
 {% endblock %}
 
 {% block content %}
-    <div class="orderlist">
-        {% for order in orders %}
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {% for order in orders %}
             <p class="bg-info">
                 <a href="{% url 'axf:orderdetail' order.identifier %}">
                     订单号: {{ order.identifier }} --
@@ -28,5 +30,9 @@
             </p>
             <br>
         {% endfor %}
+        </div>
     </div>
+
+
+
 {% endblock %}
