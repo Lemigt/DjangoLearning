@@ -144,3 +144,31 @@ class Cart(models.Model):
 
     class Meta:
         db_table = 'axf_cart'
+
+
+class Order(models.Model):
+
+    user = models.ForeignKey(User)
+
+    createtime = models.DateTimeField(auto_now_add=True)
+
+    updatetime = models.DateTimeField(auto_now=True)
+    # 状态
+    # -1 过期
+    # 0 未付款
+    # 1 已付款，待发货
+    # 2 已发货，待收货
+    # 3 已收货，待评价
+    # 4 已评价
+    status = models.IntegerField(default=0)
+
+    identifier = models.CharField(max_length=256)
+
+
+class OrderGoods(models.Model):
+
+    order = models.ForeignKey(Order)
+
+    goods = models.ForeignKey(Goods)
+
+    number = models.IntegerField()

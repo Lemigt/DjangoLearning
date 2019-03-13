@@ -8,7 +8,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from django.core.cache import cache
 
-from app.models import Wheel, Nav, Mustbuy, Shop, Main, Foodtype, Goods, User, Cart
+from app.models import Wheel, Nav, Mustbuy, Shop, Main, Foodtype, Goods, User, Cart, Order, OrderGoods
 
 
 def home(request):
@@ -39,6 +39,14 @@ def market(request, childNameId='0', sortid='0'):
     index = int(request.COOKIES.get('index', '0'))
 
     categoryid = foodtypes[index].typeid
+
+    token = request.session.get('token')
+    userid = cache.get(token)
+    if userid:
+        user = User.objects.get(pk=userid)
+        carts = Cart.objects.filter(user=user)
+    else:
+        carts = ''
 
 
 
@@ -74,14 +82,46 @@ def market(request, childNameId='0', sortid='0'):
         'foodtypes':foodtypes,
         'good_list': good_list,
         'childtypenames':childtype_list,
-        'childid': childNameId
+        'childid': childNameId,
+        'carts':carts
     }
 
     return render(request, 'market/market.html', context=response_dir)
 
 
 def cart(request):
-    return render(request, 'cart/cart.html')
+    token = request.session.get('token')
+    userid = cache.get(token)
+    if userid:
+        user = User.objects.get(pk=userid)
+        carts = user.cart_set.filter(number__gt=0)
+
+
+        return render(request, 'cart/cart.html', context={'carts': carts})
+
+    else:
+        carts = ''
+        return render(request, 'cart/noLogin.html')
+
+
+# def cart(request):
+#     token = request.session.get('token')
+#     userid = cache.get(token)
+#     if userid:  # 有登录才显示
+#         user = User.objects.get(pk=userid)
+#         carts = user.cart_set.filter(number__gt=0)
+#
+#         isall = True
+#         for cart in carts:
+#             if not cart.isselect:
+#                 isall = False
+#
+#         return render(request, 'cart/cart.html', context={'carts': carts, 'isall':isall})
+#     else:   # 未登录不显示
+#         return render(request, 'cart/noLogin.html')
+
+
+
 
 
 def mine(request):
@@ -189,10 +229,10 @@ def addgoods(request):
 
     if token:
         userid = cache.get(token)
-
+        print(userid)
         if userid:
             user = User.objects.get(pk=userid)
-            productid = request.GET.get('productid')
+            productid = request.GET.get('goodsid')
             if productid:
                 print('not none')
             else:
@@ -226,3 +266,130 @@ def addgoods(request):
     response_data['msg'] = '请登录后操作'
 
     return JsonResponse(response_data)
+
+
+def noLogin(request):
+    return render(request, 'cart/noLogin.html')
+
+
+def subgoods(request):
+
+    goodsid = request.GET.get('goodsid')
+    print(goodsid)
+    goods = Goods.objects.get(pk=goodsid)
+
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+
+    cart = Cart.objects.filter(user=user).filter(goods=goods).first()
+    cart.number = cart.number -1
+    cart.save()
+
+    response_data = {
+        'msg': '删减商品成功',
+        'status': 1,
+        'number': cart.number
+    }
+
+    return JsonResponse(response_data)
+
+
+def changeSelect(request):
+
+    cartid = request.GET.get('cartid')
+    cart = Cart.objects.get(pk=cartid)
+    if cart.isselect == 1:
+        cart.isselect = 0
+        print('change to 0')
+    else:
+        cart.isselect = 1
+        print('change to 1')
+    cart.save()
+    isSelect = cart.isselect
+
+    print(cartid)
+    response_data = {
+        'status': 1,
+        'msg': '选择状态改变',
+        'isSelect':isSelect
+    }
+
+
+    return JsonResponse(response_data)
+
+
+def changAllSelect(request):
+
+    isall = eval(request.GET.get('isall'))
+    print(type(isall))
+    print(isall)
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+
+    reIsAll = 1
+
+    carts = user.cart_set.all()
+    if isall:
+        for cart in carts:
+            cart.isselect = 1
+            cart.save()
+        reIsAll = 1
+    else:
+        for cart in carts:
+            cart.isselect = 0
+            cart.save()
+        reIsAll = 0
+
+    print(reIsAll)
+    response_data = {
+        'msg': '完成全选/反选操作',
+        'reIsAll':reIsAll,
+        'status':1
+    }
+    return JsonResponse(response_data)
+
+
+def generate_identifier():
+    temp = str(time.time()) + str(random.randrange(1000,10000))
+    return temp
+
+
+def generateorder(request):
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+
+    order = Order()
+    order.user = user
+    order.identifier = generate_identifier()
+    order.save()
+
+    carts = user.cart_set.filter(isselect=True)
+    for cart in carts:
+        orderGoods = OrderGoods()
+        orderGoods.order = order
+        orderGoods.goods = cart.goods
+        orderGoods.number = cart.number
+        orderGoods.save()
+
+        cart.delete()
+
+    return render(request, 'order/orderdetail.html', context={'order': order})
+
+
+def orderlist(request):
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+
+    orders = user.order_set.all()
+
+    return render(request, 'order/orderlist.html', context={'orders':orders})
+
+
+def orderdetail(request, identifier):
+    order = Order.objects.filter(identifier=identifier).first()
+
+    return render(request, 'order/orderdetail.html', context={'order': order})

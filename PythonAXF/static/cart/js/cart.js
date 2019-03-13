@@ -1,99 +1,94 @@
 $(function () {
     $('.cart').width(innerWidth)
-
-    // 总计
     total()
+    $('#oneSelect>span').click(function () {
+        $that = $(this)
 
-    // 商品 选中 状态
-    $('.cart .confirm-wrapper').click(function () {
-        var cartid = $(this).attr('cartid')
-        var $that = $(this)
-
-        $.get('/axf/changecartstatus/', {'cartid':cartid}, function (response) {
-            console.log(response)
-            if (response['status'] == '1'){
-                var isselect = response['isselect']
-                $that.attr('isselect', isselect)
-                // 先清空
-                $that.children().remove()
-                if (isselect){  // 选中
-                    $that.append('<span class="glyphicon glyphicon-ok"></span>')
-                } else {    // 未选中
-                    $that.append('<span class="no"></span>')
-                }
-
-                // 总计
-                total()
-            }
-        })
-    })
-
-    // 全选/取消全选
-    $('.cart .bill .all').click(function () {
-        var isall = $(this).attr('isall')
-        isall = (isall == 'false') ? true : false
-        $(this).attr('isall', isall)
-
-        // 自身状态
-        $(this).children().remove()
-        if (isall){ // 全选
-            $(this).append('<span class="glyphicon glyphicon-ok"></span>').append('<b>全选</b>')
-        } else {    // 取消全选
-            $(this).append('<span class="no"></span>').append('<b>全选</b>')
+        request_data = {
+            'cartid': $(this).parent().attr('data-cardid')
         }
 
+        $.get('/axf/changeSelect/', request_data, function (response) {
+            // console.log(response)
+            // console.log(response.isSelect)
+            // console.log(typeof response.isSelect)
 
-        // 发起ajax请求
-        $.get('/axf/changecartselect/', {'isall':isall}, function (response) {
-            console.log(response)
-            if (response['status'] == '1'){
-                // 遍历
-                $('.confirm-wrapper').each(function () {
-                    $(this).attr('isselect', isall)
-                    $(this).children().remove()
-                    if (isall){ // 选中
-                        $(this).append('<span class="glyphicon glyphicon-ok"></span>')
-                    } else {    // 未选中
-                        $(this).append('<span class="no"></span>')
-                    }
-                })
-
-                // 总计
-                total()
+            if (response.isSelect) {
+                $that.removeClass('no').addClass('glyphicon glyphicon-ok')
+            } else {
+                $that.removeClass('glyphicon glyphicon-ok').addClass('no')
             }
+            total()
         })
+
+
     })
 
-    // 计算总数
+
+    $('#allSelect>span').click(function () {
+        $that = $(this)
+        var isall = 'True'
+
+
+        if ($(this).hasClass('glyphicon-ok')) {
+            // console.log('it has glyphicon-ok')
+            isall = 'False'
+            $(this).attr('data-all', true)
+        } else {
+            // console.log('fuck not')
+            isall = 'True'
+            $(this).attr('data-all', false)
+        }
+
+        request_data = {
+            'connectionTest': 'Success Connect',
+            'isall': isall
+        }
+
+        $.get('/axf/changeAllSelect/', request_data, function (response) {
+            // console.log(response.msg)
+            //
+            // console.log(response.reIsAll)
+            // console.log(typeof response.reIsAll)
+            if (response.reIsAll) {
+                $('#allSelect>span').removeClass('no').addClass('glyphicon glyphicon-ok')
+                $('#oneSelect>span').removeClass('glyphicon-ok').removeClass('no').addClass('glyphicon glyphicon-ok')
+            } else {
+                $('#allSelect>span').removeClass('glyphicon glyphicon-ok').addClass('no')
+                $('#oneSelect>span').removeClass('no').removeClass('glyphicon-ok').addClass('no')
+            }
+
+        })
+
+
+    })
+
+
     function total() {
+        console.log('begin')
         var sum = 0
 
-        // 遍历
-        $('.goods').each(function () {
-            var $confirm = $(this).find('.confirm-wrapper')
-            var $content = $(this).find('.content-wrapper')
 
-            // 选中，才计算
-            if ($confirm.find('.glyphicon-ok').length){
-                var price = parseInt($content.find('.price').attr('str'))
-                var num = parseInt($content.find('.num').attr('str'))
+        $('.cart li').each(function () {
+            var $confirm = $(this).find('.confirm-wrapper')
+            console.log('find confirm')
+            var $content = $(this).find('.content-wrapper')
+            console.log('find cintent')
+
+            // find('.glyphicon-ok').length)
+            if ($(this).children('#oneSelect').children().hasClass('glyphicon-ok')) {
+                var price = $content.find('.price').attr('data-price')
+                console.log(price)
+                var num = $content.find('.num').attr('data-number')
+                console.log(num)
                 sum += num * price
+            }else {
+                console.log('fuck not')
             }
         })
 
-        // 修改总计 显示
+
         $('.bill .total b').html(sum)
     }
 
-
-    // 下单
-    $('#generate-order').click(function () {
-        $.get('/axf/generateorder/', function (response) {
-            console.log(response)
-            if (response['status'] == '1'){ // 订单详情(付款)
-                var orderid = response['orderid']
-                window.open('/axf/orderinfo/?orderid='+orderid, target='_self')
-            }
-        })
-    })
 })

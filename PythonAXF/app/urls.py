@@ -2,7 +2,7 @@ from django.conf.urls import url
 
 from app import views
 
-urlpatterns=[
+urlpatterns= [
     url(r'^home/$', views.home, name='home'),
     url(r'^market/$', views.market, name='marketbase'),
     url(r'^market/(\d+)/(\d+)$', views.market, name='market'),
@@ -12,5 +12,12 @@ urlpatterns=[
     url(r'^login/$', views.login, name='login'),
     url(r'^logout/$', views.logout, name='logout'),
     url(r'^checkemail/$', views.checkemail, name='checkemail'),
-    url(r'^addgoods/$', views.addgoods, name='addgoods')
+    url(r'^addgoods/$', views.addgoods, name='addgoods'),
+    url(r'^subgoods/$', views.subgoods, name='subgoods'),
+    url(r'^noLogin/$', views.noLogin, name='noLogin'),
+    url(r'^changeSelect/$', views.changeSelect, name='changeSelect'),
+    url(r'^changeAllSelect/$', views.changAllSelect, name='changAllSelect'),
+    url(r'^generateorder/$', views.generateorder, name='generateorder'),
+    url(r'orderlist/$', views.orderlist, name='orderlist'),
+    url(r'^orderdetail/(?P<identifier>[\d.]+)/$', views.orderdetail, name='orderdetail'),
 ]

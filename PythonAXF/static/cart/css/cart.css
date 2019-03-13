@@ -59,6 +59,7 @@ footer .cart dd {
 }
 .cart ul li .content-wrapper .img img{
     width: 100%;
+    height: 100%;
 }
 
 .cart ul li .content-wrapper .detail{
