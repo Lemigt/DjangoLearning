@@ -52,14 +52,14 @@ $(function () {
             // console.log(typeof response.reIsAll)
             if (response.reIsAll) {
                 $('#allSelect>span').removeClass('no').addClass('glyphicon glyphicon-ok')
-                $('#oneSelect>span').removeClass('glyphicon-ok').removeClass('no').addClass('glyphicon glyphicon-ok')
+                $('#oneSelect>span').removeClass('glyphicon glyphicon-ok').removeClass('no').addClass('glyphicon glyphicon-ok')
             } else {
                 $('#allSelect>span').removeClass('glyphicon glyphicon-ok').addClass('no')
-                $('#oneSelect>span').removeClass('no').removeClass('glyphicon-ok').addClass('no')
+                $('#oneSelect>span').removeClass('no').removeClass('glyphicon glyphicon-ok').addClass('no')
             }
-
+            total()
         })
-        total()
+        
 
     })
 
