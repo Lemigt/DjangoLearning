@@ -1,0 +1,245 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>知我药妆登录</title>
+    <link href="{% static 'common/css/common.css'%}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'css/login.css' %}" rel="stylesheet" type="text/css"/>
+    <script src="{% static 'common/js/jquery-1.12.0.js' %}"></script>
+    <script src="{% static 'common/js/common.js' %}"></script>
+    <script src="{% static 'js/login.js' %}"></script>
+{#    <script src="{% static 'js/jquery.cookie.js' %}"></script>#}
+</head>
+<body>
+
+<!---------------------------------------顶部导航---------------------------------->
+<div class="headertop">
+    <div class="headertop-box">
+        <!--左边-->
+        <ul class="headertop-left">
+            <li>欢迎来到知我！这里，用专业呵护美丽。</li>
+            <li><a href="login.html">请登录</a></li>
+            <li><a href="/register/">快速注册</a></li>
+        </ul>
+        <!--右边-->
+        <ul class="headertop-right">
+            <li class="item_personal item_btn">
+                <a href=""><span>微信商城</span><i></i></a>
+                <div class="item_personal_two item_cont">
+                    <p class="wechat_ewm_img"><img src="{% static 'common/images/2.jpg' %}"></p>
+                </div>
+            </li>
+            <li class="item_phone"><a href=""><i></i>手机知我</a></li>
+            <li class="item_personal item_btn">
+                <a class="" href=""><span>我的小窝</span><i></i></a>
+                <div class="item_personal_my item_cont">
+                    <ul>
+                        <li><a href="">我的订单</a></li>
+                        <li><a href="">我的优惠券</a></li>
+                        <li><a href="">我的收藏</a></li>
+                        <li><a href="">我的预订</a></li>
+                        <li><a href="">我的积分</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="item_line">|</li>
+            <li class="item_service item_btn">
+                <a href=""><span>客户服务</span><i></i></a>
+                <div class="item_personal_client item_cont">
+                    <ul>
+                        <li><a href="">帮助中心</a></li>
+                        <li><a href="">新浪微博</a></li>
+                        <li><a href="">正品承诺</a></li>
+                        <li><a href="">真伪查询</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!---------------------------------logo---------------------->
+<div class="header_logoimg">
+    <div class="header_logoimg_box">
+        <div class="logoimg_left">
+            <a href="index.html"><img src="{% static 'images/rejister/logo.jpg' %}"></a>
+        </div>
+        <div class="logoimg_right">
+            <img src="{% static 'images/rejister/tipinfo.jpg' %}">
+        </div>
+    </div>
+</div>
+
+<!---------------------主题部分----------------------->
+<div class="content">
+   <!--------------登录框------------------>
+    <div class="sign_box login_box">
+        <div class="userlogin_title">
+            <p><span>登录</span><a href="{% url 'zwyz:register' %}">免费注册</a></p>
+        </div>
+        <div class="userlogin_info">
+            <form id="login-user-form" method="post" action="">
+                <input type="hidden" name="redirect" value="">
+                <div class="u_info_account">
+                    <p class="u_info_name"><label for="login-username">账号</label></p>
+                    <p class="u_info_txt">
+                        <input class="sign_txt" type="text" id="login-username" value="" placeholder="请输入用户名/邮箱/手机号" name="username">
+                        <i class="login_username_i"></i>
+                    </p>
+                </div>
+                <div class="u_info_password">
+                    <p class="u_info_name"><label for="login-password">密码</label></p>
+                    <p class="u_info_txt">
+                        <input class="sign_txt" type="password" id="login-password" value="" placeholder="请输入密码" name="password">
+                        <i class="login_username_i"></i>
+                    </p>
+                </div>
+                <div class="u_info_code u_info_h verifycode">
+                    <p class="u_info_name"><label for="login-verify-code">验证码</label></p>
+                    <!--<p class="u_info_txt">-->
+                        <!--<input class="sign_txt" type="text" id="login-verify-code" name="verify_code"  placeholder="请输入验证码">-->
+                        <!--<img id="verify_code" src="images/login/yzm.gif" alt="验证码">-->
+                        <!--<span id="change_code">换一张</span>-->
+                    <!--</p>-->
+                    <p class="u_info_txt"><input class="sign_txt" type="text" id="signup-verify-code" name="verify_code" placeholder="请输入验证码">
+                         </p><p id="p1"><span style="color: rgb(244, 246, 135);">h</span><span style="color: rgb(172, 237, 29);">n</span><span style="color: rgb(9, 210, 49);">e</span><span style="color: rgb(162, 69, 185);">Y</span></p>
+                         <span id="change_code">换一张</span>
+                    <p></p>
+                </div>
+                <div class="u_info_operate">
+                    <br><br>
+                    <p class="auto_login"><label class="u_check u_checked">自动登录</label></p>
+                    <p class="forget_password"><a href="">忘记密码？</a></p>
+                </div>
+                <div class="u_info_btn">
+                    <p><input type="submit" value="登录"></p>
+                </div>
+            </form>
+        </div>
+        <div class="userlogin_other">
+            <p>合作网站账号登录</p>
+            <ul class="ext_connect clearfix">
+                <li class="qq"><a href="">QQ</a></li>
+                <li class="alipay"><a href="">支付宝</a></li>
+                <li class="sina"><a href="">新浪微博</a></li>
+                <li class="t360"><a href="">360</a></li>
+                <li class="baidu"><a href="">百度</a></li>
+                <li class="renren"><a href="">人人</a></li>
+                <li class="xunlei"><a href="">迅雷</a></li>
+            </ul>
+        </div>
+        <div class="userlogin_tip">
+            <p class="u_tip_lang"></p>
+        </div>
+    </div>
+
+</div>
+
+<!-----------------------------------尾部-------------------->
+<div class="footer">
+    <div class="footer-box w1100">
+        <!--尾部表格-->
+        <div class="footer-center">
+            <div class="footer-center-left">
+                <table class="tab-one">
+                    <tbody><tr>
+                        <th>真品保证</th>
+                        <th>30天包退</th>
+                        <th>2件包邮</th>
+                        <th>药妆专柜</th>
+                        <th>关于知我</th>
+                        <th>新手指南</th>
+                        <th>联系方式</th>
+                    </tr>
+                    <tr>
+                        <td><a href="">品牌合作</a></td>
+                        <td><a href="">退换货政策</a></td>
+                        <td><a href="">配送政策</a></td>
+                        <td><a href="">肤质判定</a></td>
+                        <td><a href="">知我介绍</a></td>
+                        <td><a href="">购物流程</a></td>
+                        <td><a href="">在线客服咨询</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">严格把关</a></td>
+                        <td><a href="">办理退换货</a></td>
+                        <td><a href="">快递查询</a></td>
+                        <td><a href="">肌肤问题</a></td>
+                        <td><a href="">商务合作</a></td>
+                        <td><a href="">支付方式</a></td>
+                        <td><a href=""><span style="font-weight: bold;">热线</span></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">百度投资</a></td>
+                        <td><a href="">售后服务</a></td>
+                        <td><a href=""></a></td>
+                        <td><a href="">达人推荐</a></td>
+                        <td><a href="">友情链接</a></td>
+                        <td><a href="">化妆品品牌大全</a></td>
+                        <td><a href=""><span style="color: #00c8ff;font-size: 12px;font-weight: bold">400-630-1018</span></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">全球品牌直供</a></td>
+                        <td><a href=""></a></td>
+                        <td><a href=""></a></td>
+                        <td><a href="">护肤常识</a></td>
+                        <td><a href="">开放API</a></td>
+                        <td><a href=""></a></td>
+                        <td><a href=""></a></td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="footer-center-right">
+                <table class="tab-two">
+                    <tbody><tr>
+                        <th>知我微信商城</th>
+                    </tr>
+                    <tr>
+                        <th><img src="{% static 'common/images/2.jpg' %}" style="width: 100px;height: 100px;"></th>
+                    </tr>
+                </tbody></table>
+            </div>
+        </div>
+    </div>
+    <!--商家保证-->
+    <div class="footer_bus">
+        <ul class="">
+            <li class="fcb_invest">
+                <span>百度投资</span>
+            </li>
+            <li class="fcb_quality">
+                <span>真品保证</span>
+            </li>
+            <li class="fcb_return">
+                <span>30天包退</span>
+            </li>
+            <li class="fcb_mail">
+                <span>两件包邮</span>
+            </li>
+        </ul>
+    </div>
+    <!--友情链接-->
+    <!--<div class="links-friendly-box w1100">-->
+    <!--<div class="links-friendly-title">友情链接：</div>-->
+    <!--</div>-->
+    <div class="footer_copyright">
+        <p class="footer_c_text1">@2011-2014 般若天成（北京）科技有限公司 zhiwo.com 保留一切权利。客服热线：400-630-1018</p>
+        <p class="footer_c_text2">
+            <a rel="nofollow" target="_blank" href="http://www.miibeian.gov.cn/">京ICP备10047008号</a>
+            |
+            <a rel="nofollow" target="_blank" href="http://www.miibeian.gov.cn/">京ICP证110762号</a>
+            | 网公安备1101054365号 | 营业执照
+        </p>
+        <p>
+            <img alt="支付特约商家" src="{% static 'common/images/footer_copy_02.jpg' %}">
+            <img alt="快捷支付" src="{% static 'common/images/footer_copy_03.jpg' %}">
+            <img alt="网上交易保障中心" src="{% static 'common/images/footer_copy_05.jpg' %}">
+        </p>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>知我药妆购物车</title>
+    <link href="css/goodcar.css" type="text/css" rel="stylesheet" />
+    <link href="common/css/common.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-1.12.0.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/goodcar.js"></script>
+    <script src="js/addGoodcar.js"></script>
+</head>
+<body>
+<!---------------------------------------顶部导航---------------------------------->
+<div class="headertop">
+    <div class="headertop-box">
+        <!--左边-->
+        <ul class="headertop-left">
+            <li>欢迎来到知我！这里，用专业呵护美丽。</li>
+            <li><a href="login.html">请登录</a></li>
+            <li><a href="rejister.html">快速注册</a></li>
+        </ul>
+        <!--右边-->
+        <ul class="headertop-right">
+            <li class="item_personal item_btn">
+                <a href=""><span>微信商城</span><i></i></a>
+                <div class="item_personal_two item_cont">
+                    <p class="wechat_ewm_img"><img src="common/images/2.jpg"></p>
+                </div>
+            </li>
+            <li class="item_phone"><a href=""><i></i>手机知我</a></li>
+            <li class="item_personal item_btn">
+                <a class="" href="" ><span>我的小窝</span><i></i></a>
+                <div class="item_personal_my item_cont">
+                    <ul>
+                        <li><a href="">我的订单</a></li>
+                        <li><a href="">我的优惠券</a></li>
+                        <li><a href="">我的收藏</a></li>
+                        <li><a href="">我的预订</a></li>
+                        <li><a href="">我的积分</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="item_line">|</li>
+            <li class="item_service item_btn">
+                <a  href="" ><span>客户服务</span><i></i></a>
+                <div class="item_personal_client item_cont">
+                    <ul>
+                        <li><a href="">帮助中心</a></li>
+                        <li><a href="">新浪微博</a></li>
+                        <li><a href="">正品承诺</a></li>
+                        <li><a href="">真伪查询</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!---------------------------------logo---------------------->
+<div class="header_logoimg">
+    <div class="header_logoimg_box">
+        <div class="logoimg_left">
+            <a href="index.html"><img src="images/rejister/logo.jpg"/></a>
+        </div>
+        <div class="logoimg_right">
+            <ul class="step_img">
+                <li class="step_item step_item_present">
+                    <span class="step_num">1</span>
+                    <span class="step_line"><i></i></span>
+                </li>
+                <li class="step_item ">
+                    <span class="step_line"><i></i></span>
+                    <span class="step_num">2</span>
+                    <span class="step_line"><i></i></span>
+                </li>
+                <li class="step_item ">
+                    <span class="step_line"><i></i></span>
+                    <span class="step_num">3</span>
+                </li>
+            </ul>
+            <ul class="step_txt">
+                <li class="step_txt_1 step_item_present">我的购物车</li>
+                <li class="step_txt_2 ">确认订单信息</li>
+                <li class="step_txt_3 ">成功提交订单</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!---------------------主体部分---------------------->
+<div class="container">
+    <div class="shopcar_contbox">
+        <!--购物车商品列表-->
+        <div class="mycart cb_title_h2">
+            <h2><p class="mycart_htitle"><span>我的购物车</span><i>My Cart</i></p><p class="mycart_htip"><span>运费每单<em>5</em>元</span><span>购买<em>任意两件</em>免运费</span></p></h2>
+            <div class="mycart_list_box">
+                <div class="mycart_list_goods">
+                    <div class="table_nav">
+                        <ul class="clearfix">
+                            <!--<li><input type="checkbox" id="all"></li>-->
+                            <li class="table_nav_name">选购的商品</li>
+                            <li class="table_nav_price">单价</li>
+                            <li class="table_nav_amount">数量</li>
+                            <li class="table_nav_allpay">金额小计</li>
+                            <li class="table_nav_integral">赠送积分</li>
+                            <li class="table_nav_operate">操作</li>
+                        </ul>
+                    </div>
+                    <div class="table_cont cart_products">
+                        <table class="table_item" id="cart_products">
+                            <tbody class="_tbody">
+
+                            <!--<tr class="group">-->
+                                <!--<td class="table_item_name mycart_listpro_show">-->
+                                    <!--<input class="table_item_check" type="checkbox">-->
+                                    <!--<div class="mycart_selpro">-->
+                                        <!--<p class="selpro_img">-->
+                                            <!--<a target="_blank" href="">-->
+                                                <!--<img src="images/index/new-01.jpg"/>-->
+                                            <!--</a>-->
+                                        <!--</p>-->
+                                        <!--<div class="selpro_info">-->
+                                            <!--<p class="selpro_name">-->
+                                                <!--<a target="_blank" href="">-->
+                                                    <!--SNP熊猫气垫BB霜 01# ，打破传统古板气垫，让美丽更生动！-->
+                                                <!--</a>-->
+                                            <!--</p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</td>-->
+                                <!--<td class="table_item_price"><p>￥<span>88</span></p></td>-->
+                                <!--<td class="table_item_amount">-->
+                                    <!--<div class="table_item_amoutbox">-->
+                                        <!--<p class="header_ginfo_amount">-->
+                                            <!--<span class="decrease_num h_amout_down"></span>-->
+                                            <!--<input class='item-buy-quantity-input' type="text" value="1">-->
+                                            <!--<span class="increase_num h_amout_up"></span>-->
+                                        <!--</p>-->
+                                    <!--</div>-->
+                                <!--</td>-->
+                                <!--<td class="table_item_allpay"><p>42.00</p></td>-->
+                                <!--<td class="table_item_integral"><p>42</p></td>-->
+                                <!--<td class="table_item_operate"><p><a class="item-buy-delete"  href="">删除</a><a href="" class="p_favorite">收藏</a></p></td>-->
+                            <!--</tr>-->
+
+
+                            </tbody>
+                        </table>
+                        <div class="mycart_allinfo_show">
+                            <div class="ui-entrance" style="margin-left:15px;margin-top:10px;"></div>
+                            <div class="myallinfo_show_one">
+                                <p class="myallinfo_delbtn"><a class="qingkong" href="" onclick="return confirm('您确定要清空购物车吗？');">全部清空</a></p>
+                                <p class="myallinfo_gobuybtn"><a href="list.html">继续购物</a></p>
+                                <p class="myallinfo_delcheck"><a class="shanchu">复选删除</a></p>
+                            </div>
+                            <div class="myallinfo_show_two">
+                                <p class="myallinfo_allamount">共<i>0</i>件商品</p>
+                                <p class="myallinfo_allpay"><span>应付金额（不含运费）：</span><i>￥</i><em id="">0.00</em></p>
+                                <p class="myallinfo_gopaybtn"><a href="" id="go_to_order">去结算</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mycart_totalinfo">
+                </div>
+            </div>
+        </div>
+        <!--今日热卖推荐-->
+        <div class="saletoday cb_title_h2 bfd_recommend_">
+            <p class="bfd_recom_cont"><span>今日特卖推荐</span><i>Recommended sale today</i></p>
+            <div class="rec-box">
+                <ul class="rec-box-list">
+                    <li class="rec-box-list2">
+                        <ul class="recommend_list">
+                            <li>
+                                <div class="list_img">
+                                    <img src="images/goodcar/01.jpg"/>
+                                </div>
+                                <div class="introduce">
+                                    <span>倩碧卓越润肤露30ml（天才黄油+）*2</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥89</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_img">
+                                    <img src="images/goodcar/02.jpg">
+                                </div>
+                                <div class="introduce">
+                                    <span>巨型一号丝瓜水美肤液【纯露配方型】巨型一号丝瓜水原液</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥60</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_img">
+                                    <img src="images/goodcar/03.jpg">
+                                </div>
+                                <div class="introduce">
+                                    <span>清仓价：马赛兰西碧护手霜-玫瑰香型75ml</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥39</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_img">
+                                    <img src="images/goodcar/04.jpg">
+                                </div>
+                                <div class="introduce">
+                                    <span>艾禾美小苏打牙膏 清新洁净25g*3支装</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥27</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <ul class="recommend_list">
+                            <li class="rec-box-list2">
+                                <div class="list_img">
+                                    <img src="images/goodcar/05.jpg">
+                                </div>
+                                <div class="introduce">
+                                    <span>sexylook极美肌润白精米微浸透隐形面膜5片/盒</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥55</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_img">
+                                    <img src="images/goodcar/06.jpg">
+                                </div>
+                                <div class="introduce">
+                                    <span>韩束水嫩亮颜去角质素70g</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥29</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_img">
+                                    <img src="images/goodcar/07.jpg">
+                                </div>
+                                <div class="introduce">
+                                    <span>韩束秘蜜水凝乳150ml</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥69</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_img">
+                                    <img src="images/goodcar/08.jpg">
+                                </div>
+                                <div class="introduce">
+                                    <span>一叶子植物酵素·多效净肤亮颜粉泥膜150g</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥89</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="rec-box-list2">
+                        <ul class="recommend_list">
+                            <li>
+                                <div class="list_img">
+                                    <img src="images/goodcar/09.jpg">
+                                </div>
+                                <div class="introduce">
+                                    <span>彩虹（莱妃尔）羊羊保湿紧致面膜10片/盒</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥108</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_img">
+                                    <img src="images/goodcar/10.jpg">
+                                </div>
+                                <div class="introduce">
+                                    <span>revlon露华浓流光凝彩柔蜜唇膏2.55g 090 玫粉色</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥49.9</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_img">
+                                    <img src="images/goodcar/11.jpg">
+                                </div>
+                                <div class="introduce">
+                                    <span>美宝莲巨遮瑕空气轻垫霜限量版 自然色 14g</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥129</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_img">
+                                    <img src="images/goodcar/12.jpg">
+                                </div>
+                                <div class="introduce">
+                                    <span>Hello Kitty金缕梅净护洗衣香皂*2</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥28</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="rec-box-list2">
+                        <ul class="recommend_list">
+                            <li>
+                                <div class="list_img">
+                                    <img src="images/goodcar/13.jpg">
+                                </div>
+                                <div class="introduce">
+                                    <span>韩国九朵云(cloud9)美白祛斑面霜60ml（新款）</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥79</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_img">
+                                    <img src="images/goodcar/14.jpg">
+                                </div>
+                                <div class="introduce">
+                                    <span>WHOO/后天气丹华泫套盒</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥1598</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_img">
+                                    <img src="images/goodcar/15.jpg">
+                                </div>
+                                <div class="introduce">
+                                    <span>【智能彩妆】MZING彩妆套装妩媚派对8+3套装组合</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥99</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_img">
+                                    <img src="images/goodcar/16.jpg">
+                                </div>
+                                <div class="introduce">
+                                    <span>知我药妆化妆棉100片（蓝色）</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥19.9</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+                        </ul>
+                    </li>
+                </ul>
+                <div class="page-left page-btn">&lt;</div>
+                <div class="page-right page-btn">&gt;</div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-----------------------------------尾部-------------------->
+<div class="footer">
+    <div class="footer-box w1100">
+        <!--尾部表格-->
+        <div class="footer-center">
+            <div class="footer-center-left">
+                <table class="tab-one">
+                    <tr>
+                        <th>真品保证</th>
+                        <th>30天包退</th>
+                        <th>2件包邮</th>
+                        <th>药妆专柜</th>
+                        <th>关于知我</th>
+                        <th>新手指南</th>
+                        <th>联系方式</th>
+                    </tr>
+                    <tr>
+                        <td><a href="">品牌合作</a></td>
+                        <td><a href="">退换货政策</a></td>
+                        <td><a href="">配送政策</a></td>
+                        <td><a href="">肤质判定</a></td>
+                        <td><a href="">知我介绍</a></td>
+                        <td><a href="">购物流程</a></td>
+                        <td><a href="">在线客服咨询</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">严格把关</a></td>
+                        <td><a href="">办理退换货</a></td>
+                        <td><a href="">快递查询</a></td>
+                        <td><a href="">肌肤问题</a></td>
+                        <td><a href="">商务合作</a></td>
+                        <td><a href="">支付方式</a></td>
+                        <td><a href=""><span style="font-weight: bold;">热线</span></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">百度投资</a></td>
+                        <td><a href="">售后服务</a></td>
+                        <td><a href=""></a></td>
+                        <td><a href="">达人推荐</a></td>
+                        <td><a href="">友情链接</a></td>
+                        <td><a href="">化妆品品牌大全</a></td>
+                        <td><a href=""><span style="color: #00c8ff;font-size: 12px;font-weight: bold">400-630-1018</span></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">全球品牌直供</a></td>
+                        <td><a href=""></a></td>
+                        <td><a href=""></a></td>
+                        <td><a href="">护肤常识</a></td>
+                        <td><a href="">开放API</a></td>
+                        <td><a href=""></a></td>
+                        <td><a href=""></a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="footer-center-right">
+                <table class="tab-two">
+                    <tr>
+                        <th>知我微信商城</th>
+                    </tr>
+                    <tr>
+                        <th><img src="common/images/2.jpg" style="width: 100px;height: 100px;"/></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--商家保证-->
+    <div class="footer_bus">
+        <ul class="">
+            <li class="fcb_invest">
+                <span>百度投资</span>
+            </li>
+            <li class="fcb_quality">
+                <span>真品保证</span>
+            </li>
+            <li class="fcb_return">
+                <span>30天包退</span>
+            </li>
+            <li class="fcb_mail">
+                <span>两件包邮</span>
+            </li>
+        </ul>
+    </div>
+    <!--友情链接-->
+    <!--<div class="links-friendly-box w1100">-->
+    <!--<div class="links-friendly-title">友情链接：</div>-->
+    <!--</div>-->
+    <div class="footer_copyright">
+        <p class="footer_c_text1">@2011-2014 般若天成（北京）科技有限公司 zhiwo.com 保留一切权利。客服热线：400-630-1018</p>
+        <p class="footer_c_text2">
+            <a rel="nofollow" target="_blank" href="http://www.miibeian.gov.cn/">京ICP备10047008号</a>
+            |
+            <a rel="nofollow" target="_blank" href="http://www.miibeian.gov.cn/">京ICP证110762号</a>
+            | 网公安备1101054365号 | 营业执照
+        </p>
+        <p>
+            <img alt="支付特约商家" src="common/images/footer_copy_02.jpg" />
+            <img alt="快捷支付" src="common/images/footer_copy_03.jpg" />
+            <img alt="网上交易保障中心" src="common/images/footer_copy_05.jpg" />
+        </p>
+    </div>
+</div>
+</body>
+</html>

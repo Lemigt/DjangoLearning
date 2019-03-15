@@ -1,0 +1,996 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>知我药妆详情页</title>
+		<link href="{% static 'common/css/common.css' %}" type="text/css" rel="stylesheet" />
+		<link href="{% static 'css/xiangqing.css' %}" type="text/css" rel="stylesheet" />
+		<script src="{% static 'common/js/jquery-1.12.0.js' %}"></script>
+		<script src="{% static 'js/jquery.cookie.js' %}"></script>
+		<script src="{% static 'common/js/common.js' %}"></script>
+		<script src="{% static 'js/xiangqing.js' %}"></script>
+	</head>
+	<body>
+
+	<!-------------------右边侧边栏------------------->
+	<div class="siderbar" id="siderbar">
+		<div class="sidebar_panel">
+			<ul class="sidebar_panel_partone">
+				<li id="sidebar_login" class="sidebar_item sidebar_login">
+					<a class="sitem_btn" href="">
+						<i class="sitem_btnbg"></i>
+					</a>
+				</li>
+				<li id="sidebar_shopcar" class="sidebar_item sidebar_shopcar">
+					<a class="sitem_btn" href="goodcar.html">
+						<i class="sitem_btnbg"></i>
+						<span class="sshopcar_text">购物车</span>
+						<span class="sshopcar_amout">0</span>
+					</a>
+				</li>
+				<li id="sidebar_collect" class="sidebar_item sidebar_collect">
+					<a class="sitem_btn" href="javascript:;">
+						<i class="sitem_btnbg"></i>
+					</a>
+				</li>
+				<li id="sidebar_foot" class="sidebar_item sidebar_foot">
+					<a class="sitem_btn" href="javascript:;">
+						<i class="sitem_btnbg"></i>
+					</a>
+				</li>
+			</ul>
+			<ul class="sidebar_panel_parttwo">
+				<li id="sidebar_wechat" class="sidebar_item sidebar_wechat">
+					<a class="sitem_btn" href="">
+						<i class="sitem_btnbg"></i>
+					</a>
+				</li>
+				<li id="sidebar_servers" class="sidebar_item sidebar_servers">
+					<a class="sitem_btn" href="javascript:;">
+						<i class="sitem_btnbg"></i>
+					</a>
+				</li>
+				<li id="sidebar_top" class="sidebar_item sidebar_top">
+					<a class="sitem_btn" href="javascript:;">
+						<i class="up_triangle"></i>
+						<span class="go_top">TOP</span>
+					</a>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+		<!---------------------------------------顶部导航---------------------------------->
+<div class="headertop">
+    <div class="headertop-box w1100">
+        <!--左边-->
+           <ul class="headertop-left">
+               <li>欢迎来到知我！这里，用专业呵护美丽。</li>
+               <li><a href="#">请登录</a></li>
+               <li><a href="#">快速注册</a></li>
+           </ul>
+        <!--右边-->
+            <ul class="headertop-right">
+                <li class="item_personal item_btn">
+                    <a href=""><span>微信商城</span><i></i></a>
+                    <div class="item_personal_two item_cont">
+                        <p class="wechat_ewm_img"><img src="common/images/2.jpg"></p>
+                    </div>
+                </li>
+                <li class="item_phone"><a href=""><i></i>手机知我</a></li>
+                <li class="item_personal item_btn">
+                    <a class="" href="" ><span>我的小窝</span><i></i></a>
+                    <div class="item_personal_my item_cont">
+                        <ul>
+                            <li><a href="">我的订单</a></li>
+                            <li><a href="">我的优惠券</a></li>
+                            <li><a href="">我的收藏</a></li>
+                            <li><a href="">我的预订</a></li>
+                            <li><a href="">我的积分</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="item_line">|</li>
+                <li class="item_service item_btn">
+                    <a  href="" ><span>客户服务</span><i></i></a>
+                    <div class="item_personal_client item_cont">
+                        <ul>
+                            <li><a href="">帮助中心</a></li>
+                            <li><a href="">新浪微博</a></li>
+                            <li><a href="">正品承诺</a></li>
+                            <li><a href="">真伪查询</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+    </div>
+</div>
+
+<!-----------------------------------顶部搜索+logo---------------------------->
+<div class="header_center">
+	<div class="header_center_box w1100">
+		<!--logo图标-->
+		<div class="header_logo">
+			<img src="common/images/logo.jpg" />
+		</div>
+		<!--搜索框-->
+		<div class="header_search">
+			<div class="search_box header_searchbox">
+				<form class="clearfix search_form"  action="" method="get">
+                    <input class="search_box_text" name="keyword" type="text" value="可莱丝" />
+                    <input class="search_box_btn" name="search" type="button" value="搜索" />
+                </form>
+                <p>
+            	   <a href="">保湿<span class="item_line">|</span></a>
+            	   <a href="">面膜<span class="item_line">|</span></a>
+            	   <a href="">洗面奶<span class="item_line">|</span></a>
+            	   <a href="">补水<span class="item_line">|</span></a>
+            	   <a href="">香水<span class="item_line">|</span></a>
+            	   <a href="">口红</a>
+                </p>
+			</div>
+		</div>
+		<!--购物车-->
+        <div class="header-shop">
+            <p><a href="goodcar.html">我的购物车</a></p>
+        </div>
+	</div>
+</div>
+
+<!-----------------------首页导航------------------------>
+<div class="header-mainnav">
+    <div class="header-mainnav-box w1100">
+        <!--菜单-->
+        <div class="index-nav">
+            <!--左边-->
+           <div class="nav-left">
+            <ul>
+                <li>
+                    <a class="mainnav" href="/">首页</a>
+                </li>
+                <li class="zhiwo">
+                    <a  href="/">知我商城</a>
+
+                    <!--导航条二级菜单-->
+                    <div class="shop-two">
+                        <div class="shop-two-left">
+                            <div class="shop1 shop">
+                                <div class="shop1-intro shop-intro">
+                                    <a href="/">护肤</a>
+                                </div>
+                                <div class="shop-intro-inline"></div>
+                                <a href="">面膜面贴</a>
+                                <a href="">乳液凝露</a>
+                                <a href="">洁面卸妆</a>
+                                <a href="">眼精华/眼霜</a>
+                                <a href="">防晒隔离</a>
+                                <a href="">化妆水爽肤水</a>
+                                <a href="">眼膜/眼贴</a>
+                                <a href="">精华</a>
+                            </div>
+                            <div class="shop2 shop">
+                                <div class="shop2-intro shop-intro">
+                                    <a href="/">药妆</a>
+                                </div>
+                                <div class="shop-intro-inline"></div>
+                                <a href="">乳液面霜</a>
+                                <a href="">洁面卸妆</a>
+                                <a href="">面部精华</a>
+                                <a href="">化妆水爽肤水</a>
+                                <a href="">面膜面贴</a>
+                                <a href="">喷雾</a>
+                                <a href="">眼精华/眼霜</a>
+                                <a href="">防晒隔离</a>
+                            </div>
+                            <div class="shop3 shop">
+                                <div class="shop3-intro shop-intro">
+                                    <a href="/">洗护</a>
+                                </div>
+                                <div class="shop-intro-inline"></div>
+                                <a href="">洗发护发</a>
+                                <a href="">口腔护理</a>
+                                <a href="">沐浴润体</a>
+                                <a href="">身体乳霜</a>
+                                <a href="">手足护理</a>
+                                <a href="">美体瘦身</a>
+                                <a href="">防晒隔离</a>
+                                <a href="">润唇膏</a>
+                            </div>
+                            <div class="shop4 shop">
+                                <div class="shop4-intro shop-intro">
+                                    <a href="/">彩妆香氛</a>
+                                </div>
+                                <div class="shop-intro-inline"></div>
+                                <a href="">唇彩/口红</a>
+                                <a href="">女士香水</a>
+                                <a href="">粉饼/蜜粉</a>
+                                <a href="">男士香水</a>
+                                <a href="">睫毛</a>
+                                <a href="">眼线</a>
+                                <a href="">腮红/胭脂</a>
+                                <a href="">粉底/妆前乳</a>
+                                <a href="">眼影/彩妆盘</a>
+                                <a href="">BB霜/CC霜</a>
+                            </div>
+                        </div>
+                        <div class="shop-two-right">
+                            <a href=""><img src="images/index/guoqin.jpg"></a>
+                        </div>
+                    </div>
+                    
+                </li>
+                <li class="overseas_nav">
+                    <a class="mainnav" href="">
+                        <img class="overseas_nav_img1" style="display: block;" src="common/images/overseas_nav_01.gif" />
+                        <img class="overseas_nav_img2" style="display: none;" src="common/images/overseas_nav_02.gif" />
+                    </a>
+                </li>
+            </ul>
+           </div>
+            <!--右边-->
+            <div class="nav-right">
+                <ul class="clearfix">
+                    <li class="fcb_invest"><span>百度投资</span></li>
+                    <li class="fcb_quality"><span>真品保证</span></li>
+                    <li class="fcb_mail"><span>2件包邮</span></li>
+                    <li class="fcb_return"><span>30天无理由退换货</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--------------主体部分-------------------->
+<div class="container">
+	
+	<div class="content_box detail_contbox">
+		<!--商城首页-->
+		<div class="detail_pro">
+			<!--导航栏-->
+			<div class="now_pos">
+				<div class="now_pos_show">
+					<p class="pos_link"><a href="">商城首页</a></p><i>&gt;</i>
+					<p class="pos_link"><a href="">唇彩/口红</a></p><i>&gt;</i>
+					<p class="pos_link"><a href="">eto/医朵</a></p><i>&gt;</i>
+					<p class="pos_close"><span>医朵eto咬唇妆口红膏1号4.2g</span></p>
+				</div>
+			</div>
+			<!--详情-->
+			<div class="detail_single_info">
+				<!--需要注销的-->
+				<!--左边的图片-->
+				<!--<div id="smallImg" class="detail_single_img" >-->
+					<!--<img src="images/xiangqing/011.jpg" alt="医朵eto咬唇妆口红膏1号4.2g">-->
+					<!--<div id="smallArea"></div>-->
+				<!--</div>-->
+				<!--<div id="bigArea">-->
+					<!--<img id="bigImg" src="images/xiangqing/011.jpg"/>-->
+				<!--</div>-->
+
+
+
+				<!--右边的介绍-->
+				<div class="detail_single_intro">
+					<!--需要注销的-->
+					<!--<div class="detail_single_introcol1">-->
+						<!--<h1 class="dsingle_introcol1_name">医朵eto咬唇妆口红膏1号4.2g</h1>-->
+						<!--<div class="dsingle_introcol1_price">-->
+							<!--<p class="dsingle_nowprice"><i>￥</i><span>59.0</span></p>-->
+							<!--<p class="dsingle_hisprice"><span>市场价：</span><del>￥108.0</del></p>-->
+						<!--</div>-->
+					<!--</div>-->
+
+					<div class="detail_single_introcomment">
+						<p class="dpuser_ctimer_scoretxt">评&nbsp;价</p>
+						<p class="dpuser_ctimer_scorebg">
+							<span class="dpuser_ctimer_scoregoods" style="width: 82%;"></span>
+						</p>
+						<p class="dpuser_totleamount">
+							<a href="#detail_pro_usercomment"><span>59</span>个人评价</a>
+						</p>
+					</div>
+					<div class="detail_single_introamout">
+						<div class="detail_single_introamoutbtn">
+							<span class="header_ginfo_price">数&nbsp;量:</span>
+							<p class="header_ginfo_amount">
+								<span class="h_amout_down" id="btn_decrease_num" data="1"></span>
+								<input type="text" id="buy_number" value="1">
+								<span class="h_amout_up" id="btn_increase_num" data="0"></span>
+							</p>
+							<p class="look_brand_more">
+                                <a href="">更多eto/医朵产品</a>
+                            </p>
+						</div>
+						<div class="detail_single_introsales">
+							<div class="dsingle_introsales_tipbox">
+								<p class="dintrotip_one">
+									<span class="dsingle_introsales_tip">满赠</span>
+									<span>医朵品牌团满258送舒德尔玛+口红 </span>
+								</p>
+								<p>
+									<span class="dsingle_introsales_tip">满减</span>
+									<span>贝德玛品牌团  满199减30 </span>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="detail_single_introbuy">
+						<div class="dsingle_introbuy_operate">
+							<p class="dsingle_introbuy_operatebtn">
+							   <a href="" id="btn_add_cart" pic="" rel="nofollow">加入购物车</a>
+							</p>
+							<p class="dsingle_introbuy_operatecang hascang" id="p_favorite">
+								<span id="btn_favorite">收藏</span><i></i>
+							</p>
+						</div>
+						<div class="dsingle_introbuy_effect">
+							<span class="dsingle_introbuy_effecttip">功效</span>
+							<ul class="clearfix">
+							    <li><i></i><span>润唇保湿</span></li>
+                            </ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-------------------品牌热卖---------------------->
+		<div class="hot_brand_box">
+			<div class="hot_brand_lists ">
+				<ul class="clearfix">
+					<li class="hot_brand_title">品牌热卖</li>
+					<li><a href="">Estee Lauder/雅诗兰黛</a></li>
+					<li><a href="">Estee Lauder/雅诗兰黛</a></li>
+					<li><a href="">AUPRES/欧珀莱</a></li>
+					<li><a href="">SHISEIDO/资生堂</a></li>
+					<li><a href="">The Body Shop/美体小铺</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-----------------------组合购买-------------------->
+		<div class="group_buy bfd_recommend_">
+			<h2>
+				<p class="bfd_recom_cont">组合购买</p>
+				<a href="" target="_blank" class="bfd_img_logo" title="百分点推荐引擎"></a>
+			</h2>
+			<div class="group_buy_goods clearfix">
+				<div class="group_buygoods_info" id="bfd_show_fbt" from="group" gid="1119520" market_price="89.00" price="79.00">
+					<ul class="clearfix">
+						<li>
+							<div class="group_buygoods_infoimg">
+								<a href="">
+									<img src="images/xiangqing/011.jpg" />
+								</a>
+							</div>
+							<div class="group_buygoods_infodetail">
+								<p class="g_infodetail_name">
+									<a>医朵eto咬唇妆口红膏1号4.2g</a>
+								</p>
+								<p class="g_infodetail_price">￥59.00</p>
+							</div>
+							<div class="group_buygoods_contactico">
+								<img src="images/xiangqing/detailadd.png"/>
+							</div>
+						</li>
+						<li>
+							<div class="group_buygoods_infoimg">
+								<a href="">
+									<img src="images/xiangqing/019.jpg" />
+								</a>
+							</div>
+							<div class="group_buygoods_infodetail">
+								<p class="g_infodetail_name">
+									<a target="_blank" href="">医朵eto咬唇妆口红膏2号4.2</a>
+								</p>
+								<p class="g_infodetail_price">
+									<label class="checkbox checked" gid="1111302" from="mall" market_price="108" price="45">￥45</label>
+								</p>
+								<div class="group_buygoods_contactico">
+									<img src="images/xiangqing/detailadd.png"/>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="group_buygoods_infoimg">
+								<a href="">
+									<img src="images/xiangqing/020.jpg" />
+								</a>
+							</div>
+							<div class="group_buygoods_infodetail">
+								<p class="g_infodetail_name">
+									<a target="_blank" href="">森田药妆玻尿酸微导保湿面膜5片</a>
+								</p>
+								<p class="g_infodetail_price">
+									<label class="checkbox checked" gid="1111302" from="mall" market_price="108" price="53">￥53</label>
+								</p>
+								<div class="group_buygoods_contactico">
+									<img src="images/xiangqing/detailadd.png"/>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="group_buygoods_infoimg">
+								<a href="">
+									<img src="images/xiangqing/021.jpg" />
+								</a>
+							</div>
+							<div class="group_buygoods_infodetail">
+								<p class="g_infodetail_name">
+									<a target="_blank" href="">韩国所望草本芦荟洗面奶150ml</a>
+								</p>
+								<p class="g_infodetail_price">
+									<label class="checkbox checked" gid="1111302" from="mall" market_price="108" price="49">￥49</label>
+								</p>
+								<div class="group_buygoods_contactico">
+									<img src="images/xiangqing/detailequal.png"/>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="group_buygoods_totle" id="buy_together">
+                    <p class="group_btotle_amount"><strong><i id="together_num">4</i>件商品组合购买</strong></p>
+                    <p class="group_btotle_price">知我总价：<em id="together_total_price">￥206.00</em></p>
+                    <p>市场总价：<span id="together_total_market_price">￥344.00</span></p>
+                    <p>为您节省：<span id="together_total_saving">￥138.00</span></p>
+                    <p class="group_btotole_buybtn"><a href="" id="button" rel="nofollow">购买套组</a></p>
+                </div>
+			</div>
+		</div>
+		
+		<!----------------同品牌销量排行----------------->
+		<div class="samebrand_rank cb_title_h2">
+			<h2>
+				<p><span>同品牌销量排行</span><i>SAME BRAND SALES RANKING</i></p>
+			</h2>
+			<div class="pb_list_goods">
+				<ul class="clearfix">
+					<li>
+						<div class="goods_img">
+							<a href=""><img src="images/xiangqing/goods-1.jpg" ></a>
+						</div>
+						<div class="goods_price">
+							<p class="pro_name"><a href="">医朵舒缓提拉额贴10p</a></p>
+                            <p class="now_price"><i>￥</i><span class="price_day">39.0</span><del>￥99.0</del></p>
+                            <p class="buy_btn"><a href="" class="put-cart">加入购物车</a></p>
+						</div>
+					</li>
+					<li>
+						<div class="goods_img">
+							<a href=""><img src="images/xiangqing/goods-2.jpg" ></a>
+						</div>
+						<div class="goods_price">
+							<p class="pro_name"><a href="">医朵eto美眼眼袋散3g</a></p>
+                            <p class="now_price"><i>￥</i><span class="price_day">59.0</span><del>￥138.0</del></p>
+                            <p class="buy_btn"><a href="" class="put-cart">加入购物车</a></p>
+						</div>
+					</li>
+					<li>
+						<div class="goods_img">
+							<a href=""><img src="images/xiangqing/goods-3.jpg" ></a>
+						</div>
+						<div class="goods_price">
+							<p class="pro_name"><a href="">医朵eto蜂毒笑颜紧致贴10对</a></p>
+                            <p class="now_price"><i>￥</i><span class="price_day">55.0</span><del>￥128.0</del></p>
+                            <p class="buy_btn"><a href="" class="put-cart">加入购物车</a></p>
+						</div>
+					</li>
+					<li>
+						<div class="goods_img">
+							<a href=""><img src="images/xiangqing/goods-4.jpg" ></a>
+						</div>
+						<div class="goods_price">
+							<p class="pro_name"><a href="">医朵eto美眼脂粒散3g</a></p>
+                            <p class="now_price"><i>￥</i><span class="price_day">49.0</span><del>￥138.0</del></p>
+                            <p class="buy_btn"><a href="" class="put-cart">加入购物车</a></p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<!------------------商品参数---------------------->
+		<div class="detail_proinfo clearfix">
+			<!--左边-->
+			<div class="detail_ranking">
+				<h2><p>同分类排行<span>RANKING</span></p></h2>
+				<div class="pro_list">
+					<ul>
+						<li>
+							<div class="prolist_img"> 
+						        <a href=""><img src="images/xiangqing/rank1.jpg" alt="倩碧蜡笔小胖唇膏笔-宝贝小胖04 1.2g"></a>		
+							</div>
+							<div class="prolist_info">
+								<p class="prolist_info_name">
+									<a href="">倩碧蜡笔小胖唇膏笔-宝贝小胖04 1.2g</a>
+								</p>
+								<p class="prolist_info_price">￥39.0</p>
+							</div>
+						</li>
+						<li>
+							<div class="prolist_img"> 
+						        <a href=""><img src="images/xiangqing/rank2.jpg" alt="智美蜗牛白玉蜗牛特润滋养润唇膏3.8g"></a>		
+							</div>
+							<div class="prolist_info">
+								<p class="prolist_info_name">
+									<a href="">智美蜗牛白玉蜗牛特润滋养润唇膏3.8g</a>
+								</p>
+								<p class="prolist_info_price">￥69.0</p>
+							</div>
+						</li>
+						<li>
+							<div class="prolist_img"> 
+						        <a href=""><img src="images/xiangqing/rank3.jpg" alt="雅顿8小时润泽唇膏3.7g"></a>		
+							</div>
+							<div class="prolist_info">
+								<p class="prolist_info_name">
+									<a href="">雅顿8小时润泽唇膏3.7g</a>
+								</p>
+								<p class="prolist_info_price">￥72.0</p>
+							</div>
+						</li>
+						<li>
+							<div class="prolist_img"> 
+						        <a href=""><img src="images/xiangqing/rank4.jpg" alt="suki蜂蜜+柠檬润唇膏"></a>		
+							</div>
+							<div class="prolist_info">
+								<p class="prolist_info_name">
+									<a href="">suki蜂蜜+柠檬润唇膏</a>
+								</p>
+								<p class="prolist_info_price">￥24.0</p>
+							</div>
+						</li>
+						<li>
+							<div class="prolist_img"> 
+						        <a href=""><img src="images/xiangqing/rank5.jpg" alt="Dior迪奥粉漾魅惑润唇膏1.4G"></a>		
+							</div>
+							<div class="prolist_info">
+								<p class="prolist_info_name">
+									<a href="">Dior迪奥粉漾魅惑润唇膏1.4G</a>
+								</p>
+								<p class="prolist_info_price">￥65.0</p>
+							</div>
+						</li>
+						<li>
+							<div class="prolist_img"> 
+						        <a href=""><img src="images/xiangqing/rank6.jpg" alt="小甘菊敏感修护唇膏4.8g"></a>		
+							</div>
+							<div class="prolist_info">
+								<p class="prolist_info_name">
+									<a href="">小甘菊敏感修护唇膏4.8g</a>
+								</p>
+								<p class="prolist_info_price">￥49.0</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="bfd_recommend_">
+					<h3>
+						<p class="bfd_recom_cont">买过还买过</p>
+						<a href="" class="bfd_img_logo" title="百分点推荐引擎"></a>
+					</h3>
+					<div class="pro_list">
+						<ul id="bought-bought">
+							<li>
+								<div class="prolist_img"> 
+						            <a href=""><img src="images/xiangqing/rank7.jpg" alt="知我药妆化妆棉100片（蓝色）"></a>		
+							    </div>
+							    <div class="prolist_info">
+								    <p class="prolist_info_name">
+									    <a href="">知我药妆化妆棉100片（蓝色）</a>
+								    </p>
+								    <p class="prolist_info_price">￥19.9</p>
+							    </div>
+							</li>
+							<li>
+								<div class="prolist_img"> 
+						            <a href=""><img src="images/xiangqing/rank8.jpg" alt="碧卓越润肤露30ml（天才黄油"></a>		
+							    </div>
+							    <div class="prolist_info">
+								    <p class="prolist_info_name">
+									    <a href="">碧卓越润肤露30ml（天才黄油</a>
+								    </p>
+								    <p class="prolist_info_price">￥89</p>
+							    </div>
+							</li>
+							<li>
+								<div class="prolist_img"> 
+						            <a href=""><img src="images/xiangqing/rank9.jpg" alt="可莱丝胎盘鱼子酱面膜10片"></a>		
+							    </div>
+							    <div class="prolist_info">
+								    <p class="prolist_info_name">
+									    <a href="">可莱丝胎盘鱼子酱面膜10片</a>
+								    </p>
+								    <p class="prolist_info_price">￥109</p>
+							    </div>
+							</li>
+							<li>
+								<div class="prolist_img"> 
+						            <a href=""><img src="images/xiangqing/rank10.jpg" alt="韩国雪花秀滋阴水乳各5ml*5"></a>		
+							    </div>
+							    <div class="prolist_info">
+								    <p class="prolist_info_name">
+									    <a href="">韩国雪花秀滋阴水乳各5ml*5</a>
+								    </p>
+								    <p class="prolist_info_price">￥59</p>
+							    </div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="bfd_recommend_">
+					<h3>
+						<p class="bfd_recom_cont">看过还看过</p>
+						<a href="" class="bfd_img_logo" title="百分点推荐引擎"></a>
+					</h3>
+					<div class="pro_list">
+						<ul id="bought-bought">
+							<li>
+								<div class="prolist_img"> 
+						            <a href=""><img src="images/xiangqing/rank11.jpg" alt="舒兰仕焕能醒肤爽肤水150ml"></a>		
+							    </div>
+							    <div class="prolist_info">
+								    <p class="prolist_info_name">
+									    <a href="">舒兰仕焕能醒肤爽肤水150ml</a>
+								    </p>
+								    <p class="prolist_info_price">￥60</p>
+							    </div>
+							</li>
+							<li>
+								<div class="prolist_img"> 
+						            <a href=""><img src="images/xiangqing/rank12.jpg" alt="可莱丝H.D.P毛孔紧致水洗式面膜"></a>		
+							    </div>
+							    <div class="prolist_info">
+								    <p class="prolist_info_name">
+									    <a href="">可莱丝H.D.P毛孔紧致水洗式面膜</a>
+								    </p>
+								    <p class="prolist_info_price">￥49</p>
+							    </div>
+							</li>
+							<li>
+								<div class="prolist_img"> 
+						            <a href=""><img src="images/xiangqing/rank13.jpg" alt="英国AA网芦荟海藻眼胶60ml"></a>		
+							    </div>
+							    <div class="prolist_info">
+								    <p class="prolist_info_name">
+									    <a href="">英国AA网芦荟海藻眼胶60ml</a>
+								    </p>
+								    <p class="prolist_info_price">￥59</p>
+							    </div>
+							</li>
+							<li>
+								<div class="prolist_img"> 
+						            <a href=""><img src="images/xiangqing/rank14.jpg" alt="倩碧焕妍活力紧致弹力眼霜5ml"></a>		
+							    </div>
+							    <div class="prolist_info">
+								    <p class="prolist_info_name">
+									    <a href="">倩碧焕妍活力紧致弹力眼霜5ml</a>
+								    </p>
+								    <p class="prolist_info_price">￥49</p>
+							    </div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+			</div> 
+			<!--右边-->
+			<div class="detail_inforbox">
+			    <h3 class="detail_infor_nav fixed">
+			    	<ul class="clearfix">
+						<li><a href="">商品参数</a></li>
+						<li><a href="">本单详情</a></li>
+						<li><a href="">使用方法</a></li>						
+						<li><a href="">用户口碑</a></li>
+					</ul>
+					<div class="detail_buyinfo">
+						<p class="detail_buyinfo_price"><i>￥</i><span>59.0</span></p>
+						<p class="detail_buyinfo_btn"><a href="" class="put-cart">加入购物车</a></p>
+					</div>
+			    </h3>
+			    <div class="detail_infor_cont">
+			    	<div class="detail_pro_coupon">
+						<h2 class="dc_title_h2"><p><span></span><em>品牌授权</em><i>Brand license</i></p></h2>
+                        <div class="dpc_cont">
+                            <img src="images/xiangqing/001.jpg">
+                        </div>
+                    </div>
+                    <div id="detail_pro_parameters" class="detail_pro_parameters">
+						<h2 class="dc_title_h2"><p><span></span><em>商品参数</em><i>Product parameters</i></p></h2>
+						<div class="dpp_list">
+							<table>
+							   <tbody>
+							    <tr>
+                                    <td class="dpp_list_title">原 产 地:</td>
+                                    <td class="dpp_list_cont">中国</td>
+                                </tr>
+                                <tr>
+                                    <td class="dpp_list_title">功  效:</td>
+                                    <td class="dpp_list_cont">润唇保湿</td>
+                                </tr>
+                                <tr>
+                                    <td class="dpp_list_title">规  格:</td>
+                                    <td class="dpp_list_cont">4.2g</td>
+                                </tr>
+                                <tr>
+                                    <td class="dpp_list_title">质  地:</td>
+                                    <td class="dpp_list_cont">膏</td>
+                                </tr>
+                                                            <tr>
+                                    <td class="dpp_list_title">颜  色:</td>
+                                    <td class="dpp_list_cont">1号</td>
+                                </tr>
+                                <tr>
+                                    <td class="dpp_list_title">生产日期:</td>
+                                    <td class="dpp_list_cont">具体日前以收到实物为准</td>
+                                </tr>
+                                <tr>
+                                    <td class="dpp_list_title">保 质 期:</td>
+                                    <td class="dpp_list_cont">3年</td>
+                                </tr>
+                                <tr>
+                                    <td class="dpp_list_title">包  装:</td>
+                                    <td class="dpp_list_cont">有外盒无塑封</td>
+                                </tr>
+                                <tr>
+                                    <td class="dpp_list_title">适合肤质:</td>
+                                    <td class="dpp_list_cont">任何肤质</td>
+                                </tr>
+                                <tr>
+                                    <td class="dpp_list_title">适合人群:</td>
+                                    <td class="dpp_list_cont">所有人群 尤其女性</td>
+                                </tr>
+                                <tr>
+                                    <td class="dpp_list_title">温馨提示:</td>
+                                    <td class="dpp_list_cont">由于部分商品包装更换较为频繁，因此您收到的货品有可能与图片不完全一致，请您以收到的商品实物为准，同时我们会尽量做到及时更新，由此给您带来不便多多谅解，谢谢！</td>
+                                </tr>
+                            	</tbody>
+							</table>
+							<div class="dpp_list_img">
+								<img src="images/xiangqing/011.jpg"/>
+							</div>
+						</div>
+					</div>
+					<div id="detail_pro_coupon" class="detail_pro_coupon">
+						<h2 class="dc_title_h2"><p><span></span><em>本单详情</em><i>Coupon</i></p></h2>
+						<div class="dpc_cont">
+							<p>
+								<img src="images/xiangqing/002.jpg" />
+								<img src="images/xiangqing/003.jpg" />
+								<img src="images/xiangqing/004.jpg" />
+								<img src="images/xiangqing/005.jpg" />
+								<img src="images/xiangqing/006.jpg" />
+								<img src="images/xiangqing/007.jpg" />
+								<img src="images/xiangqing/008.jpg" />
+								<img src="images/xiangqing/009.jpg" />
+							</p>
+							<p><strong>产品详情：</strong> </p>
+							<p>拥有三个色的横切面，轻松打造当下流行的咬唇妆，保湿滋润度非常好，横向涂抹会有渐变咬唇的效果，竖向涂抹会涂出三种颜色综合后的全唇妆效果，一支多用，经典渐变唇色，打造更真实更有层次感的双唇，似有若无的唇妆效果，涂抹后的嘴唇好似真的被轻咬过，带着异常自然的唇色和一点儿诱惑的意味，直让人心动不已。轻盈水感，吻上唇间。</p>
+							<p>
+	                             <img alt="" src="images/xiangqing/story.jpg"/> 
+							</p>
+							<p>
+								<img alt="" src="images/xiangqing/010.jpg"/> 
+							</p>
+							<h2 class="dc_title_h2">
+	                            <p><span></span><em>产品实拍</em><i>Photos</i> </p>
+                            </h2>
+                            <p>
+	                            <img alt="" src="images/xiangqing/011.jpg"> 
+                            </p>
+                            <p> 拥有三个色的横切面，轻松打造当下流行的咬唇妆。</p>
+                            <p>
+	                            <img alt="" src="images/xiangqing/012.jpg"> 
+                            </p>
+                            <p> 保湿滋润度非常好。</p>
+                            <p>
+	                            <img alt="" src="images/xiangqing/013.jpg"> 
+                            </p>
+                            <p> 横向涂抹会有渐变咬唇的效果。</p>
+                            <p>
+	                            <img alt="" src="images/xiangqing/014.jpg"> 
+                            </p>
+                            <p> 竖向涂抹会涂出三种颜色综合后的全唇妆效果。</p>
+                            <p>
+	                            <img alt="" src="images/xiangqing/015.jpg"> 
+                            </p>
+                            <p> 一支多用，经典渐变唇色。</p>
+                            <p>
+	                            <img alt="" src="images/xiangqing/016.jpg"> 
+                            </p>
+                            <p> 打造更真实更有层次感的双唇。</p>
+                            <p>
+	                            <img alt="" src="images/xiangqing/017.jpg"> 
+                            </p>
+                            <p> 似有若无的唇妆效果。</p>
+                            <p>
+	                            <img alt="" src="images/xiangqing/018.jpg"> 
+                            </p>
+                            <p> 涂抹后的嘴唇好似真的被轻咬过，带着异常自然的唇色和一点儿诱惑的意味，直让人心动不已。</p>
+                            <h2 class="dc_title_h2">
+                                <p><span></span><em>他们说</em><i>Reviews</i> </p>
+                            </h2>
+                            <p>“这个一号颜色我喜欢，不浓~ ”</p>
+                            <p align="right">
+	                            <br>
+                                 ——<span style="color:#00acf5;"> 滙 </span> 
+                            </p>
+                            <p>“给嘴唇穿衣服，很美哦~ ”</p>
+                            <p align="right">
+	                            <br>
+                                 ——<span style="color:#00acf5;">  哈哈不抱抱</span> 
+                            </p>
+                            <p>“起初还不会用，无意涂抹都很有个性，嘻嘻赞~ ”</p>
+                            <p align="right">
+	                            <br>
+                                 ——<span style="color:#00acf5;"> 和比较好</span> 
+                            </p>
+                            <p>“还行吧这个宝贝，看见同事买的用着还行我也就买了！”</p>
+                            <p align="right">
+	                            <br>
+                                 ——<span style="color:#00acf5;"> 到你金口难开</span> 
+                            </p>
+                            <p>“渐变色的感觉，用着不错，很好！”</p>
+                            <p align="right">
+	                            <br>
+                                 ——<span style="color:#00acf5;"> 的撒回家</span> 
+                            </p>
+						</div>
+					</div>
+					<div id="detail_pro_usemethod" class="detail_pro_realshot">
+					    <h2 class="dc_title_h2"><p><span></span><em>使用方法</em><i>Use method</i></p></h2>
+                        <div class="dpc_cont">
+                                                                                            根据自己的需要涂抹于唇部即可！<br>
+                        </div>
+                    </div>
+                    <div id="detail_pro_usercomment" class="detail_pro_usercomment">
+					    <h2 class="dc_title_h2 clearfix">
+					    	<p><span></span><em>用户口碑</em><i>User reputation</i></p>
+					    	<a class="dc_title_link" href="">全部评论</a>
+					    </h2>
+                        <div class="dpc_cont">
+                            <ul>
+                            	<li>
+									<div class="dpuser_cont_photo">
+										<p class="dpuser_cphoto_img"><img src="images/xiangqing/ava_08.jpg"/></p>
+										<p class="dpuser_cphoto_txt ell">Demon Lee</p>
+									</div>
+									<div class="dpuser_cont_info">
+										<div class="dpuser_coninfo_timer">
+											<div class="dpuser_ctimer_score">
+												<p>评分：</p>
+												<p class="dpuser_ctimer_scorebg"><span class="dpuser_ctimer_scoregoods" style="width:100%"></span></p>
+											</div>
+											<p class="dpuser_ctimer_timer">2016-09-22</p>
+										</div>
+										<div class="dpuser_coninfo_cont">
+											<p>真的有楚楚可人怜噢，赞</p>
+										</div>
+										<div class="dpuser_coninfo_zan">
+											<input type="hidden" name="comment_id" class="comment_id" value="577322">
+											<p class="yizan 577322"><span>赞</span><i>（0）</i></p>
+										</div>
+									</div>
+								</li>
+								
+                            </ul>                                                             
+                        </div>
+                    </div>
+					
+			    </div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<!-----------------------------------尾部-------------------->
+<div class="footer">
+    <div class="footer-box w1100">
+        <!--尾部表格-->
+        <div class="footer-center">
+            <div class="footer-center-left">
+               <table class="tab-one">
+                <tr>
+                    <th>真品保证</th>
+                    <th>30天包退</th>
+                    <th>2件包邮</th>
+                    <th>药妆专柜</th>
+                    <th>关于知我</th>
+                    <th>新手指南</th>
+                    <th>联系方式</th>
+                </tr>
+                <tr>
+                    <td><a href="">品牌合作</a></td>
+                    <td><a href="">退换货政策</a></td>
+                    <td><a href="">配送政策</a></td>
+                    <td><a href="">肤质判定</a></td>
+                    <td><a href="">知我介绍</a></td>
+                    <td><a href="">购物流程</a></td>
+                    <td><a href="">在线客服咨询</a></td>
+                </tr>
+                <tr>
+                    <td><a href="">严格把关</a></td>
+                    <td><a href="">办理退换货</a></td>
+                    <td><a href="">快递查询</a></td>
+                    <td><a href="">肌肤问题</a></td>
+                    <td><a href="">商务合作</a></td>
+                    <td><a href="">支付方式</a></td>
+                    <td><a href=""><span style="font-weight: bold;">热线</span></a></td>
+                </tr>
+                <tr>
+                    <td><a href="">百度投资</a></td>
+                    <td><a href="">售后服务</a></td>
+                    <td><a href=""></a></td>
+                    <td><a href="">达人推荐</a></td>
+                    <td><a href="">友情链接</a></td>
+                    <td><a href="">化妆品品牌大全</a></td>
+                    <td><a href=""><span style="color: #00c8ff;font-size: 12px;font-weight: bold">400-630-1018</span></a></td>
+                </tr>
+                <tr>
+                    <td><a href="">全球品牌直供</a></td>
+                    <td><a href=""></a></td>
+                    <td><a href=""></a></td>
+                    <td><a href="">护肤常识</a></td>
+                    <td><a href="">开放API</a></td>
+                    <td><a href=""></a></td>
+                    <td><a href=""></a></td>
+                 </tr>
+              </table>
+            </div>
+            <div class="footer-center-right">
+              <table class="tab-two">
+                <tr>
+                    <th>知我微信商城</th>
+                </tr>
+                <tr>
+                    <th><img src="common/images/2.jpg" style="width: 100px;height: 100px;"/></th>
+                </tr>
+              </table>
+            </div>
+        </div> 
+    </div>
+    <!--商家保证-->
+     <div class="footer_bus">
+  		<ul class="">
+  			<li class="fcb_invest">
+  				<span>百度投资</span>
+  			</li>
+  			<li class="fcb_quality">
+  				<span>真品保证</span>
+  			</li>
+  			<li class="fcb_return">
+  				<span>30天包退</span>
+  			</li>
+  			<li class="fcb_mail">
+  				<span>两件包邮</span>
+  			</li>
+  		</ul>
+  	</div>
+  	<!--友情链接-->
+  	<!--<div class="links-friendly-box w1100">
+  		<div class="links-friendly-title">友情链接：</div>
+  	</div>-->
+  	<div class="footer_copyright">
+  		<p class="footer_c_text1">@2011-2014 般若天成（北京）科技有限公司 zhiwo.com 保留一切权利。客服热线：400-630-1018</p>
+  		<p class="footer_c_text2">
+			<a rel="nofollow" target="_blank" href="http://www.miibeian.gov.cn/">京ICP备10047008号</a>
+			|
+			<a rel="nofollow" target="_blank" href="http://www.miibeian.gov.cn/">京ICP证110762号</a>
+			| 网公安备1101054365号 | 营业执照
+		</p>
+		<p>
+			<img alt="支付特约商家" src="common/images/footer_copy_02.jpg" />
+			<img alt="快捷支付" src="common/images/footer_copy_03.jpg" />
+			<img alt="网上交易保障中心" src="common/images/footer_copy_05.jpg" />
+		</p>
+  	</div>
+</div>
+
+
+	</body>
+</html>

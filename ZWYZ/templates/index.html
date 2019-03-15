@@ -1,0 +1,1479 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>知我药妆首页</title>
+    <link href="{% static 'common/css/common.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'css/index.css' %}" type="text/css" rel="stylesheet"/>
+    <link href="{% static 'css/swiper-3.4.2.min.css' %}" type="text/css" rel="stylesheet"/>
+    <script src="{% static 'common/js/jquery-1.12.0.js' %}"></script>
+    <script src="{% static 'common/js/common.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/jquery.cookie.js' %}"></script>
+
+    {#    <script src="{% static 'js/changeimg.js' %}"></script>#}
+</head>
+<body>
+
+
+<!---------------------------------侧边栏楼梯-------------------------------------->
+<div class="side_nav">
+    <ul>
+        <li class="snav_zhiwo_index">
+            <a href="#">
+  					<span>
+  						知我
+  						<br>
+  						首页
+  					</span>
+            </a>
+        </li>
+        <li class="snav_main_push">
+            <a href="#mainpush">
+                <span>今日头条</span>
+            </a>
+        </li>
+        <li class="snav_group">
+            <a href="#brandgroup">
+                <span>品牌团</span>
+            </a>
+        </li>
+        <li class="snav_today_deals">
+            <a href="#newpro">
+                <span>上新单品</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<!-------------------右边侧边栏------------------->
+<div class="siderbar" id="siderbar">
+    <div class="sidebar_panel">
+        <ul class="sidebar_panel_partone">
+            <li id="sidebar_login" class="sidebar_item sidebar_login">
+                <a class="sitem_btn" href="{% url 'zwyz:login' %}">
+                    <i class="sitem_btnbg"></i>
+                </a>
+                <!--<div class="sidebar_tooltip" style="left: 0px; opacity: 0; display: none;">-->
+                <!--<a href="login.html" rel="nofollow">登录</a><span>|</span><a href="rejister.html" rel="nofollow">注册</a>-->
+                <!--<i class="triangle"></i>-->
+                <!--</div>-->
+
+{#                <div class="sidebar_tooltip" style="left: 0px; opacity: 0; display: none;">#}
+{#                    <a href="login.html" rel="nofollow">登录</a><span>|</span><a href="rejister.html" rel="nofollow">注册</a>#}
+{#                    <i class="triangle"></i>#}
+{#                </div>#}
+
+            </li>
+            <li id="sidebar_shopcar" class="sidebar_item sidebar_shopcar">
+                <a class="sitem_btn" href="goodcar.html">
+                    <i class="sitem_btnbg"></i>
+                    <span class="sshopcar_text">购物车</span>
+                    <span class="sshopcar_amout">0</span>
+                </a>
+            </li>
+            <li id="sidebar_collect" class="sidebar_item sidebar_collect">
+                <a class="sitem_btn" href="javascript:;">
+                    <i class="sitem_btnbg"></i>
+                </a>
+                <!--<div class="sidebar_tooltip">-->
+                <!--<span>我的收藏</span>-->
+                <!--<i class="triangle"></i>-->
+                <!--</div>-->
+                    <div class="sidebar_tooltip">
+                        <span>我的收藏</span>
+                        <i class="triangle"></i>
+                    </div>
+
+            </li>
+            <li id="sidebar_foot" class="sidebar_item sidebar_foot">
+                <a class="sitem_btn" href="javascript:;">
+                    <i class="sitem_btnbg"></i>
+                </a>
+                <!--<div class="sidebar_tooltip" style="left: 0px; opacity: 0; display: none;">-->
+                <!--<span>我看过的</span>-->
+                <!--<i class="triangle"></i>-->
+                <!--</div>-->
+                <div class="sidebar_tooltip" style="left: 0px; opacity: 0; display: none;">
+                    <span>我看过的</span>
+                    <i class="triangle"></i>
+                </div>
+            </li>
+        </ul>
+        <ul class="sidebar_panel_parttwo">
+            <li id="sidebar_wechat" class="sidebar_item sidebar_wechat">
+                <a class="sitem_btn" href="">
+                    <i class="sitem_btnbg"></i>
+                </a>
+                <!--<div class="sidebar_tooltip clearfix">-->
+                <!--<div class="sidebar_ewm_box">-->
+                <!--<img src="http://mp.weixin.baifendian.com/qr/zhiwo/getQr?571095350" alt="知我微信商城二维码">-->
+                <!--<span>知我微信商城</span>-->
+                <!--<i class="triangle"></i>-->
+                <!--</div>-->
+                <!--<div class="sidebar_ewm_box">-->
+                <!--<img src="http://images.zhiwo.com/product/2016/0523/android_ewm.png" alt="Android版下载">-->
+                <!--<span>Android版APP下载</span>-->
+                <!--<i class="triangle"></i>-->
+                <!--</div>-->
+                <!--<div class="sidebar_ewm_box">-->
+                <!--<img src="http://images.zhiwo.com/product/2016/0523/iphone_ewm.png" alt="Android版下载">-->
+                <!--<span>iPhone版APP下载</span>-->
+                <!--<i class="triangle"></i>-->
+                <!--</div>-->
+                <!--</div>-->
+{#                <div class="sidebar_tooltip clearfix">#}
+{#                <div class="sidebar_ewm_box">#}
+{#                <img src="http://mp.weixin.baifendian.com/qr/zhiwo/getQr?571095350" alt="知我微信商城二维码">#}
+{#                <span>知我微信商城</span>#}
+{#                <i class="triangle"></i>#}
+{#                </div>#}
+{#                <div class="sidebar_ewm_box">#}
+{#                <img src="http://images.zhiwo.com/product/2016/0523/android_ewm.png" alt="Android版下载">#}
+{#                <span>Android版APP下载</span>#}
+{#                <i class="triangle"></i>#}
+{#                </div>#}
+{#                <div class="sidebar_ewm_box">#}
+{#                <img src="http://images.zhiwo.com/product/2016/0523/iphone_ewm.png" alt="Android版下载">#}
+{#                <span>iPhone版APP下载</span>#}
+{#                <i class="triangle"></i>    #}
+{#                </div>#}
+{#                </div>#}
+            </li>
+            <li id="sidebar_servers" class="sidebar_item sidebar_servers">
+                <a class="sitem_btn" href="javascript:;">
+                    <i class="sitem_btnbg"></i>
+                </a>
+                <!--<div class="sidebar_tooltip" style="left: 0px; opacity: 0; display: none;">-->
+                <!--<span>客服中心</span>-->
+                <!--<i class="triangle"></i>-->
+                <!--</div>-->
+            </li>
+            <li id="sidebar_top" class="sidebar_item sidebar_top">
+                <a class="sitem_btn" href="javascript:;">
+                    <i class="up_triangle"></i>
+                    <span class="go_top">TOP</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<!-----------------------------顶部图片--------------------------------->
+<div class="top-img">
+    <span class="span1"
+          style="background:url(images/index/unfold.jpg) no-repeat;position: absolute; top: 0; right: 100px; width: 50px; height: 80px; overflow: hidden; z-index: 9999;display: none;"></span>
+    <span class="span2"
+          style="background:url(images/index/fold.jpg) no-repeat; position: absolute; top: 0; right: 100px; width: 50px; height: 80px; overflow: hidden; display: block; z-index: 9999;"></span>
+    <a class="topbanner_small" href=""></a>
+    <a class="topbanner_big" href=""></a>
+</div>
+<!---------------------------------顶部导航---------------------------------->
+<div class="headertop">
+    <div class="headertop-box w1100">
+        <!--左边-->
+        <ul class="headertop-left">
+            <li>欢迎来到知我！这里，用专业呵护美丽。</li>
+            <li><a href="{% url 'zwyz:login' %}">请登录</a></li>
+            <li><a href="{% url 'zwyz:register' %}">快速注册</a></li>
+            <!--<li><a href="index.html">[退出]</a></li>-->
+            <li><a href="index.html">[退出]</a></li>
+        </ul>
+        <!--右边-->
+        <ul class="headertop-right">
+            <li class="item_personal item_btn">
+                <a href=""><span>微信商城</span><i></i></a>
+                <div class="item_personal_two item_cont">
+                    <p class="wechat_ewm_img"><img src="{% static 'common/images/2.jpg' %}"></p>
+                </div>
+            </li>
+            <li class="item_phone"><a href=""><i></i>手机知我</a></li>
+            <li class="item_personal item_btn">
+                <a class="" href=""><span>我的小窝</span><i></i></a>
+                <div class="item_personal_my item_cont">
+                    <ul>
+                        <li><a href="">我的订单</a></li>
+                        <li><a href="">我的优惠券</a></li>
+                        <li><a href="">我的收藏</a></li>
+                        <li><a href="">我的预订</a></li>
+                        <li><a href="">我的积分</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="item_line">|</li>
+            <li class="item_service item_btn">
+                <a href=""><span>客户服务</span><i></i></a>
+                <div class="item_personal_client item_cont">
+                    <ul>
+                        <li><a href="">帮助中心</a></li>
+                        <li><a href="">新浪微博</a></li>
+                        <li><a href="">正品承诺</a></li>
+                        <li><a href="">真伪查询</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-----------------------------------顶部搜索+logo---------------------------->
+<div class="header_center">
+    <div class="header_center_box w1100">
+        <!--logo图标-->
+        <div class="header_logo">
+            <a href="index.html"><img src="{% static 'common/images/logo.jpg' %}"></a>
+        </div>
+        <!--搜索框-->
+        <div class="header_search">
+            <div class="search_box header_searchbox">
+                <form class="clearfix search_form" action="" method="get">
+                    <input class="search_box_text" name="keyword" type="text" value="可莱丝">
+                    <input class="search_box_btn" name="search" type="button" value="搜索">
+                </form>
+                <p>
+                    <a href="list.html">保湿<span class="item_line">|</span></a>
+                    <a href="list.html">面膜<span class="item_line">|</span></a>
+                    <a href="list.html">洗面奶<span class="item_line">|</span></a>
+                    <a href="list.html">补水<span class="item_line">|</span></a>
+                    <a href="list.html">香水<span class="item_line">|</span></a>
+                    <a href="list.html">口红</a>
+                </p>
+            </div>
+        </div>
+        <!--购物车-->
+        <div class="header-shop">
+            <p><a href="goodcar.html">我的购物车</a></p>
+        </div>
+    </div>
+</div>
+
+<!-----------------------首页导航------------------------>
+<div class="header-mainnav">
+    <div class="header-mainnav-box w1100">
+        <!--菜单-->
+        <div class="index-nav">
+            <!--左边-->
+            <div class="nav-left">
+                <ul>
+                    <li>
+                        <a class="mainnav" href="/">首页</a>
+                    </li>
+                    <li class="zhiwo">
+                        <a href="{% url 'zwyz:list' %}">知我商城</a>
+
+                        <!--导航条二级菜单-->
+                        <div class="shop-two" style="display: none;">
+                            <div class="shop-two-left">
+                                <div class="shop1 shop">
+                                    <div class="shop1-intro shop-intro">
+                                        <a href="/">护肤</a>
+                                    </div>
+                                    <div class="shop-intro-inline"></div>
+                                    <a href="">面膜面贴</a>
+                                    <a href="">乳液凝露</a>
+                                    <a href="">洁面卸妆</a>
+                                    <a href="">眼精华/眼霜</a>
+                                    <a href="">防晒隔离</a>
+                                    <a href="">化妆水爽肤水</a>
+                                    <a href="">眼膜/眼贴</a>
+                                    <a href="">精华</a>
+                                </div>
+                                <div class="shop2 shop">
+                                    <div class="shop2-intro shop-intro">
+                                        <a href="/">药妆</a>
+                                    </div>
+                                    <div class="shop-intro-inline"></div>
+                                    <a href="">乳液面霜</a>
+                                    <a href="">洁面卸妆</a>
+                                    <a href="">面部精华</a>
+                                    <a href="">化妆水爽肤水</a>
+                                    <a href="">面膜面贴</a>
+                                    <a href="">喷雾</a>
+                                    <a href="">眼精华/眼霜</a>
+                                    <a href="">防晒隔离</a>
+                                </div>
+                                <div class="shop3 shop">
+                                    <div class="shop3-intro shop-intro">
+                                        <a href="/">洗护</a>
+                                    </div>
+                                    <div class="shop-intro-inline"></div>
+                                    <a href="">洗发护发</a>
+                                    <a href="">口腔护理</a>
+                                    <a href="">沐浴润体</a>
+                                    <a href="">身体乳霜</a>
+                                    <a href="">手足护理</a>
+                                    <a href="">美体瘦身</a>
+                                    <a href="">防晒隔离</a>
+                                    <a href="">润唇膏</a>
+                                </div>
+                                <div class="shop4 shop">
+                                    <div class="shop4-intro shop-intro">
+                                        <a href="/">彩妆香氛</a>
+                                    </div>
+                                    <div class="shop-intro-inline"></div>
+                                    <a href="">唇彩/口红</a>
+                                    <a href="">女士香水</a>
+                                    <a href="">粉饼/蜜粉</a>
+                                    <a href="">男士香水</a>
+                                    <a href="">睫毛</a>
+                                    <a href="">眼线</a>
+                                    <a href="">腮红/胭脂</a>
+                                    <a href="">粉底/妆前乳</a>
+                                    <a href="">眼影/彩妆盘</a>
+                                    <a href="">BB霜/CC霜</a>
+                                </div>
+                            </div>
+                            <div class="shop-two-right">
+                                <a href=""><img src="{% static 'images/index/guoqin.jpg' %}"></a>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="overseas_nav">
+                        <a class="mainnav" href="">
+                            <img class="overseas_nav_img1" style="display: block;"
+                                 src="{% static 'common/images/overseas_nav_01.gif' %}">
+                            <img class="overseas_nav_img2" style="display: none;"
+                                 src="{% static 'common/images/overseas_nav_02.gif' %}">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--右边-->
+            <div class="nav-right">
+                <ul class="clearfix">
+                    <li class="fcb_invest"><span>百度投资</span></li>
+                    <li class="fcb_quality"><span>真品保证</span></li>
+                    <li class="fcb_mail"><span>2件包邮</span></li>
+                    <li class="fcb_return"><span>30天无理由退换货</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------------------主题部分-------------------->
+
+<div class="container">
+    <!----------轮播图--------->
+    {#    <div class="playimages">#}
+    {#        <ul class="f-img">#}
+    {##}
+    {#            <li>#}
+    {#                <img src="{% static 'images/index/13856306688559702181.jpg' %}" alt="">#}
+    {#            </li>#}
+    {##}
+    {#            <li>#}
+    {#               <img src="{% static 'images/index/14868629584169215411.jpg' %}" alt="">#}
+    {#            </li>#}
+    {#        </ul>#}
+
+
+    {#        <ul>#}
+    {#            <img src="{% static 'images/index/14868629584169215411.jpg' %}" alt="">#}
+    {#        </ul>#}
+    {#        <ul class="f_btn">#}
+    {##}
+    {#        </ul>#}
+
+
+    <div class="swiper-container playimages">
+        <div class="swiper-wrapper">
+
+            {% for loopimg in loopimgs %}
+                <div class="swiper-slide">
+                    <img src="{% static loopimg.imgurl  %}" >
+                </div>
+            {% endfor %}
+
+
+{#            <div class="swiper-slide">#}
+{#                <img src="images/index/lunbo1.jpg" alt="sb">#}
+{#            </div>#}
+{##}
+{#            <div class="swiper-slide">#}
+{#                <img src="{% static 'images/index/lunbo2.jpg' %}" alt="sb">#}
+{#            </div>#}
+{#            <div class="swiper-slide">#}
+{#                <img src="{% static 'images/index/lunbo3.jpg' %}" alt="sb">#}
+{#            </div>#}
+{#            <div class="swiper-slide">#}
+{#                <img src="{% static 'images/index/lunbo4.jpg' %}" alt="sb">#}
+{#            </div>#}
+{#            <div class="swiper-slide">#}
+{#                <img src="{% static 'images/index/lunbo5.jpg' %}" alt="sb">#}
+{#            </div>#}
+            {#            <div class="swiper-slide">Slide 6</div>#}
+            {#            <div class="swiper-slide">Slide 7</div>#}
+            {#            <div class="swiper-slide">Slide 8</div>#}
+            {#            <div class="swiper-slide">Slide 9</div>#}
+            {#            <div class="swiper-slide">Slide 10</div>#}
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        {#        <div class="swiper-button-next"></div>#}
+        {#        <div class="swiper-button-prev"></div>#}
+    </div>
+
+
+    {#    </div>#}
+
+    <!-----------------今日头条------------>
+    <div id="mainpush" class="mainpush_box w1100">
+        <h1>
+            <span>今日头条</span>
+            <i>TODAY HEADLINES</i>
+        </h1>
+        <div class="m_list">
+            <ul class="clearfix">
+                <!--11111-->
+                <li class="m_t20">
+                    <div class="m_list_img fl">
+                        <!--<a target="_blank" href="">-->
+                        <!--<img src="images/index/12124558486672069314.jpg" />-->
+                        <!--</a>-->
+                        <a href="#">
+                            <img src={% static "images/index/12124558486672069314.jpg" %}/>
+                        </a>
+                    </div>
+
+                    <div class="m_list_cont fr">
+
+                        <!--倒计时-->
+                        <div class="m_list_ctime d_sb">
+                            <i class="downClook">购物团结束</i>
+                            <span>
+								<span class="time_d">0-881</span>天
+								<span class="time_h">06</span>时
+								<span class="time_m">44</span>分
+								<span class="time_s">05</span>秒
+							</span>
+                        </div>
+                        <!--详情-->
+                        <div class="m_list_cname">
+                            <!--<a target="_blank">-->
+                            <!--<span>3.5折/【官方授权】</span>-->
+                            <!--【随时补水 舒缓抗燥】国内专柜正品薇姿润泉舒缓喷雾（小喷）50ml*2瓶组，促进皮肤细胞更新，缓解皮肤发红、刺激，抗干燥，维持皮肤的酸碱平衡，肌肤的魔法师。补水保湿，抗氧化，舒缓肌肤。选用温泉水，富含多种矿物质和微量元素，一瓶多用哦！-->
+                            <!--</a>-->
+                            <a href="#">
+                                <span>3.5折/【官方授权】</span>
+                                随时补水
+                                舒缓抗燥】国内专柜正品薇姿润泉舒缓喷雾（小喷）50ml*2瓶组，促进皮肤细胞更新，缓解皮肤发红、刺激，抗干燥，维持皮肤的酸碱平衡，肌肤的魔法师。补水保湿，抗氧化，舒缓肌肤。选用温泉水，富含多种矿物质和微量元素，一瓶多用哦！
+                            </a>
+                        </div>
+                        <!--加入购物车-->
+                        <div class="m_list_cbuy clearfix">
+                            <p class="mlcb_price fl">
+                                <i>￥</i>
+                                <span>49</span>
+                                <del>￥140.00</del>
+                            </p>
+                            <p class="mlcb_btn fr">
+                                <a class="put-cart embox" href=" ">加入购物车</a>
+                            </p>
+                        </div>
+                        <div class="m_list_ctip">
+                            <p class="mlct_count d_sb">
+                                已有<span>20</span>人购买
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <!--22222-->
+                <li class="m_t20">
+                    <div class="m_list_img fl">
+                        <!--<a target="_blank" href="">-->
+                        <!--<img src="images/index/14868629584169215411.jpg" />-->
+                        <!--</a>-->
+                        <a href="#">
+                            <img src='{% static "images/index/14868629584169215411.jpg" %}'/>
+                        </a>
+                    </div>
+
+                    <div class="m_list_cont fr">
+
+                        <!--倒计时-->
+                        <div class="m_list_ctime d_sb">
+                            <i class="downClook">购物团结束</i>
+                            <span>
+								<span class="time_d">0-881</span>天
+								<span class="time_h">06</span>时
+								<span class="time_m">44</span>分
+								<span class="time_s">05</span>秒
+							</span>
+                        </div>
+                        <!--详情-->
+                        <div class="m_list_cname">
+                            <!--<a target="_blank">-->
+                            <!--<span>4.7折/【官方授权】</span>-->
+                            <!--【随时补水 舒缓抗燥】国内专柜正品薇姿润泉舒缓喷雾（小喷）50ml*2瓶组，促进皮肤细胞更新，缓解皮肤发红、刺激，抗干燥，维持皮肤的酸碱平衡，肌肤的魔法师。补水保湿，抗氧化，舒缓肌肤。选用温泉水，富含多种矿物质和微量元素，一瓶多用哦！-->
+                            <!--</a>-->
+
+                            <a href="#">
+                                <span>4.7折/【官方授权】</span>
+                                赶走黑眼圈
+                                缓解视疲劳】珍视明蒸汽热敷眼罩缓解眼疲劳玫瑰香型10片，恒温热蒸，采用恒温41°美眼工艺，持续25分钟恒温热蒸汽。精油护眼，所添加的玫瑰精油，有促进调节女性内分泌、肌肤美白的作用，对眼肌深层滋养；缓解眼疲劳，辅助睡眠，舒缓
+                            </a>
+                        </div>
+                        <!--加入购物车-->
+                        <div class="m_list_cbuy clearfix">
+                            <p class="mlcb_price fl">
+                                <i>￥</i>
+                                <span>49</span>
+                                <del>￥105.00</del>
+                            </p>
+                            <p class="mlcb_btn fr">
+                                <a class="put-cart embox" href=" ">加入购物车</a>
+                            </p>
+                        </div>
+                        <div class="m_list_ctip">
+                            <p class="mlct_count d_sb">
+                                已有<span>20</span>人购买
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <!--3333-->
+                <li class="m_t20">
+                    <div class="m_list_img fl">
+                        <!--<a target="_blank" href="">-->
+                        <!--<img src="images/index/10071627553711126218.jpg" />-->
+                        <!--</a>-->
+                        <a href="#">
+                            <img src="{% static 'images/index/10071627553711126218.jpg' %}"/>
+                        </a>
+                    </div>
+
+                    <div class="m_list_cont fr">
+
+                        <!--倒计时-->
+                        <div class="m_list_ctime d_sb">
+                            <i class="downClook">购物团结束</i>
+                            <span>
+								<span class="time_d">0-881</span>天
+								<span class="time_h">06</span>时
+								<span class="time_m">44</span>分
+								<span class="time_s">05</span>秒
+							</span>
+                        </div>
+                        <!--详情-->
+                        <div class="m_list_cname">
+                            <!--<a target="_blank">-->
+                            <!--<span>4.5折/【锁定水分 提亮肤色】</span>-->
+                            <!--韩国AHC透明质酸B5爽肤水100ml，玻尿酸成分可以有效提高肌肤的保湿力，草本成分可以有效修复毛孔让肌肤有活力，修复红点，让肌肤充满水分，带来湿润的肌肤，迅即吸取高倍水份分子进入皮肤，并补充营养要素。-->
+                            <!--</a>-->
+                            <a href="#">
+                                <span>4.5折/【锁定水分 提亮肤色】</span>
+                                韩国AHC透明质酸B5爽肤水100ml，玻尿酸成分可以有效提高肌肤的保湿力，草本成分可以有效修复毛孔让肌肤有活力，修复红点，让肌肤充满水分，带来湿润的肌肤，迅即吸取高倍水份分子进入皮肤，并补充营养要素。
+                            </a>
+
+                        </div>
+                        <!--加入购物车-->
+                        <div class="m_list_cbuy clearfix">
+                            <p class="mlcb_price fl">
+                                <i>￥</i>
+                                <span>49</span>
+                                <del>￥105.00</del>
+                            </p>
+                            <p class="mlcb_btn fr">
+                                <a class="put-cart embox" href=" ">加入购物车</a>
+                            </p>
+                        </div>
+                        <div class="m_list_ctip">
+                            <p class="mlct_count d_sb">
+                                已有
+                                <span>20</span>
+                                人购买
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <!--444-->
+                <li class="m_t20">
+                    <div class="m_list_img fl">
+                        <!--<a target="_blank" href="">-->
+                        <!--<img src="images/index/13856306688559702181.jpg" />-->
+                        <!--</a>-->
+                        <a href="#">
+                            <img src="{% static 'images/index/13856306688559702181.jpg' %}"/>
+                        </a>
+                    </div>
+
+                    <div class="m_list_cont fr">
+
+                        <!--倒计时-->
+                        <div class="m_list_ctime d_sb">
+                            <i class="downClook">购物团结束</i>
+                            <span>
+								<span class="time_d">0-881</span>天
+								<span class="time_h">06</span>时
+								<span class="time_m">44</span>分
+								<span class="time_s">05</span>秒
+							</span>
+                        </div>
+                        <!--详情-->
+                        <div class="m_list_cname">
+                            <!--<a target="_blank">-->
+                            <!--<span>4.5折/【锁定水分 提亮肤色】</span>-->
+                            <!--韩国AHC透明质酸B5爽肤水100ml，玻尿酸成分可以有效提高肌肤的保湿力，草本成分可以有效修复毛孔让肌肤有活力，修复红点，让肌肤充满水分，带来湿润的肌肤，迅即吸取高倍水份分子进入皮肤，并补充营养要素。-->
+                            <!--</a>-->
+                            <a href="#">
+                                <span>4.5折/【锁定水分 提亮肤色】</span>
+                                8.0折/雅漾舒缓眼霜10ml，葡聚糖硫酸酯，舒缓眼周脆弱皮肤，有效缓解眼部浮肿，淡化黑眼圈。专为娇嫩的眼部皮肤提供特别护理。适合各种皮肤类型。作为保湿和减轻肿胀程度的护理。针对因眼部水液代谢失衡造成的浮肿和黑眼圈。
+                            </a>
+                        </div>
+                        <!--加入购物车-->
+                        <div class="m_list_cbuy clearfix">
+                            <p class="mlcb_price fl">
+                                <i>￥</i>
+                                <span>49</span>
+                                <del>￥105.00</del>
+                            </p>
+                            <p class="mlcb_btn fr">
+                                <a class="put-cart embox" href=" ">加入购物车</a>
+                            </p>
+                        </div>
+                        <div class="m_list_ctip">
+                            <p class="mlct_count d_sb">
+                                已有<span>20</span>人购买
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--------------品牌团------------------->
+    <div class="bandground_box w1100">
+        <div class="pingpai">
+            <span>品牌团 COSMETICS BRANDS</span>
+        </div>
+        <div class="b_list">
+            <ul class="clearfix">
+                <li class="b_list_li">
+                    <a target="_blank" href="">
+                        <img src="{% static 'images/index/16659547635030272610.jpg' %}">
+                    </a>
+                </li>
+                <li class="b_list_li">
+                    <a target="_blank" href="">
+                        <img src="{% static 'images/index/18007182278140465112.jpg' %}">
+                    </a>
+                </li>
+                <li class="b_list_li">
+                    <a target="_blank" href="">
+                        <img src="{% static 'images/index/3979957543783096858.jpg' %}">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-----------------------小知推荐------------------>
+    <div class="recommend-box w1100">
+        <div class="tuijian">
+            <span>小知推荐 XIAO ZHI RECOMMEDNED</span>
+            <a class="bfd_img_logo fr" title="百分点推荐引擎" target="_blank" href=""></a>
+        </div>
+        <div class="rec-box">   <!--包围ul的div-->
+            <ul class="rec-box-list">
+                <li class="rec-box-list2">
+                    <ul class="recommend_list">
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/14828638848059910423.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥219</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/13141054463001608280.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥259</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/12511743564264675465.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥219</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/12285272296332757448.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥89</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <ul class="recommend_list">
+                        <li class="rec-box-list2">
+                            <div class="list_img">
+                                <img src="{% static 'images/index/12285272296332757448.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥219</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/10245653192416487391.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥259</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/12511743564264675465.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥219</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/3026235666530726444.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥89</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="rec-box-list2">
+                    <ul class="recommend_list">
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/2696962139136865740.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥219</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/7602756111693462688.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥259</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/14828638848059910423.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥219</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/7859074772677134169.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥89</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="rec-box-list2">
+                    <ul class="recommend_list">
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/14828638848059910423.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥219</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/13141054463001608280.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥259</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/12511743564264675465.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥219</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/12285272296332757448.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥89</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="rec-box-list2">
+                    <ul class="recommend_list">
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/14828638848059910423.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥219</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/13141054463001608280.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥259</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/12511743564264675465.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥219</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_img">
+                                <img src="{% static 'images/index/12285272296332757448.jpg' %}">
+                            </div>
+                            <div class="introduce">
+                                <span>国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml</span>
+                            </div>
+                            <div class="recommend_price">
+                                <span>￥89</span>
+                                <del>￥222</del>
+                            </div>
+                            <div class="recommend_car">
+                                <span>加入购物车</span>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="page-left page-btn">&lt;</div>
+            <div class="page-right page-btn">&gt;</div>
+        </div>
+    </div>
+
+    <!------------------------品牌切换---------------------->
+    <div class="brand_box w1100">
+        <div class="brand_b_nav">
+            <ul class="clearfix">
+                <li class="brand_b_nav_li bbn_current">
+                    <span>畅销品牌</span>
+                    <i></i>
+                </li>
+                <li class="brand_b_nav_li">
+                    <span>欧美品牌</span>
+                    <i></i>
+                </li>
+                <li class="brand_b_nav_li">
+                    <span>日韩品牌</span>
+                    <i></i>
+                </li>
+                <li class="brand_b_nav_li">
+                    <span>国内品牌</span>
+                    <i></i>
+                </li>
+            </ul>
+            <div class="bbn_allbrand fr">
+                <a href="" target="_blank">全部品牌+</a>
+            </div>
+        </div>
+        <div class="brand_b_cont">
+            <div class="brand_bc_page clearfix">
+                <div class="bbc_listbrand">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/01.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/02.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/03.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/04.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/05.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/06.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/07.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/08.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/09.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/10.jpg' %}">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bbc_hotbrand">
+                    <a href="" target="_blank">
+                        <img src="{% static 'images/index/chang-01.jpg' %}">
+                    </a>
+                </div>
+            </div>
+            <div class="brand_bc_page clearfix">
+                <div class="bbc_listbrand">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/11.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/12.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/13.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/14.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/15.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/16.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/17.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/18.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/19.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/20.jpg' %}">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bbc_hotbrand fr">
+                    <a href="" target="_blank">
+                        <img src="{% static 'images/index/chang-02.jpg' %}">
+                    </a>
+                </div>
+            </div>
+            <div class="brand_bc_page clearfix">
+                <div class="bbc_listbrand fl">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/21.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/22.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/23.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/24.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/25.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/26.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/27.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/28.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/29.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/30.jpg' %}">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bbc_hotbrand fr">
+                    <a href="" target="_blank">
+                        <img src="{% static 'images/index/chang-03.jpg' %}">
+                    </a>
+                </div>
+            </div>
+            <div class="brand_bc_page clearfix">
+                <div class="bbc_listbrand fl">
+                    <ul class="clearfix">
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/31.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/32.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/33.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/34.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/35.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/36.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/37.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/38.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/39.jpg' %}">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank">
+                                <img src="{% static 'images/index/40.jpg' %}">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bbc_hotbrand fr">
+                    <a href="" target="_blank">
+                        <img src="{% static 'images/index/chang-04.jpg' %}">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="bbc_leftbtn">&lt;</div>
+        <div class="bbc_rightbtn">&gt;</div>
+    </div>
+
+    <!-----------------------------今日新品-------------------------------->
+    <div class="newpro_box w1100">
+        <div class="todaynews">
+            <span>今日新品  HOT DEALS TODAY</span>
+        </div>
+        <div class="newpro_list w1100">
+            <ul id="grounpGoods">
+                <!--<li>
+                    <div class="evegoods">
+                        <div class="good-img">
+                            <img src="images/index/new-01.jpg"/>
+                        </div>
+                        <div class="good-introduce">
+                            <p>
+                                <span>4.0折</span>
+                                SNP熊猫气垫BB霜 01# ，打破传统古板气垫，让美丽更生动！
+                            </p>
+                        </div>
+                        <div class="buy-box">
+                            <div class="good-price">
+                                <span>￥88</span>
+                                <del>￥218.00</del>
+                            </div>
+                            <div class="good-car">
+                                <p>加入购物车</p>
+                            </div>
+                        </div>
+                        <div class="countdown">
+                                <p class="sale_tip_time">
+                                     <span>
+                                         距团购结束
+                                         <span class="time_d"></span>天
+                                         <span class="time_h"></span>小时
+                                         <span class="time_m"></span>分
+                                         <span class="time_s"></span>秒
+                                     </span>
+                             </p>
+                             <p class="sale_tip_count">
+                                     <span>409人已购买</span>
+                             </p>
+                        </div>
+                    </div>
+                </li>-->
+
+
+            </ul>
+        </div>
+    </div>
+
+    <!--搜索框-->
+    <div class="b_search_box w1100">
+        <div class="search_box bottom_searchbox">
+            <form class="clearfix" id="search_form" action="/product/search" method="get">
+                <input id="search_keyword" class="search_box_text" name="keyword" type="text" value="口红">
+                <input id="search_btn" class="search_box_btn" name="search" type="submit" value="搜索">
+            </form>
+            <ul class="hotkey clearfix">
+                <li><a href="">保湿<span class="item_line">|</span></a></li>
+                <li><a href="">面膜<span class="item_line">|</span></a></li>
+                <li><a href="">洗面奶<span class="item_line">|</span></a></li>
+                <li><a href="">补水<span class="item_line">|</span></a></li>
+                <li><a href="">香水<span class="item_line">|</span></a></li>
+                <li><a href="">口红</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--contant 结束  -->
+</div>
+
+<!-----------------------------------尾部-------------------->
+<div class="footer">
+    <div class="footer-box w1100">
+        <!--尾部表格-->
+        <div class="footer-center">
+            <div class="footer-center-left">
+                <table class="tab-one">
+                    <tbody>
+                    <tr>
+                        <th>真品保证</th>
+                        <th>30天包退</th>
+                        <th>2件包邮</th>
+                        <th>药妆专柜</th>
+                        <th>关于知我</th>
+                        <th>新手指南</th>
+                        <th>联系方式</th>
+                    </tr>
+                    <tr>
+                        <td><a href="">品牌合作</a></td>
+                        <td><a href="">退换货政策</a></td>
+                        <td><a href="">配送政策</a></td>
+                        <td><a href="">肤质判定</a></td>
+                        <td><a href="">知我介绍</a></td>
+                        <td><a href="">购物流程</a></td>
+                        <td><a href="">在线客服咨询</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">严格把关</a></td>
+                        <td><a href="">办理退换货</a></td>
+                        <td><a href="">快递查询</a></td>
+                        <td><a href="">肌肤问题</a></td>
+                        <td><a href="">商务合作</a></td>
+                        <td><a href="">支付方式</a></td>
+                        <td><a href=""><span style="font-weight: bold;">热线</span></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">百度投资</a></td>
+                        <td><a href="">售后服务</a></td>
+                        <td><a href=""></a></td>
+                        <td><a href="">达人推荐</a></td>
+                        <td><a href="">友情链接</a></td>
+                        <td><a href="">化妆品品牌大全</a></td>
+                        <td><a href=""><span
+                                style="color: #00c8ff;font-size: 12px;font-weight: bold">400-630-1018</span></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="">全球品牌直供</a></td>
+                        <td><a href=""></a></td>
+                        <td><a href=""></a></td>
+                        <td><a href="">护肤常识</a></td>
+                        <td><a href="">开放API</a></td>
+                        <td><a href=""></a></td>
+                        <td><a href=""></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="footer-center-right">
+                <table class="tab-two">
+                    <tbody>
+                    <tr>
+                        <th>知我微信商城</th>
+                    </tr>
+                    <tr>
+                        <th><img src="{% static 'common/images/2.jpg' %}" style="width: 100px;height: 100px;"></th>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--商家保证-->
+    <div class="footer_bus">
+        <ul class="">
+            <li class="fcb_invest">
+                <span>百度投资</span>
+            </li>
+            <li class="fcb_quality">
+                <span>真品保证</span>
+            </li>
+            <li class="fcb_return">
+                <span>30天包退</span>
+            </li>
+            <li class="fcb_mail">
+                <span>两件包邮</span>
+            </li>
+        </ul>
+    </div>
+    <!--友情链接-->
+    <div class="links-friendly-box w1100">
+        <div class="links-friendly-title">友情链接：</div>
+    </div>
+    <div class="footer_copyright">
+        <p class="footer_c_text1">@2011-2014 般若天成（北京）科技有限公司 zhiwo.com 保留一切权利。客服热线：400-630-1018</p>
+        <p class="footer_c_text2">
+            <a rel="nofollow" target="_blank" href="http://www.miibeian.gov.cn/">京ICP备10047008号</a>
+            |
+            <a rel="nofollow" target="_blank" href="http://www.miibeian.gov.cn/">京ICP证110762号</a>
+            | 网公安备1101054365号 | 营业执照
+        </p>
+        <p>
+            <img alt="支付特约商家" src="{% static 'common/images/footer_copy_02.jpg' %}">
+            <img alt="快捷支付" src="{% static 'common/images/footer_copy_03.jpg' %}">
+            <img alt="网上交易保障中心" src="{% static 'common/images/footer_copy_05.jpg' %}">
+        </p>
+    </div>
+</div>
+
+
+</body>
+</html>
+<script src="{% static 'js/swiper-3.4.2.min.js' %}"></script>
+<script>
+
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
+    });
+</script>

@@ -1,0 +1,522 @@
+[
+  {
+    "img": "images/index/new-01.jpg",
+    "id": "01",
+    "discount":"4.0折",
+    "price":"￥88",
+    "del":"￥218.00",
+    "text":"SNP熊猫气垫BB霜 01# ，打破传统古板气垫，让美丽更生动！"
+  },
+  {
+    "img": "images/index/new-02.jpg",
+    "id": "02",
+    "discount":"3.9折",
+    "price":"￥85",
+    "del":"￥218.00",
+    "text":"SNP维他命果冻紧致保湿面膜10片，解决皱纹烦恼，打造光滑嫩肌。"
+  },
+  {
+    "img": "images/index/new-03.jpg",
+    "id": "03",
+    "discount":"1.9折",
+    "price":"￥32",
+    "del":"￥168.00",
+    "text":"雅诗兰黛卷翘型睫毛膏2.8ML，让你拥有从未体验过的睫毛新美态"
+  },
+  {
+    "img": "images/index/new-04.jpg",
+    "id": "04",
+    "discount":"6.5折",
+    "price":"￥109",
+    "del":"￥168.00",
+    "text":"蜜诗美纳米雾化喷雾美颜仪（海洋之心），让肌肤畅快淋漓！"
+  },
+  {
+    "img": "images/index/new-05.jpg",
+    "id": "05",
+    "discount":"6.7折",
+    "price":"￥39",
+    "del":"￥58.00",
+    "text":"好本清薰衣草香味护手霜，独特的薰衣草精油添加，解决手部干燥粗糙。"
+  },
+  {
+    "img": "images/index/new-06.jpg",
+    "id": "06",
+    "discount":"5.7折",
+    "price":"￥39",
+    "del":"￥69.00",
+    "text":"sexylook极美肌极润黑豆水亮微浸透隐形面膜5片/盒。"
+  },
+  {
+    "img": "images/index/new-07.jpg",
+    "id": "07",
+    "discount":"3.3折",
+    "price":"￥49",
+    "del":"￥150.00",
+    "text":"倩碧明肌净透水2号60ml*2，释放细胞原生力量！"
+  },
+  {
+    "img": "images/index/new-08.jpg",
+    "id": "08",
+    "discount":"8.8折",
+    "price":"￥219",
+    "del":"￥222.00",
+    "text":"国内专柜正品Avene雅漾活泉恒润隔离保湿霜SPF20 40ml"
+  },
+  {
+    "img": "images/index/new-09.jpg",
+    "id": "09",
+    "discount":"2.2折",
+    "price":"￥55",
+    "del":"￥246.00",
+    "text":"倩碧眼部护理滋养霜+倩碧深层特效水嫩保湿霜/水磁场面霜。"
+  },
+  {
+    "img": "images/index/new-10.jpg",
+    "id": "10",
+    "discount":"5.5折",
+    "price":"￥65",
+    "del":"￥118.00",
+    "text":"suki lady美妍防水极细眼线水笔 ，轻松描绘精致轮廓。"
+  },
+  {
+  "img": "images/index/new-11.jpg",
+  "id": "11",
+  "discount":"2.3折",
+  "price":"￥45",
+  "del":"￥198.00",
+  "text":"阿迪达斯男士冰点香水！清新淡爽，散发男性气质！"
+  },
+  {
+    "img": "images/index/new-12.jpg",
+    "id": "12",
+    "discount":"8.4折",
+    "price":"￥158",
+    "del":"￥188.00",
+    "text":"资生堂安热沙防晒喷雾SPF50+PA++++，防水、保湿！"
+  },
+  {
+    "img": "images/index/new-13.jpg",
+    "id": "13",
+    "discount":"7.2折",
+    "price":"￥49",
+    "del":"￥68.00",
+    "text":"柔润唇部，赋予双唇透明质感，滋养双手，温柔呵护手部肌肤。"
+  },
+  {
+    "img": "images/index/new-14.jpg",
+    "id": "14",
+    "discount":"7.5折",
+    "price":"￥75",
+    "del":"￥100.00",
+    "text":"MG美即芦荟水酷补水面膜25g*10，肌肤清新水润每一天。"
+  },
+  {
+    "img": "images/index/new-15.jpg",
+    "id": "15",
+    "discount":"6.2折",
+    "price":"￥49",
+    "del":"￥79.00",
+    "text":"sexylook极美肌全效嫩白纯棉黑颈颜面膜5片/盒，美丽UP！"
+  },
+  {
+    "img": "images/index/new-16.jpg",
+    "id": "16",
+    "discount":"3.7折",
+    "price":"￥168",
+    "del":"￥450.00",
+    "text":"【官方授权】菲拉格慕女士香水五件套，极似一条迷人的丝带，轻轻柔柔！其他网站价格:￥198.0"
+  },
+  {
+    "img": "images/index/new-17.jpg",
+    "id": "17",
+    "discount":"2.9折",
+    "price":"￥109",
+    "del":"￥380.00",
+    "text":"【官方授权】菲拉格慕仲夏之梦淡香水30ml，唤起被温暖阳光包围所散发的香氛。其他网站价格:￥138.0"
+  },
+  {
+    "img": "images/index/new-18.jpg",
+    "id": "18",
+    "discount":"4.6折",
+    "price":"￥59",
+    "del":"￥128.00",
+    "text":"兰蔻璀璨香水5ml！炽热而甜蜜，让女性大胆绽放感性与激情！"
+  },
+  {
+    "img": "images/index/new-19.jpg",
+    "id": "19",
+    "discount":"4.6折",
+    "price":"￥109",
+    "del":"￥238.00",
+    "text":"【官方授权】JAYJUN水光面膜10片，让你拥有婴儿般的肌肤。"
+  },
+  {
+    "img": "images/index/new-20.jpg",
+    "id": "20",
+    "discount":"2.6折",
+    "price":"￥65",
+    "del":"￥254.00",
+    "text":"雅诗兰黛水凝润颜粉底液36#7ml+凝采纤长睫毛膏2.8ml。"
+  },
+  {
+    "img": "images/index/new-21.jpg",
+    "id": "21",
+    "discount":"2.8折",
+    "price":"￥189",
+    "del":"￥680.00",
+    "text":"迪奥修复系列护肤套装（内附化妆包），肌肤如获新生，恢复自然活力。"
+  },
+  {
+    "img": "images/index/new-22.jpg",
+    "id": "22",
+    "discount":"7.5折",
+    "price":"￥59",
+    "del":"￥79.00",
+    "text":"巴斯克林舒和草本沐浴露新鲜柑橘香型600ml，滋润保湿肌肤！"
+  },
+  {
+  "img": "images/index/new-23.jpg",
+  "id": "23",
+  "discount":"3.1折",
+  "price":"￥49",
+  "del":"￥156.00",
+  "text":"【官方授权】【滋养修复】韩国自然乐园芦荟胶，保湿、抗干燥、舒缓，全面呵护！"
+  },
+  {
+    "img": "images/index/new-24.jpg",
+    "id": "24",
+    "discount":"3.8折",
+    "price":"￥49",
+    "del":"￥128.00",
+    "text":"爱茉莉红吕含光耀护损伤修护洗发水400ML，令秀发莹韧光泽！"
+  },
+  {
+    "img": "images/index/new-25.jpg",
+    "id": "25",
+    "discount":"5.6折",
+    "price":"￥55",
+    "del":"￥98.00",
+    "text":"【官方授权】英国AA网焕然新生洗发皂50g，滋养秀发，维持光泽。"
+  },
+  {
+    "img": "images/index/new-26.jpg",
+    "id": "26",
+    "discount":"6.5折",
+    "price":"￥45",
+    "del":"￥69.00",
+    "text":"sexylook极美肌深层亮白纯棉黑面膜5片/盒，唤醒美颜魔力！"
+  },
+  {
+    "img": "images/index/new-27.jpg",
+    "id": "27",
+    "discount":"4.1折",
+    "price":"￥49",
+    "del":"￥120.00",
+    "text":"迪奥真我香水EDP5ml（Q版），释放真我，做最美的自己！"
+  },
+  {
+    "img": "images/index/new-28.jpg",
+    "id": "28",
+    "discount":"4.1折",
+    "price":"￥208",
+    "del":"￥506.00",
+    "text":"JAYJUN水光面膜+JAYJUN水光玫瑰面膜，保湿补水组合。"
+  },
+  {
+    "img": "images/index/new-29.jpg",
+    "id": "29",
+    "discount":"5.3折",
+    "price":"￥159",
+    "del":"￥298.00",
+    "text":"【官方授权】韩束黑石榴初露套组，打造健康柔软的理想肌肤。其他网站价格:￥199.0"
+  },
+  {
+    "img": "images/index/new-30.jpg",
+    "id": "30",
+    "discount":"3.2折",
+    "price":"￥69",
+    "del":"￥219.00",
+    "text":"贵妇黄金钻石眼膜60枚，时间会变，双眼紧致不会变！"
+  },
+  {
+    "img": "images/index/new-31.jpg",
+    "id": "31",
+    "discount":"8.0折",
+    "price":"￥63.5",
+    "del":"￥79.00",
+    "text":"雅漾燕窝面膜10片/盒，透出婴儿般柔嫩白皙。"
+  },
+  {
+    "img": "images/index/new-32.jpg",
+    "id": "32",
+    "discount":"4.5折",
+    "price":"￥29",
+    "del":"￥65.00",
+    "text":"【官方授权】所望氨基蚕丝蛋白亮泽美发精华 （弹力素效果）500ml。"
+  },
+  {
+    "img": "images/index/new-33.jpg",
+    "id": "33",
+    "discount":"4.1折",
+    "price":"￥65",
+    "del":"￥158.00",
+    "text":"露华浓不脱色水润唇釉8ml 035#，跳跃于唇上的优雅与浪漫。"
+  },
+  {
+    "img": "images/index/new-34.jpg",
+    "id": "34",
+    "discount":"4.8折",
+    "price":"￥85",
+    "del":"￥178.00",
+    "text":"爱丽小屋防晒喷雾SPF50+PA+++，你想不到的舒适感！"
+  },
+  {
+    "img": "images/index/new-35.jpg",
+    "id": "35",
+    "discount":"7.1折",
+    "price":"￥25",
+    "del":"￥35.00",
+    "text":"Hello Kitty植物精纯清爽洗面乳80g，给孩子健康肌肤。"
+  },
+  {
+    "img": "images/index/new-36.jpg",
+    "id": "36",
+    "discount":"5.3折",
+    "price":"￥129",
+    "del":"￥245.00",
+    "text":"瑰珀翠香泉舒缓沐浴啫喱250ml，给身体做一个全身SPA！"
+  },
+  {
+    "img": "images/index/new-37.jpg",
+    "id": "37",
+    "discount":"9.5折",
+    "price":"￥55",
+    "del":"￥58.00",
+    "text":"欧诗漫毛孔清透洁面乳100ml，肌肤呈现健康光泽！"
+  },
+  {
+    "img": "images/index/new-38.jpg",
+    "id": "38",
+    "discount":"5.3折",
+    "price":"￥159",
+    "del":"￥298.00",
+    "text":"MCC水润光感精华气垫霜23#13g，演绎滋润水分光泽！"
+  },
+  {
+    "img": "images/index/new-39.jpg",
+    "id": "39",
+    "discount":"8.3折",
+    "price":"￥219",
+    "del":"￥265.00",
+    "text":"资生堂安耐晒防晒露人气小金瓶！"
+  },
+  {
+    "img": "images/index/new-40.jpg",
+    "id": "40",
+    "discount":"4.3折",
+    "price":"￥99",
+    "del":"￥228.00",
+    "text":"【智能彩妆】MZING彩妆套装清新韩式8+3套组，欧巴一见倾心。"
+  },
+  {
+    "img": "images/index/new-41.jpg",
+    "id": "41",
+    "discount":"2.8折",
+    "price":"￥99",
+    "del":"￥354.00",
+    "text":"兰蔻新水份缘套装（保湿舒缓日霜+保湿舒缓晚霜），全方位滋润肌肤。"
+  },
+  {
+    "img": "images/index/new-42.jpg",
+    "id": "42",
+    "discount":"2.8折",
+    "price":"￥59",
+    "del":"￥99.00",
+    "text":"SNP熊猫舒缓眼罩5枚，让眼睛得到舒适的休息。"
+  },
+  {
+    "img": "images/index/new-43.jpg",
+    "id": "43",
+    "discount":"2.7折",
+    "price":"￥49",
+    "del":"￥180.00",
+    "text":"兰蔻清滢洁面白莲花卸妆乳50ml*2，温和卸妆，让肌肤变得更洁净"
+  },
+  {
+    "img": "images/index/new-44.jpg",
+    "id": "44",
+    "discount":"6.3折",
+    "price":"￥36",
+    "del":"￥57.00",
+    "text":"恩芝纯棉护垫155mm（25片）*3，呵护您的细腻肌肤。"
+  },
+  {
+    "img": "images/index/new-45.jpg",
+    "id": "45",
+    "discount":"4.6折",
+    "price":"￥55",
+    "del":"￥120.00",
+    "text":"凡士林可可亚保湿润肤霜（新）600ml，清爽保湿，健康舒适。"
+  },
+  {
+    "img": "images/index/new-46.jpg",
+    "id": "46",
+    "discount":"3.5折",
+    "price":"￥35",
+    "del":"￥99.00",
+    "text":"兰蔻眼部卸妆液30ml，轻松卸妆，美丽不打折！"
+  },
+  {
+    "img": "images/index/new-47.jpg",
+    "id": "47",
+    "discount":"8.7折",
+    "price":"￥279",
+    "del":"￥320.00",
+    "text":"一步到位的清洁效果，乳液状质地，温和清洁眼部及脸部彩妆，快速卸除。"
+  },
+  {
+    "img": "images/index/new-48.jpg",
+    "id": "48",
+    "discount":"4.3折",
+    "price":"￥219",
+    "del":"￥512.00",
+    "text":"植美村 玫瑰亮采保湿礼盒，让你的肌肤持久焕发保湿能量。"
+  },
+  {
+    "img": "images/index/new-49.jpg",
+    "id": "49",
+    "discount":"2.3折",
+    "price":"￥45",
+    "del":"￥198.00",
+    "text":"阿迪达斯男士冰点香水！清新淡爽，散发男性气质！"
+  },
+  {
+    "img": "images/index/new-50.jpg",
+    "id": "50",
+    "discount":"5.5折",
+    "price":"￥88",
+    "del":"￥160.00",
+    "text":"彩虹（莱妃尔）三部曲净颜修复面膜10片，让肌肤健康活力。"
+  },
+  {
+    "img": "images/index/new-51.jpg",
+    "id": "51",
+    "discount":"7.5折",
+    "price":"￥118.5",
+    "del":"￥158.00",
+    "text":"【官方授权】贝德玛水润保湿洁肤水250ml（专柜），洁净您的肌肤。"
+  },
+  {
+    "img": "images/index/new-52.jpg",
+    "id": "52",
+    "discount":"1.9折",
+    "price":"￥42",
+    "del":"￥219.00",
+    "text":"倩碧蜡笔小胖眼影笔（清新系02）2ml*2，令眼妆更富立体感。"
+  },
+  {
+    "img": "images/index/new-53.jpg",
+    "id": "53",
+    "discount":"4.4折",
+    "price":"￥39",
+    "del":"￥88.00",
+    "text":"澳芝曼维生素E保湿霜250g，深度锁水深层滋润。"
+  },
+  {
+    "img": "images/index/new-54.jpg",
+    "id": "54",
+    "discount":"2.0折",
+    "price":"￥59",
+    "del":"￥288.00",
+    "text":"韩国SINIL PHARM疲劳贴、痛痛贴、缓解颈部酸痛神器！其他网站价格:￥65.0"
+  },
+  {
+    "img": "images/index/new-55.jpg",
+    "id": "55",
+    "discount":"6.6折",
+    "price":"￥59",
+    "del":"￥89.00",
+    "text":"费雪 丝滑水润山羊奶身体乳150g，给孕妈妈想要的呵护。"
+  },
+  {
+    "img": "images/index/new-56.jpg",
+    "id": "56",
+    "discount":"3.2折",
+    "price":"￥29",
+    "del":"￥90.00",
+    "text":"倩碧蜡笔小胖唇膏笔04#1.2g，晶冻亮泽、柔美甜蜜！"
+  },
+  {
+    "img": "images/index/new-57.jpg",
+    "id": "57",
+    "discount":"5.8折",
+    "price":"￥39.9",
+    "del":"￥69.00",
+    "text":"【官方授权】MG美即海洋冰泉补水面膜25g*5，使肌肤水润饱满。"
+  }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
