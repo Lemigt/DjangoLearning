@@ -11,8 +11,10 @@
 		<script src="{% static 'js/jquery.cookie.js' %}"></script>
 		<script src="{% static 'common/js/common.js' %}"></script>
 		<script src="{% static 'js/xiangqing.js' %}"></script>
+{#        <script src="{% static 'js/changeimg.js' %}"></script>#}
 	</head>
 	<body>
+
 
 	<!-------------------右边侧边栏------------------->
 	<div class="siderbar" id="siderbar">
@@ -76,12 +78,12 @@
                 <li class="item_personal item_btn">
                     <a href=""><span>微信商城</span><i></i></a>
                     <div class="item_personal_two item_cont">
-                        <p class="wechat_ewm_img"><img src="common/images/2.jpg"></p>
+                        <p class="wechat_ewm_img"><img src="{% static 'common/images/2.jpg' %}"></p>
                     </div>
                 </li>
                 <li class="item_phone"><a href=""><i></i>手机知我</a></li>
                 <li class="item_personal item_btn">
-                    <a class="" href="" ><span>我的小窝</span><i></i></a>
+                    <a class="" href=""><span>我的小窝</span><i></i></a>
                     <div class="item_personal_my item_cont">
                         <ul>
                             <li><a href="">我的订单</a></li>
@@ -94,7 +96,7 @@
                 </li>
                 <li class="item_line">|</li>
                 <li class="item_service item_btn">
-                    <a  href="" ><span>客户服务</span><i></i></a>
+                    <a href=""><span>客户服务</span><i></i></a>
                     <div class="item_personal_client item_cont">
                         <ul>
                             <li><a href="">帮助中心</a></li>
@@ -113,14 +115,14 @@
 	<div class="header_center_box w1100">
 		<!--logo图标-->
 		<div class="header_logo">
-			<img src="common/images/logo.jpg" />
+			<img src="{% static 'common/images/logo.jpg' %}">
 		</div>
 		<!--搜索框-->
 		<div class="header_search">
 			<div class="search_box header_searchbox">
-				<form class="clearfix search_form"  action="" method="get">
-                    <input class="search_box_text" name="keyword" type="text" value="可莱丝" />
-                    <input class="search_box_btn" name="search" type="button" value="搜索" />
+				<form class="clearfix search_form" action="" method="get">
+                    <input class="search_box_text" name="keyword" type="text" value="可莱丝">
+                    <input class="search_box_btn" name="search" type="button" value="搜索">
                 </form>
                 <p>
             	   <a href="">保湿<span class="item_line">|</span></a>
@@ -151,7 +153,7 @@
                     <a class="mainnav" href="/">首页</a>
                 </li>
                 <li class="zhiwo">
-                    <a  href="/">知我商城</a>
+                    <a href="/">知我商城</a>
 
                     <!--导航条二级菜单-->
                     <div class="shop-two">
@@ -216,15 +218,15 @@
                             </div>
                         </div>
                         <div class="shop-two-right">
-                            <a href=""><img src="images/index/guoqin.jpg"></a>
+                            <a href=""><img src="{% static 'images/index/guoqin.jpg' %}"></a>
                         </div>
                     </div>
-                    
+
                 </li>
                 <li class="overseas_nav">
                     <a class="mainnav" href="">
-                        <img class="overseas_nav_img1" style="display: block;" src="common/images/overseas_nav_01.gif" />
-                        <img class="overseas_nav_img2" style="display: none;" src="common/images/overseas_nav_02.gif" />
+                        <img class="overseas_nav_img1" style="display: block;" src="{% static 'common/images/overseas_nav_01.gif' %}">
+                        <img class="overseas_nav_img2" style="display: none;" src="{% static 'common/images/overseas_nav_02.gif' %}">
                     </a>
                 </li>
             </ul>
@@ -244,19 +246,19 @@
 
 <!--------------主体部分-------------------->
 <div class="container">
-	
+
 	<div class="content_box detail_contbox">
 		<!--商城首页-->
 		<div class="detail_pro">
 			<!--导航栏-->
-			<div class="now_pos">
-				<div class="now_pos_show">
-					<p class="pos_link"><a href="">商城首页</a></p><i>&gt;</i>
-					<p class="pos_link"><a href="">唇彩/口红</a></p><i>&gt;</i>
-					<p class="pos_link"><a href="">eto/医朵</a></p><i>&gt;</i>
-					<p class="pos_close"><span>医朵eto咬唇妆口红膏1号4.2g</span></p>
-				</div>
-			</div>
+{#			<div class="now_pos">#}
+{#				<div class="now_pos_show">#}
+{#					<p class="pos_link"><a href="">商城首页</a></p><i>&gt;</i>#}
+{#					<p class="pos_link"><a href="">唇彩/口红</a></p><i>&gt;</i>#}
+{#					<p class="pos_link"><a href="">eto/医朵</a></p><i>&gt;</i>#}
+{#					<p class="pos_close"><span>医朵eto咬唇妆口红膏1号4.2g</span></p>#}
+{#				</div>#}
+{#			</div>#}
 			<!--详情-->
 			<div class="detail_single_info">
 				<!--需要注销的-->
@@ -268,9 +270,13 @@
 				<!--<div id="bigArea">-->
 					<!--<img id="bigImg" src="images/xiangqing/011.jpg"/>-->
 				<!--</div>-->
-
-
-
+                    <div id="smallImg" class="detail_single_img" >
+                        <img src="{% static goods.goodsimg %}" alt="医朵eto咬唇妆口红膏1号4.2g">
+                        <div id="smallArea"></div>
+                    </div>
+                    <div id="bigArea">
+                        <img id="bigImg" src="{% static 'images/xiangqing/011.jpg' %}"/>
+                    </div>
 				<!--右边的介绍-->
 				<div class="detail_single_intro">
 					<!--需要注销的-->
@@ -282,7 +288,16 @@
 						<!--</div>-->
 					<!--</div>-->
 
-					<div class="detail_single_introcomment">
+                    <div class="detail_single_introcol1">
+                        <h1 class="dsingle_introcol1_name">{{ goods.longname }}</h1>
+                        <div class="dsingle_introcol1_price">
+                            <p class="dsingle_nowprice"><i>￥</i><span>{{ goods.price }}</span></p>
+                            <p class="dsingle_hisprice"><span>市场价：</span>
+                                <del>￥{{ goods.marketprice }}</del>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="detail_single_introcomment">
 						<p class="dpuser_ctimer_scoretxt">评&nbsp;价</p>
 						<p class="dpuser_ctimer_scorebg">
 							<span class="dpuser_ctimer_scoregoods" style="width: 82%;"></span>
@@ -307,11 +322,11 @@
 							<div class="dsingle_introsales_tipbox">
 								<p class="dintrotip_one">
 									<span class="dsingle_introsales_tip">满赠</span>
-									<span>医朵品牌团满258送舒德尔玛+口红 </span>
+									<span>{{ goods.fullgift }}</span>
 								</p>
 								<p>
 									<span class="dsingle_introsales_tip">满减</span>
-									<span>贝德玛品牌团  满199减30 </span>
+									<span>{{ goods.fullminus }}</span>
 								</p>
 							</div>
 						</div>
@@ -335,7 +350,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!-------------------品牌热卖---------------------->
 		<div class="hot_brand_box">
 			<div class="hot_brand_lists ">
@@ -349,7 +364,7 @@
 				</ul>
 			</div>
 		</div>
-		
+
 		<!-----------------------组合购买-------------------->
 		<div class="group_buy bfd_recommend_">
 			<h2>
@@ -362,7 +377,7 @@
 						<li>
 							<div class="group_buygoods_infoimg">
 								<a href="">
-									<img src="images/xiangqing/011.jpg" />
+									<img src="{% static 'images/xiangqing/011.jpg' %}">
 								</a>
 							</div>
 							<div class="group_buygoods_infodetail">
@@ -372,13 +387,13 @@
 								<p class="g_infodetail_price">￥59.00</p>
 							</div>
 							<div class="group_buygoods_contactico">
-								<img src="images/xiangqing/detailadd.png"/>
+								<img src="{% static 'images/xiangqing/detailadd.png' %}">
 							</div>
 						</li>
 						<li>
 							<div class="group_buygoods_infoimg">
 								<a href="">
-									<img src="images/xiangqing/019.jpg" />
+									<img src="{% static 'images/xiangqing/019.jpg' %}">
 								</a>
 							</div>
 							<div class="group_buygoods_infodetail">
@@ -389,14 +404,14 @@
 									<label class="checkbox checked" gid="1111302" from="mall" market_price="108" price="45">￥45</label>
 								</p>
 								<div class="group_buygoods_contactico">
-									<img src="images/xiangqing/detailadd.png"/>
+									<img src="{% static 'images/xiangqing/detailadd.png' %}">
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="group_buygoods_infoimg">
 								<a href="">
-									<img src="images/xiangqing/020.jpg" />
+									<img src="{% static 'images/xiangqing/020.jpg' %}">
 								</a>
 							</div>
 							<div class="group_buygoods_infodetail">
@@ -407,14 +422,14 @@
 									<label class="checkbox checked" gid="1111302" from="mall" market_price="108" price="53">￥53</label>
 								</p>
 								<div class="group_buygoods_contactico">
-									<img src="images/xiangqing/detailadd.png"/>
+									<img src="{% static 'images/xiangqing/detailadd.png' %}">
 								</div>
 							</div>
 						</li>
 						<li>
 							<div class="group_buygoods_infoimg">
 								<a href="">
-									<img src="images/xiangqing/021.jpg" />
+									<img src="{% static 'images/xiangqing/021.jpg' %}">
 								</a>
 							</div>
 							<div class="group_buygoods_infodetail">
@@ -425,7 +440,7 @@
 									<label class="checkbox checked" gid="1111302" from="mall" market_price="108" price="49">￥49</label>
 								</p>
 								<div class="group_buygoods_contactico">
-									<img src="images/xiangqing/detailequal.png"/>
+									<img src="{% static 'images/xiangqing/detailequal.png' %}">
 								</div>
 							</div>
 						</li>
@@ -440,7 +455,7 @@
                 </div>
 			</div>
 		</div>
-		
+
 		<!----------------同品牌销量排行----------------->
 		<div class="samebrand_rank cb_title_h2">
 			<h2>
@@ -450,7 +465,7 @@
 				<ul class="clearfix">
 					<li>
 						<div class="goods_img">
-							<a href=""><img src="images/xiangqing/goods-1.jpg" ></a>
+							<a href=""><img src="{% static 'images/xiangqing/goods-1.jpg' %}"></a>
 						</div>
 						<div class="goods_price">
 							<p class="pro_name"><a href="">医朵舒缓提拉额贴10p</a></p>
@@ -460,7 +475,7 @@
 					</li>
 					<li>
 						<div class="goods_img">
-							<a href=""><img src="images/xiangqing/goods-2.jpg" ></a>
+							<a href=""><img src="{% static 'images/xiangqing/goods-2.jpg' %}"></a>
 						</div>
 						<div class="goods_price">
 							<p class="pro_name"><a href="">医朵eto美眼眼袋散3g</a></p>
@@ -470,7 +485,7 @@
 					</li>
 					<li>
 						<div class="goods_img">
-							<a href=""><img src="images/xiangqing/goods-3.jpg" ></a>
+							<a href=""><img src="{% static 'images/xiangqing/goods-3.jpg' %}"></a>
 						</div>
 						<div class="goods_price">
 							<p class="pro_name"><a href="">医朵eto蜂毒笑颜紧致贴10对</a></p>
@@ -480,7 +495,7 @@
 					</li>
 					<li>
 						<div class="goods_img">
-							<a href=""><img src="images/xiangqing/goods-4.jpg" ></a>
+							<a href=""><img src="{% static 'images/xiangqing/goods-4.jpg' %}"></a>
 						</div>
 						<div class="goods_price">
 							<p class="pro_name"><a href="">医朵eto美眼脂粒散3g</a></p>
@@ -491,7 +506,7 @@
 				</ul>
 			</div>
 		</div>
-		
+
 		<!------------------商品参数---------------------->
 		<div class="detail_proinfo clearfix">
 			<!--左边-->
@@ -500,8 +515,8 @@
 				<div class="pro_list">
 					<ul>
 						<li>
-							<div class="prolist_img"> 
-						        <a href=""><img src="images/xiangqing/rank1.jpg" alt="倩碧蜡笔小胖唇膏笔-宝贝小胖04 1.2g"></a>		
+							<div class="prolist_img">
+						        <a href=""><img src="{% static 'images/xiangqing/rank1.jpg' %}" alt="倩碧蜡笔小胖唇膏笔-宝贝小胖04 1.2g"></a>
 							</div>
 							<div class="prolist_info">
 								<p class="prolist_info_name">
@@ -511,8 +526,8 @@
 							</div>
 						</li>
 						<li>
-							<div class="prolist_img"> 
-						        <a href=""><img src="images/xiangqing/rank2.jpg" alt="智美蜗牛白玉蜗牛特润滋养润唇膏3.8g"></a>		
+							<div class="prolist_img">
+						        <a href=""><img src="{% static 'images/xiangqing/rank2.jpg' %}" alt="智美蜗牛白玉蜗牛特润滋养润唇膏3.8g"></a>
 							</div>
 							<div class="prolist_info">
 								<p class="prolist_info_name">
@@ -522,8 +537,8 @@
 							</div>
 						</li>
 						<li>
-							<div class="prolist_img"> 
-						        <a href=""><img src="images/xiangqing/rank3.jpg" alt="雅顿8小时润泽唇膏3.7g"></a>		
+							<div class="prolist_img">
+						        <a href=""><img src="{% static 'images/xiangqing/rank3.jpg' %}" alt="雅顿8小时润泽唇膏3.7g"></a>
 							</div>
 							<div class="prolist_info">
 								<p class="prolist_info_name">
@@ -533,8 +548,8 @@
 							</div>
 						</li>
 						<li>
-							<div class="prolist_img"> 
-						        <a href=""><img src="images/xiangqing/rank4.jpg" alt="suki蜂蜜+柠檬润唇膏"></a>		
+							<div class="prolist_img">
+						        <a href=""><img src="{% static 'images/xiangqing/rank4.jpg' %}" alt="suki蜂蜜+柠檬润唇膏"></a>
 							</div>
 							<div class="prolist_info">
 								<p class="prolist_info_name">
@@ -544,8 +559,8 @@
 							</div>
 						</li>
 						<li>
-							<div class="prolist_img"> 
-						        <a href=""><img src="images/xiangqing/rank5.jpg" alt="Dior迪奥粉漾魅惑润唇膏1.4G"></a>		
+							<div class="prolist_img">
+						        <a href=""><img src="{% static 'images/xiangqing/rank5.jpg' %}" alt="Dior迪奥粉漾魅惑润唇膏1.4G"></a>
 							</div>
 							<div class="prolist_info">
 								<p class="prolist_info_name">
@@ -555,8 +570,8 @@
 							</div>
 						</li>
 						<li>
-							<div class="prolist_img"> 
-						        <a href=""><img src="images/xiangqing/rank6.jpg" alt="小甘菊敏感修护唇膏4.8g"></a>		
+							<div class="prolist_img">
+						        <a href=""><img src="{% static 'images/xiangqing/rank6.jpg' %}" alt="小甘菊敏感修护唇膏4.8g"></a>
 							</div>
 							<div class="prolist_info">
 								<p class="prolist_info_name">
@@ -575,8 +590,8 @@
 					<div class="pro_list">
 						<ul id="bought-bought">
 							<li>
-								<div class="prolist_img"> 
-						            <a href=""><img src="images/xiangqing/rank7.jpg" alt="知我药妆化妆棉100片（蓝色）"></a>		
+								<div class="prolist_img">
+						            <a href=""><img src="{% static 'images/xiangqing/rank7.jpg' %}" alt="知我药妆化妆棉100片（蓝色）"></a>
 							    </div>
 							    <div class="prolist_info">
 								    <p class="prolist_info_name">
@@ -586,8 +601,8 @@
 							    </div>
 							</li>
 							<li>
-								<div class="prolist_img"> 
-						            <a href=""><img src="images/xiangqing/rank8.jpg" alt="碧卓越润肤露30ml（天才黄油"></a>		
+								<div class="prolist_img">
+						            <a href=""><img src="{% static 'images/xiangqing/rank8.jpg' %}" alt="碧卓越润肤露30ml（天才黄油"></a>
 							    </div>
 							    <div class="prolist_info">
 								    <p class="prolist_info_name">
@@ -597,8 +612,8 @@
 							    </div>
 							</li>
 							<li>
-								<div class="prolist_img"> 
-						            <a href=""><img src="images/xiangqing/rank9.jpg" alt="可莱丝胎盘鱼子酱面膜10片"></a>		
+								<div class="prolist_img">
+						            <a href=""><img src="{% static 'images/xiangqing/rank9.jpg' %}" alt="可莱丝胎盘鱼子酱面膜10片"></a>
 							    </div>
 							    <div class="prolist_info">
 								    <p class="prolist_info_name">
@@ -608,8 +623,8 @@
 							    </div>
 							</li>
 							<li>
-								<div class="prolist_img"> 
-						            <a href=""><img src="images/xiangqing/rank10.jpg" alt="韩国雪花秀滋阴水乳各5ml*5"></a>		
+								<div class="prolist_img">
+						            <a href=""><img src="{% static 'images/xiangqing/rank10.jpg' %}" alt="韩国雪花秀滋阴水乳各5ml*5"></a>
 							    </div>
 							    <div class="prolist_info">
 								    <p class="prolist_info_name">
@@ -621,7 +636,7 @@
 						</ul>
 					</div>
 				</div>
-				
+
 				<div class="bfd_recommend_">
 					<h3>
 						<p class="bfd_recom_cont">看过还看过</p>
@@ -630,8 +645,8 @@
 					<div class="pro_list">
 						<ul id="bought-bought">
 							<li>
-								<div class="prolist_img"> 
-						            <a href=""><img src="images/xiangqing/rank11.jpg" alt="舒兰仕焕能醒肤爽肤水150ml"></a>		
+								<div class="prolist_img">
+						            <a href=""><img src="{% static 'images/xiangqing/rank11.jpg' %}" alt="舒兰仕焕能醒肤爽肤水150ml"></a>
 							    </div>
 							    <div class="prolist_info">
 								    <p class="prolist_info_name">
@@ -641,8 +656,8 @@
 							    </div>
 							</li>
 							<li>
-								<div class="prolist_img"> 
-						            <a href=""><img src="images/xiangqing/rank12.jpg" alt="可莱丝H.D.P毛孔紧致水洗式面膜"></a>		
+								<div class="prolist_img">
+						            <a href=""><img src="{% static 'images/xiangqing/rank12.jpg' %}" alt="可莱丝H.D.P毛孔紧致水洗式面膜"></a>
 							    </div>
 							    <div class="prolist_info">
 								    <p class="prolist_info_name">
@@ -652,8 +667,8 @@
 							    </div>
 							</li>
 							<li>
-								<div class="prolist_img"> 
-						            <a href=""><img src="images/xiangqing/rank13.jpg" alt="英国AA网芦荟海藻眼胶60ml"></a>		
+								<div class="prolist_img">
+						            <a href=""><img src="{% static 'images/xiangqing/rank13.jpg' %}" alt="英国AA网芦荟海藻眼胶60ml"></a>
 							    </div>
 							    <div class="prolist_info">
 								    <p class="prolist_info_name">
@@ -663,8 +678,8 @@
 							    </div>
 							</li>
 							<li>
-								<div class="prolist_img"> 
-						            <a href=""><img src="images/xiangqing/rank14.jpg" alt="倩碧焕妍活力紧致弹力眼霜5ml"></a>		
+								<div class="prolist_img">
+						            <a href=""><img src="{% static 'images/xiangqing/rank14.jpg' %}" alt="倩碧焕妍活力紧致弹力眼霜5ml"></a>
 							    </div>
 							    <div class="prolist_info">
 								    <p class="prolist_info_name">
@@ -676,15 +691,15 @@
 						</ul>
 					</div>
 				</div>
-				
-			</div> 
+
+			</div>
 			<!--右边-->
 			<div class="detail_inforbox">
 			    <h3 class="detail_infor_nav fixed">
 			    	<ul class="clearfix">
 						<li><a href="">商品参数</a></li>
 						<li><a href="">本单详情</a></li>
-						<li><a href="">使用方法</a></li>						
+						<li><a href="">使用方法</a></li>
 						<li><a href="">用户口碑</a></li>
 					</ul>
 					<div class="detail_buyinfo">
@@ -696,7 +711,7 @@
 			    	<div class="detail_pro_coupon">
 						<h2 class="dc_title_h2"><p><span></span><em>品牌授权</em><i>Brand license</i></p></h2>
                         <div class="dpc_cont">
-                            <img src="images/xiangqing/001.jpg">
+                            <img src="{% static 'images/xiangqing/001.jpg' %}">
                         </div>
                     </div>
                     <div id="detail_pro_parameters" class="detail_pro_parameters">
@@ -751,7 +766,7 @@
                             	</tbody>
 							</table>
 							<div class="dpp_list_img">
-								<img src="images/xiangqing/011.jpg"/>
+								<img src="{% static 'images/xiangqing/011.jpg' %}">
 							</div>
 						</div>
 					</div>
@@ -759,56 +774,56 @@
 						<h2 class="dc_title_h2"><p><span></span><em>本单详情</em><i>Coupon</i></p></h2>
 						<div class="dpc_cont">
 							<p>
-								<img src="images/xiangqing/002.jpg" />
-								<img src="images/xiangqing/003.jpg" />
-								<img src="images/xiangqing/004.jpg" />
-								<img src="images/xiangqing/005.jpg" />
-								<img src="images/xiangqing/006.jpg" />
-								<img src="images/xiangqing/007.jpg" />
-								<img src="images/xiangqing/008.jpg" />
-								<img src="images/xiangqing/009.jpg" />
+								<img src="{% static 'images/xiangqing/002.jpg' %}">
+								<img src="{% static 'images/xiangqing/003.jpg' %}">
+								<img src="{% static 'images/xiangqing/004.jpg' %}">
+								<img src="{% static 'images/xiangqing/005.jpg' %}">
+								<img src="{% static 'images/xiangqing/006.jpg' %}">
+								<img src="{% static 'images/xiangqing/007.jpg' %}">
+								<img src="{% static 'images/xiangqing/008.jpg' %}">
+								<img src="{% static 'images/xiangqing/009.jpg' %}">
 							</p>
 							<p><strong>产品详情：</strong> </p>
 							<p>拥有三个色的横切面，轻松打造当下流行的咬唇妆，保湿滋润度非常好，横向涂抹会有渐变咬唇的效果，竖向涂抹会涂出三种颜色综合后的全唇妆效果，一支多用，经典渐变唇色，打造更真实更有层次感的双唇，似有若无的唇妆效果，涂抹后的嘴唇好似真的被轻咬过，带着异常自然的唇色和一点儿诱惑的意味，直让人心动不已。轻盈水感，吻上唇间。</p>
 							<p>
-	                             <img alt="" src="images/xiangqing/story.jpg"/> 
+	                             <img alt="" src="{% static 'images/xiangqing/story.jpg' %}">
 							</p>
 							<p>
-								<img alt="" src="images/xiangqing/010.jpg"/> 
+								<img alt="" src="{% static 'images/xiangqing/010.jpg' %}">
 							</p>
 							<h2 class="dc_title_h2">
 	                            <p><span></span><em>产品实拍</em><i>Photos</i> </p>
                             </h2>
                             <p>
-	                            <img alt="" src="images/xiangqing/011.jpg"> 
+	                            <img alt="" src="{% static 'images/xiangqing/011.jpg' %}">
                             </p>
                             <p> 拥有三个色的横切面，轻松打造当下流行的咬唇妆。</p>
                             <p>
-	                            <img alt="" src="images/xiangqing/012.jpg"> 
+	                            <img alt="" src="{% static 'images/xiangqing/012.jpg' %}">
                             </p>
                             <p> 保湿滋润度非常好。</p>
                             <p>
-	                            <img alt="" src="images/xiangqing/013.jpg"> 
+	                            <img alt="" src="{% static 'images/xiangqing/013.jpg' %}">
                             </p>
                             <p> 横向涂抹会有渐变咬唇的效果。</p>
                             <p>
-	                            <img alt="" src="images/xiangqing/014.jpg"> 
+	                            <img alt="" src="{% static 'images/xiangqing/014.jpg' %}">
                             </p>
                             <p> 竖向涂抹会涂出三种颜色综合后的全唇妆效果。</p>
                             <p>
-	                            <img alt="" src="images/xiangqing/015.jpg"> 
+	                            <img alt="" src="{% static 'images/xiangqing/015.jpg' %}">
                             </p>
                             <p> 一支多用，经典渐变唇色。</p>
                             <p>
-	                            <img alt="" src="images/xiangqing/016.jpg"> 
+	                            <img alt="" src="{% static 'images/xiangqing/016.jpg' %}">
                             </p>
                             <p> 打造更真实更有层次感的双唇。</p>
                             <p>
-	                            <img alt="" src="images/xiangqing/017.jpg"> 
+	                            <img alt="" src="{% static 'images/xiangqing/017.jpg' %}">
                             </p>
                             <p> 似有若无的唇妆效果。</p>
                             <p>
-	                            <img alt="" src="images/xiangqing/018.jpg"> 
+	                            <img alt="" src="{% static 'images/xiangqing/018.jpg' %}">
                             </p>
                             <p> 涂抹后的嘴唇好似真的被轻咬过，带着异常自然的唇色和一点儿诱惑的意味，直让人心动不已。</p>
                             <h2 class="dc_title_h2">
@@ -817,27 +832,27 @@
                             <p>“这个一号颜色我喜欢，不浓~ ”</p>
                             <p align="right">
 	                            <br>
-                                 ——<span style="color:#00acf5;"> 滙 </span> 
+                                 ——<span style="color:#00acf5;"> 滙 </span>
                             </p>
                             <p>“给嘴唇穿衣服，很美哦~ ”</p>
                             <p align="right">
 	                            <br>
-                                 ——<span style="color:#00acf5;">  哈哈不抱抱</span> 
+                                 ——<span style="color:#00acf5;">  哈哈不抱抱</span>
                             </p>
                             <p>“起初还不会用，无意涂抹都很有个性，嘻嘻赞~ ”</p>
                             <p align="right">
 	                            <br>
-                                 ——<span style="color:#00acf5;"> 和比较好</span> 
+                                 ——<span style="color:#00acf5;"> 和比较好</span>
                             </p>
                             <p>“还行吧这个宝贝，看见同事买的用着还行我也就买了！”</p>
                             <p align="right">
 	                            <br>
-                                 ——<span style="color:#00acf5;"> 到你金口难开</span> 
+                                 ——<span style="color:#00acf5;"> 到你金口难开</span>
                             </p>
                             <p>“渐变色的感觉，用着不错，很好！”</p>
                             <p align="right">
 	                            <br>
-                                 ——<span style="color:#00acf5;"> 的撒回家</span> 
+                                 ——<span style="color:#00acf5;"> 的撒回家</span>
                             </p>
 						</div>
 					</div>
@@ -856,7 +871,7 @@
                             <ul>
                             	<li>
 									<div class="dpuser_cont_photo">
-										<p class="dpuser_cphoto_img"><img src="images/xiangqing/ava_08.jpg"/></p>
+										<p class="dpuser_cphoto_img"><img src="{% static 'images/xiangqing/ava_08.jpg' %}"></p>
 										<p class="dpuser_cphoto_txt ell">Demon Lee</p>
 									</div>
 									<div class="dpuser_cont_info">
@@ -876,15 +891,15 @@
 										</div>
 									</div>
 								</li>
-								
-                            </ul>                                                             
+
+                            </ul>
                         </div>
                     </div>
-					
+
 			    </div>
 			</div>
 		</div>
-		
+
 	</div>
 </div>
 
@@ -895,7 +910,7 @@
         <div class="footer-center">
             <div class="footer-center-left">
                <table class="tab-one">
-                <tr>
+                <tbody><tr>
                     <th>真品保证</th>
                     <th>30天包退</th>
                     <th>2件包邮</th>
@@ -940,19 +955,19 @@
                     <td><a href=""></a></td>
                     <td><a href=""></a></td>
                  </tr>
-              </table>
+              </tbody></table>
             </div>
             <div class="footer-center-right">
               <table class="tab-two">
-                <tr>
+                <tbody><tr>
                     <th>知我微信商城</th>
                 </tr>
                 <tr>
-                    <th><img src="common/images/2.jpg" style="width: 100px;height: 100px;"/></th>
+                    <th><img src="{% static 'common/images/2.jpg' %}" style="width: 100px;height: 100px;"></th>
                 </tr>
-              </table>
+              </tbody></table>
             </div>
-        </div> 
+        </div>
     </div>
     <!--商家保证-->
      <div class="footer_bus">
@@ -984,12 +999,15 @@
 			| 网公安备1101054365号 | 营业执照
 		</p>
 		<p>
-			<img alt="支付特约商家" src="common/images/footer_copy_02.jpg" />
-			<img alt="快捷支付" src="common/images/footer_copy_03.jpg" />
-			<img alt="网上交易保障中心" src="common/images/footer_copy_05.jpg" />
+			<img alt="支付特约商家" src="{% static 'common/images/footer_copy_02.jpg' %}">
+			<img alt="快捷支付" src="{% static 'common/images/footer_copy_03.jpg' %}">
+			<img alt="网上交易保障中心" src="{% static 'common/images/footer_copy_05.jpg' %}">
 		</p>
   	</div>
 </div>
+
+
+
 
 
 	</body>

@@ -175,10 +175,15 @@
         <!--左边-->
         <ul class="headertop-left">
             <li>欢迎来到知我！这里，用专业呵护美丽。</li>
-            <li><a href="{% url 'zwyz:login' %}">请登录</a></li>
+            {% if user %}
+               <li>{{ user.telnumber }}</li>
+            {% else %}
+                <li><a href="{% url 'zwyz:login' %}">请登录</a></li>
+            {% endif %}
+
             <li><a href="{% url 'zwyz:register' %}">快速注册</a></li>
             <!--<li><a href="index.html">[退出]</a></li>-->
-            <li><a href="index.html">[退出]</a></li>
+            <li><a href="{% url 'zwyz:logout' %}">[退出]</a></li>
         </ul>
         <!--右边-->
         <ul class="headertop-right">
@@ -260,7 +265,7 @@
                         <a class="mainnav" href="/">首页</a>
                     </li>
                     <li class="zhiwo">
-                        <a href="{% url 'zwyz:list' %}">知我商城</a>
+                        <a href="{% url 'zwyz:listbase' %}">知我商城</a>
 
                         <!--导航条二级菜单-->
                         <div class="shop-two" style="display: none;">

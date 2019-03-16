@@ -325,9 +325,10 @@
         <div class="now_pos">
             <div class="now_pos_show">
                 <p class="pos_link"><a href="">商城首页</a></p>
-                <i>&gt;</i>
-                <p class="pos_link"><a href="">口红</a></p>
-                <i>&gt;</i>
+{#                <i>&gt;</i>#}
+{#                <p class="pos_link" id="brandshow"></p>#}
+{#                <i>&gt;</i>#}
+{#                <p class="pos_link" id="typeshow"></p>#}
             </div>
             <div class="list_reset"><a href="">重置</a></div>
         </div>
@@ -341,23 +342,23 @@
                     <div class="lbm_fcbrand_num">
                         <ul class="clearfix">
                             <li class="lbm_numcurrent lbm_fcbrand_numall"><a
-                                    href="/product/search?keyword=口红&amp;search=">全部品牌</a><i></i></li>
-                            <li><a href="/product/search?keyword=口红&amp;i=1&amp;search=">ABCD</a><i></i></li>
-                            <li><a href="/product/search?keyword=口红&amp;i=2&amp;search=">EFG</a><i></i></li>
-                            <li><a href="/product/search?keyword=口红&amp;i=3&amp;search=">HIJK</a><i></i></li>
-                            <li><a href="/product/search?keyword=口红&amp;i=4&amp;search=">LMN</a><i></i></li>
-                            <li><a href="/product/search?keyword=口红&amp;i=5&amp;search=">OPQ</a><i></i></li>
-                            <li><a href="/product/search?keyword=口红&amp;i=6&amp;search=">RST</a><i></i></li>
-                            <li><a href="/product/search?keyword=口红&amp;i=7&amp;search=">UVW</a><i></i></li>
-                            <li><a href="/product/search?keyword=口红&amp;i=8&amp;search=">XYZ</a><i></i></li>
+                                    href="{% url 'zwyz:listbase' %}">重新选择</a><i></i></li>
+{#                            <li><a href="/product/search?keyword=口红&amp;i=1&amp;search=">ABCD</a><i></i></li>#}
+{#                            <li><a href="/product/search?keyword=口红&amp;i=2&amp;search=">EFG</a><i></i></li>#}
+{#                            <li><a href="/product/search?keyword=口红&amp;i=3&amp;search=">HIJK</a><i></i></li>#}
+{#                            <li><a href="/product/search?keyword=口红&amp;i=4&amp;search=">LMN</a><i></i></li>#}
+{#                            <li><a href="/product/search?keyword=口红&amp;i=5&amp;search=">OPQ</a><i></i></li>#}
+{#                            <li><a href="/product/search?keyword=口红&amp;i=6&amp;search=">RST</a><i></i></li>#}
+{#                            <li><a href="/product/search?keyword=口红&amp;i=7&amp;search=">UVW</a><i></i></li>#}
+{#                            <li><a href="/product/search?keyword=口红&amp;i=8&amp;search=">XYZ</a><i></i></li>#}
                         </ul>
                     </div>
 
                     <div class="lbm_fcbrand_name iscroll_box">
                         <div class="iscroll_contbox iscroll_contbox_one">
-                            <ul class="iscroll_cont clearfix">
-                                <li><a href="/product/search?keyword=口红&amp;brand=604&amp;search=">所望</a></li>
-                                <li><a href="/product/search?keyword=口红&amp;brand=621&amp;search=">SEXY LOOK</a></li>
+                            <ul class="iscroll_cont clearfix" id="brandlist">
+                                <li class="brand " brand-id="1">医朵</li>
+                                <li class="brand " brand-id="2">米蔻</li>
                                 <li><a href="/product/search?keyword=口红&amp;brand=528&amp;search=">too cool for
                                     school </a></li>
                                 <li><a href="/product/search?keyword=口红&amp;brand=608&amp;search=">爱茉莉吕</a></li>
@@ -1052,12 +1053,12 @@
                 <div class="lbm_fcbrand">
                     <div class="lbm_fcbrand_name iscroll_box">
                         <div class="iscroll_contbox iscroll_contbox_two">
-                            <ul class="iscroll_cont clearfix ">
-                                <li>
-                                    <a href="/product/search?keyword=口红&amp;cat=165&amp;search=">防晒隔离</a>
+                            <ul class="iscroll_cont clearfix " id="typelist">
+                                <li class="type" type-id="1" >
+                                    唇彩/口红
                                 </li>
-                                <li>
-                                    <a href="/product/search?keyword=口红&amp;cat=239&amp;search=">辅食</a>
+                                <li class="type" type-id="2">
+                                   唇线笔
                                 </li>
                                 <li>
                                     <a href="/product/search?keyword=口红&amp;cat=206&amp;search=">香水套装</a>
@@ -1339,35 +1340,35 @@
             </div>
 
             <!--按价格-->
-            <div class="lbm_filter_cont lbm_fcont_sort clearfix">
-                <div class="lbm_fctit">按价格：</div>
-                <div class="lbm_fcbrand">
-                    <div class="lbm_fcbrand_name iscroll_box">
-                        <div class="">
-                            <ul class="iscroll_cont clearfix">
-                                <li>
-                                    <a href="/product/search?keyword=口红&amp;r=1&amp;search=">0-50元</a>
-                                </li>
-                                <li>
-                                    <a href="/product/search?keyword=口红&amp;r=2&amp;search=">50-100元</a>
-                                </li>
-                                <li>
-                                    <a href="/product/search?keyword=口红&amp;r=3&amp;search=">100-200元</a>
-                                </li>
-                                <li>
-                                    <a href="/product/search?keyword=口红&amp;r=4&amp;search=">200-500元</a>
-                                </li>
-                                <li>
-                                    <a href="/product/search?keyword=口红&amp;r=5&amp;search=">500-1000元</a>
-                                </li>
-                                <li>
-                                    <a href="/product/search?keyword=口红&amp;r=6&amp;search=">1000元以上</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{#            <div class="lbm_filter_cont lbm_fcont_sort clearfix">#}
+{#                <div class="lbm_fctit">按价格：</div>#}
+{#                <div class="lbm_fcbrand">#}
+{#                    <div class="lbm_fcbrand_name iscroll_box">#}
+{#                        <div class="">#}
+{#                            <ul class="iscroll_cont clearfix">#}
+{#                                <li>#}
+{#                                    <a href="/product/search?keyword=口红&amp;r=1&amp;search=">0-50元</a>#}
+{#                                </li>#}
+{#                                <li>#}
+{#                                    <a href="/product/search?keyword=口红&amp;r=2&amp;search=">50-100元</a>#}
+{#                                </li>#}
+{#                                <li>#}
+{#                                    <a href="/product/search?keyword=口红&amp;r=3&amp;search=">100-200元</a>#}
+{#                                </li>#}
+{#                                <li>#}
+{#                                    <a href="/product/search?keyword=口红&amp;r=4&amp;search=">200-500元</a>#}
+{#                                </li>#}
+{#                                <li>#}
+{#                                    <a href="/product/search?keyword=口红&amp;r=5&amp;search=">500-1000元</a>#}
+{#                                </li>#}
+{#                                <li>#}
+{#                                    <a href="/product/search?keyword=口红&amp;r=6&amp;search=">1000元以上</a>#}
+{#                                </li>#}
+{#                            </ul>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
 
         </div>
     </div>
@@ -1377,16 +1378,14 @@
         <!--导航栏-->
         <div class="pb_subnav">
             <ul class="pb_subnav_menu clearfix">
-                <li class=""><a class="" href=""><span>人气</span></a></li>
-                <li class="">
-                    <div></div>
-                    <a class="menu_current" href=""><span>销量</span></a></li>
-                <li class=""><a class="" href=""><span>折扣</span></a></li>
-                <li class="menu_price"><a class="" href=""><span>价格</span></a></li>
-                <li class="menu_sel"><a href=""><span>特卖品</span></a></li>
+{#                <li class=""><a  href=""><span>人气</span></a></li>#}
+                <li id="salessort"><a href="{% url 'zwyz:list' 1 %}"><span>销量</span></a></li>
+                <li id="downpricesort"><a href="{% url 'zwyz:list' 2 %}"><span>价格降序</span></a></li>
+                <li id="uppricesort"><a href="{% url 'zwyz:list' 3 %}"><span>价格升序</span></a></li>
+{#                <li class="menu_sel"><a href=""><span>特卖品</span></a></li>#}
             </ul>
             <ul class="pb_subnav_tip clearfix">
-                <li class="tip_amount">共<i>21</i>个商品</li>
+                <li class="tip_amount">共<i id="goodsnum">6</i>个商品</li>
             </ul>
         </div>
         <!--商品列表-->
@@ -1412,25 +1411,50 @@
                     <!--</p>-->
                     <!--</div>-->
                     <!--</li>-->
-                    <li>
-                    <div class="goods_img">
-                    <a href="{% url 'zwyz:xiangqing' %}"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552581071979&di=a3d4210c3bab5e8aa8e022127c04682c&imgtype=0&src=http%3A%2F%2Fwww.qqma.com%2Fimgpic2%2Fcpimagenew%2F2017%2F08%2F24%2F24-ren00004-86379332.jpg" /></a>
-                    </div>
-                    <div class="goods_price">
-                    <p class="pro_name">
-                    <a href="">医朵eto咬唇妆口红膏3号4.2g eto/医朵</a>
-                    </p>
-                    <p class="now_price">
-                    <i>￥</i>
-                    <span class="price_day">49.0</span>
-                    <del>￥108.0</del>
-                    </p>
-                    <p class="buy_btn">
-                    <a class="put-cart" href="">加入购物车</a>
-                    </p>
-                    </div>
+{#                    <li>#}
+{#                    <div class="goods_img">#}
+{#                    <a href="{% url 'zwyz:xiangqing' %}"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552581071979&di=a3d4210c3bab5e8aa8e022127c04682c&imgtype=0&src=http%3A%2F%2Fwww.qqma.com%2Fimgpic2%2Fcpimagenew%2F2017%2F08%2F24%2F24-ren00004-86379332.jpg" /></a>#}
+{#                    </div>#}
+{#                    <div class="goods_price">#}
+{#                    <p class="pro_name">#}
+{#                    <a href="">医朵eto咬唇妆口红膏3号4.2g eto/医朵</a>#}
+{#                    </p>#}
+{#                    <p class="now_price">#}
+{#                    <i>￥</i>#}
+{#                    <span class="price_day">49.0</span>#}
+{#                    <del>￥108.0</del>#}
+{#                    </p>#}
+{#                    <p class="buy_btn">#}
+{#                    <a class="put-cart" href="">加入购物车</a>#}
+{#                    </p>#}
+{#                    </div>#}
+{##}
+{#                    </li>#}
 
+                    {% for good in goods %}
+                    <li brand-id="{{ good.brandid }}" type-id="{{ good.typeid }}" goods-id="{{ good.id }}" >
+                        <div class="goods_img">
+                        <a href="{% url 'zwyz:xiangqing' good.id %}"><img src="{% static good.goodsimg %}" /></a>
+                        </div>
+                        <div class="goods_price">
+                        <p class="pro_name">
+                        <a href="">{{ good.longname }}</a>
+                        </p>
+                        <p class="now_price">
+                        <i>￥</i>
+                        <span class="price_day">{{ good.price }}</span>
+                        <del>￥{{ good.marketprice }}</del>
+                        </p>
+                        <p class="buy_btn">
+                        <a class="put-cart" href="#">加入购物车</a>
+                        </p>
+                        </div>
                     </li>
+                    {% endfor %}
+
+
+
+
                 </ul>
             </div>
         </div>

@@ -81,19 +81,20 @@
         </div>
         <div class="userlogin_info">
             <form id="login-user-form" method="post" action="">
+                {% csrf_token %}
                 <input type="hidden" name="redirect" value="">
                 <div class="u_info_account">
                     <p class="u_info_name"><label for="login-username">账号</label></p>
                     <p class="u_info_txt">
-                        <input class="sign_txt" type="text" id="login-username" value="" placeholder="请输入用户名/邮箱/手机号" name="username">
-                        <i class="login_username_i"></i>
+                        <input class="sign_txt" type="text" id="login-username" value="" placeholder="请输入手机号" name="username">
+                        <i class="login_username_i" style="color: red;">{{ u_err }}</i>
                     </p>
                 </div>
                 <div class="u_info_password">
                     <p class="u_info_name"><label for="login-password">密码</label></p>
                     <p class="u_info_txt">
                         <input class="sign_txt" type="password" id="login-password" value="" placeholder="请输入密码" name="password">
-                        <i class="login_username_i"></i>
+                        <i class="login_username_i" style="color: red;">{{ p_err }}</i>
                     </p>
                 </div>
                 <div class="u_info_code u_info_h verifycode">

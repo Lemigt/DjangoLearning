@@ -9,13 +9,31 @@ class LoopImg(models.Model):
 
 class Goods(models.Model):
     longname = models.CharField(max_length=100)
+    goodsimg = models.CharField(max_length=255)
     brandname = models.CharField(max_length=100)
     typename = models.CharField(max_length=100)
-    brandid = models.IntegerField()
-    typeid = models.IntegerField()
+    brandid = models.CharField(max_length=10)
+    typeid = models.CharField(max_length=10)
     # 商品价格
     price = models.FloatField()
     # 商品超市价格
     marketprice = models.FloatField()
+    # 商品月销量
+    sales = models.IntegerField(default=0)
+    # 详情ID
+    detailid = models.CharField(max_length=10)
+    # 满赠
+    fullgift = models.CharField(max_length=100, default='')
+    #满减
+    fullminus = models.CharField(max_length=200, default='')
+
+    class Meta:
+        db_table = 'zwyz_goods'
 
 
+class User(models.Model):
+    telnumber = models.CharField(max_length=20, unique=True)
+    password = models.CharField(max_length=100)
+
+    class Meta:
+        db_table = 'zwyz_user'

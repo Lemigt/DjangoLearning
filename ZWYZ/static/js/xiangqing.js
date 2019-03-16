@@ -27,12 +27,12 @@ $(function(){
 //====================列表页跳转到详情页========================
 $(function(){
 
-    var goodId = location.search.replace("?","");
-    if( goodId=="" ){
-        alert("没有产品")
-    }else{
-        goodOp(goodId)
-    }
+    // var goodId = location.search.replace("?","");
+    // if( goodId=="" ){
+    //     alert("没有产品")
+    // }else{
+    //     goodOp(goodId)
+    // }
 
     function goodOp(id){
         $.get("json/kouhong.json", function(data) {

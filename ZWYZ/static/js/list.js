@@ -140,6 +140,110 @@ $(function(){
 })
 
 
+$(function () {
+	$('.brand').click(function () {
+		// $that = $(this)
+		$(this).addClass('select')
+		$(this).siblings().removeClass('select')
+		brandid = $(this).attr('brand-id')
+		typeid = $('#typelist>.select').attr('type-id')
+
+		if (typeid){
+
+			console.log(brandid, typeid)
+
+			$('#bfd_show_fu>li').show()
+			$('#bfd_show_fu>li').each(function () {
+				if ($(this).attr('brand-id') != brandid){
+					$(this).hide()
+				}
+				if ($(this).attr('type-id') != typeid){
+						$(this).hide()
+				}
+			})
+			total()
+
+		} else {
+			typeid = '0'
+			console.log(brandid, typeid)
+			$('#bfd_show_fu>li').show()
+			$('#bfd_show_fu>li').each(function () {
+				if ($(this).attr('brand-id') != brandid){
+					$(this).hide()
+				}
+			})
+			total()
+		}
+
+
+		// request_data = {
+		// 	'typeid':typeid,
+		// 	'brandid':brandid
+		// }
+
+	})
+
+
+	$('.type').click(function () {
+
+		$that = $(this)
+		$(this).addClass('select')
+		$(this).siblings().removeClass('select')
+		typeid = $(this).attr('type-id')
+		brandid = $('#brandlist>.select').attr('brand-id')
+		if (brandid){
+
+			console.log(brandid, typeid)
+			$('#bfd_show_fu>li').show()
+			$('#bfd_show_fu>li').each(function () {
+				if ($(this).attr('type-id') != typeid){
+					$(this).hide()
+				}
+				if ($(this).attr('brand-id') != brandid){
+						$(this).hide()
+				}
+			})
+			total()
+		} else {
+			brandid = '0'
+			console.log(brandid, typeid)
+			$('#bfd_show_fu>li').show()
+			$('#bfd_show_fu>li').each(function () {
+				if ($(this).attr('type-id')!= typeid){
+					$(this).hide()
+				}
+			})
+			total()
+		}
+		// request_data = {
+		// 	'typeid':typeid,
+		// 	'brandid':brandid
+		// }
+
+		// $.get('/classify/', request_data, function (response) {
+		// 		console.log(response.)
+		// })
+
+	})
+
+	function total() {
+		var num = 0
+		$('#bfd_show_fu>li').each(function () {
+			if ($(this).is(":hidden")) {
+
+			}else {
+				num += 1
+			}
+		})
+		console.log(num)
+		$('#goodsnum').html(num)
+	}
+
+
+
+})
+
+
 
 
 

@@ -13,6 +13,7 @@
     <script src="{% static 'js/jquery.cookie.js' %}"></script>
 </head>
 <body>
+
 <!---------------------------------------顶部导航---------------------------------->
 <div class="headertop">
     <div class="headertop-box">
@@ -27,12 +28,12 @@
             <li class="item_personal item_btn">
                 <a href=""><span>微信商城</span><i></i></a>
                 <div class="item_personal_two item_cont">
-                    <p class="wechat_ewm_img"><img src="common/images/2.jpg"></p>
+                    <p class="wechat_ewm_img"><img src="{% static 'common/images/2.jpg' %}"></p>
                 </div>
             </li>
             <li class="item_phone"><a href=""><i></i>手机知我</a></li>
             <li class="item_personal item_btn">
-                <a class="" href="" ><span>我的小窝</span><i></i></a>
+                <a class="" href=""><span>我的小窝</span><i></i></a>
                 <div class="item_personal_my item_cont">
                     <ul>
                         <li><a href="">我的订单</a></li>
@@ -45,7 +46,7 @@
             </li>
             <li class="item_line">|</li>
             <li class="item_service item_btn">
-                <a  href="" ><span>客户服务</span><i></i></a>
+                <a href=""><span>客户服务</span><i></i></a>
                 <div class="item_personal_client item_cont">
                     <ul>
                         <li><a href="">帮助中心</a></li>
@@ -63,10 +64,10 @@
 <div class="header_logoimg">
     <div class="header_logoimg_box">
         <div class="logoimg_left">
-            <a href="index.html"><img src="images/rejister/logo.jpg"/></a>
+            <a href="index.html"><img src="{% static 'images/rejister/logo.jpg' %}"></a>
         </div>
         <div class="logoimg_right">
-            <img src="images/rejister/tipinfo.jpg"/>
+            <img src="{% static 'images/rejister/tipinfo.jpg' %}">
         </div>
     </div>
 </div>
@@ -79,29 +80,31 @@
             <p><span class="zc">注册</span><a href="login.html"><span class="zh">已有知我账号？</span>登录</a></p>
         </div>
         <div class="userlogin_info">
-            <form class="signup-user-form" id="signup-user-form" method="post">
-                <input type="hidden" name="redirect" value=""/>
+            <form class="signup-user-form" id="signup-user-form" method="post" action="{% url 'zwyz:register' %}">
+                {% csrf_token %}
+                <input type="hidden" name="redirect" value="">
                 <div class="u_info_h mobile">
-                    <p class="u_info_txt"><input id="signup-mobile" class="sign_txt" type="text" name="mobile"  placeholder="请输入您的手机号" ></p>
+                    <p class="u_info_txt"><input id="signup-mobile" class="sign_txt" type="text" name="mobile" placeholder="请输入您的手机号"></p>
+                    <p class="error">{{ err }}</p>
                     <!-- <p class="error">手机格式有误，请重新输入</p> -->
                     <p class="error error1"></p>
                 </div>
                 <div class="u_info_password u_info_h password">
-                    <p class="u_info_txt"><input id="signup-password" class="sign_txt" type="password"  name="password" placeholder="请输入密码" ></p>
+                    <p class="u_info_txt"><input id="signup-password" class="sign_txt" type="password" name="password" placeholder="请输入密码"></p>
                     <!-- <p class="error">密码长度需6-16位字符</p> -->
                     <p class="error error2"></p>
                 </div>
                 <div class="u_info_password u_info_h password_confirm">
-                    <p class="u_info_txt"><input id="signup-password-confirm" class="sign_txt" type="password"  name="password2" placeholder="确定密码" ></p>
+                    <p class="u_info_txt"><input id="signup-password-confirm" class="sign_txt" type="password" name="password2" placeholder="确定密码"></p>
                     <!-- <p class="error">两次输入的密码不匹配</p> -->
                     <p class="error error3"></p>
                 </div>
                 <div class="u_info_code u_info_h verifycode">
-                    <p class="u_info_txt"><input class="sign_txt" type="text" id="signup-verify-code" name="verify_code"  placeholder="请输入验证码" >
+                    <p class="u_info_txt"><input class="sign_txt" type="text" id="signup-verify-code" name="verify_code" placeholder="请输入验证码">
                         <!--<img id="verify_code" src="images/rejister/verifycode.png" alt="验证码">-->
-                        <p id="p1"></p>
+                        </p><p id="p1"><span style="color: rgb(50, 129, 184);">f</span><span style="color: rgb(159, 32, 79);">R</span><span style="color: rgb(163, 135, 108);">v</span><span style="color: rgb(47, 133, 69);">B</span></p>
                         <span id="change_code">换一张</span>
-                    </p>
+                    <p></p>
                     <p class="error error4"></p>
                 </div>
                 <div class="u_info_btn">
@@ -132,7 +135,7 @@
         <div class="footer-center">
             <div class="footer-center-left">
                 <table class="tab-one">
-                    <tr>
+                    <tbody><tr>
                         <th>真品保证</th>
                         <th>30天包退</th>
                         <th>2件包邮</th>
@@ -177,17 +180,17 @@
                         <td><a href=""></a></td>
                         <td><a href=""></a></td>
                     </tr>
-                </table>
+                </tbody></table>
             </div>
             <div class="footer-center-right">
                 <table class="tab-two">
-                    <tr>
+                    <tbody><tr>
                         <th>知我微信商城</th>
                     </tr>
                     <tr>
-                        <th><img src="common/images/2.jpg" style="width: 100px;height: 100px;"/></th>
+                        <th><img src="{% static 'common/images/2.jpg' %}" style="width: 100px;height: 100px;"></th>
                     </tr>
-                </table>
+                </tbody></table>
             </div>
         </div>
     </div>
@@ -221,12 +224,15 @@
             | 网公安备1101054365号 | 营业执照
         </p>
         <p>
-            <img alt="支付特约商家" src="common/images/footer_copy_02.jpg" />
-            <img alt="快捷支付" src="common/images/footer_copy_03.jpg" />
-            <img alt="网上交易保障中心" src="common/images/footer_copy_05.jpg" />
+            <img alt="支付特约商家" src="{% static 'common/images/footer_copy_02.jpg' %}">
+            <img alt="快捷支付" src="{% static 'common/images/footer_copy_03.jpg' %}">
+            <img alt="网上交易保障中心" src="{% static 'common/images/footer_copy_05.jpg' %}">
         </p>
     </div>
 </div>
+
+
+
 
 </body>
 </html>

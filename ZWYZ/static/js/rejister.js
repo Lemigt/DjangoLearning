@@ -21,7 +21,7 @@ $(function(){
     var isPassWord=false;
     $("#signup-password").blur(function(){
         //password
-        var regPassWord=/^[a-z0-9_-]{6,16}$/;
+        var regPassWord=/^[a-zA-Z0-9_-]{6,16}$/;
         if(regPassWord.test($("#signup-password").val())){
             $(".error2").html("");
             $(".error2").css({"color":"green"});
@@ -55,37 +55,37 @@ $(function(){
         }
     })
 
-    $("#signup-submit").click(function(e){
-        e.preventDefault();
-
-        if(isUserName&&isPassWord&&isPassWord2&&isYanzheng){
-
-            var arr = $.cookie("users") ? JSON.parse($.cookie("users")) : [];
-
-            //遍历users数组, 判断是否存在该用户,如果存在则不能注册
-            for(var i=0; i<arr.length; i++) {
-                if ( $("#signup-mobile").val() == arr[i].name ) {
-                    console.log("该用户已经存在, 不能注册!");
-                    return;
-                }
-            }
-
-            //需要注册的用户(需要保存到cookie中的用户)
-            var users = {
-                name: $("#signup-mobile").val(), //用户名，手机号
-                pwd: $("#signup-password").val() //密码
-            }
-            arr.push(users); //添加新用户
-
-            //保存到cookie中
-            $.cookie("users", JSON.stringify(arr), {expires:30, path:"/"});
-            console.log( $.cookie("users") );
-
-            location.href="login.html";
-        }else{
-            alert("账号不合法，请重新注册");
-        }
-    })
+    // $("#signup-submit").click(function(e){
+    //     e.preventDefault();
+    //
+    //     if(isUserName&&isPassWord&&isPassWord2&&isYanzheng){
+    //
+    //         var arr = $.cookie("users") ? JSON.parse($.cookie("users")) : [];
+    //
+    //         //遍历users数组, 判断是否存在该用户,如果存在则不能注册
+    //         for(var i=0; i<arr.length; i++) {
+    //             if ( $("#signup-mobile").val() == arr[i].name ) {
+    //                 console.log("该用户已经存在, 不能注册!");
+    //                 return;
+    //             }
+    //         }
+    //
+    //         //需要注册的用户(需要保存到cookie中的用户)
+    //         var users = {
+    //             name: $("#signup-mobile").val(), //用户名，手机号
+    //             pwd: $("#signup-password").val() //密码
+    //         }
+    //         arr.push(users); //添加新用户
+    //
+    //         //保存到cookie中
+    //         $.cookie("users", JSON.stringify(arr), {expires:30, path:"/"});
+    //         console.log( $.cookie("users") );
+    //
+    //         location.href="login.html";
+    //     }else{
+    //         alert("账号不合法，请重新注册");
+    //     }
+    // })
 
     //验证码
     //生成随机验证码的ascII码
