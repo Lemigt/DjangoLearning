@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b334aa6b-c1c1-4045-a5c8-121505ca3bd9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/common/js/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/orderlist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/orderdetail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PythonAXF/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PythonAXF/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PythonAXF/app/alipay/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PythonAXF/app/alipay/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PythonAXF/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PythonAXF/app/urls.py" afterDir="false" />
@@ -16,12 +15,8 @@
       <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/goodcar.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/goodcar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/common.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/goodcar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/goodcar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orderlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orderlist.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,14 +58,14 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4404412">
+    <splitter split-orientation="horizontal" split-proportion="0.6997708">
       <split-first>
         <leaf>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="439">
-                  <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+                <state relative-caret-position="351">
+                  <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
                 </state>
               </provider>
             </entry>
@@ -102,8 +97,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="396">
-                  <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+                <state relative-caret-position="418">
+                  <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
                   <folding>
                     <element signature="e#0#32#0" expanded="true" />
                   </folding>
@@ -114,8 +109,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="505">
-                  <caret line="219" lean-forward="true" selection-start-line="219" selection-end-line="219" />
+                <state relative-caret-position="447">
+                  <caret line="285" lean-forward="true" selection-start-line="285" selection-end-line="285" />
                   <folding>
                     <element signature="e#0#14#0" expanded="true" />
                   </folding>
@@ -123,17 +118,14 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/templates/orderlist.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="395">
-                  <caret line="203" column="34" lean-forward="true" selection-start-line="203" selection-start-column="34" selection-end-line="203" selection-end-column="34" />
+                <state relative-caret-position="381">
+                  <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
                   <folding>
                     <element signature="e#541#2431#0#HTML" />
-                    <element signature="e#2509#3579#0#HTML" />
-                    <element signature="e#3636#8338#0#HTML" />
-                    <element signature="e#7604#7627#0#HTML" expanded="true" />
-                    <element signature="e#7739#7761#0#HTML" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="e#8401#12082#0#HTML" />
                     <element signature="e#9632#9658#0#HTML" expanded="true" />
                     <element signature="e#10055#10111#0#HTML" expanded="true" />
@@ -143,11 +135,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/templates/orderdetail.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="506">
+                  <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/templates/goodcar.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1420">
-                  <caret line="94" selection-start-line="94" selection-end-line="94" />
+                <state relative-caret-position="682">
+                  <caret line="201" column="30" lean-forward="true" selection-start-line="201" selection-start-column="30" selection-end-line="201" selection-end-column="30" />
                   <folding>
                     <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
                   </folding>
@@ -180,8 +181,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/static/js/goodcar.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="381">
-                  <caret line="114" column="8" lean-forward="true" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="8" />
+                <state relative-caret-position="132">
+                  <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -227,12 +228,13 @@
         <option value="$PROJECT_DIR$/templates/list.html" />
         <option value="$PROJECT_DIR$/templates/test.html" />
         <option value="$PROJECT_DIR$/templates/common.html" />
-        <option value="$PROJECT_DIR$/app/urls.py" />
+        <option value="$PROJECT_DIR$/static/js/goodcar.js" />
+        <option value="$PROJECT_DIR$/app/models.py" />
+        <option value="$PROJECT_DIR$/templates/orderdetail.html" />
         <option value="$PROJECT_DIR$/templates/goodcar.html" />
+        <option value="$PROJECT_DIR$/app/urls.py" />
         <option value="$PROJECT_DIR$/app/views.py" />
         <option value="$PROJECT_DIR$/templates/orderlist.html" />
-        <option value="$PROJECT_DIR$/app/models.py" />
-        <option value="$PROJECT_DIR$/static/js/goodcar.js" />
       </list>
     </option>
   </component>
@@ -266,12 +268,6 @@
               <item name="ZWYZ" type="b2602c69:ProjectViewProjectNode" />
               <item name="ZWYZ" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZWYZ" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZWYZ" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ZWYZ" type="b2602c69:ProjectViewProjectNode" />
@@ -368,19 +364,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552549088795</updated>
-      <workItem from="1552549091257" duration="79923000" />
+      <workItem from="1552549091257" duration="89238000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79923000" />
+    <option name="totallyTimeSpent" value="89238000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1857" height="1085" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.08347153" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1116639" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -397,7 +393,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="SciView" />
-      <window_info active="true" anchor="right" id="Database" visible="true" weight="0.16473189" />
+      <window_info anchor="right" id="Database" visible="true" weight="0.16473189" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -429,23 +425,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://252d5915-253a-49cd-8837-21aee39209ec/schema/ZWYZ/table/app_loopimg">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/images/index/lunbo1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ZWYZ/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -670,23 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ZWYZ/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/common.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
@@ -705,16 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="219" lean-forward="true" selection-start-line="219" selection-end-line="219" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -728,21 +680,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/orderlist.html">
+    <entry file="file://$PROJECT_DIR$/ZWYZ/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="203" column="34" lean-forward="true" selection-start-line="203" selection-start-column="34" selection-end-line="203" selection-end-column="34" />
-          <folding>
-            <element signature="e#541#2431#0#HTML" />
-            <element signature="e#2509#3579#0#HTML" />
-            <element signature="e#3636#8338#0#HTML" />
-            <element signature="e#7604#7627#0#HTML" expanded="true" />
-            <element signature="e#7739#7761#0#HTML" expanded="true" />
-            <element signature="e#8401#12082#0#HTML" />
-            <element signature="e#9632#9658#0#HTML" expanded="true" />
-            <element signature="e#10055#10111#0#HTML" expanded="true" />
-            <element signature="e#10848#10883#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="418">
+          <caret line="49" column="13" lean-forward="true" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://252d5915-253a-49cd-8837-21aee39209ec/schema/ZWYZ/table/zwyz_ordergoods">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -753,29 +701,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/goodcar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="105" lean-forward="true" selection-start-line="105" selection-end-line="105" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://252d5915-253a-49cd-8837-21aee39209ec/schema/ZWYZ/table/zwyz_order">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="351">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/goodcar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1420">
-          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        <state relative-caret-position="682">
+          <caret line="201" column="30" lean-forward="true" selection-start-line="201" selection-start-column="30" selection-end-line="201" selection-end-column="30" />
           <folding>
             <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/goodcar.js">
+    <entry file="file://$PROJECT_DIR$/app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="285" lean-forward="true" selection-start-line="285" selection-end-line="285" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/orderdetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/orderlist.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="381">
-          <caret line="114" column="8" lean-forward="true" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="8" />
+          <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#541#2431#0#HTML" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#8401#12082#0#HTML" />
+            <element signature="e#9632#9658#0#HTML" expanded="true" />
+            <element signature="e#10055#10111#0#HTML" expanded="true" />
+            <element signature="e#10848#10883#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

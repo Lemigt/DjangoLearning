@@ -6,8 +6,11 @@
     <meta charset="UTF-8">
     <title>知我药妆</title>
     <link href="{% static 'common/css/common.css' %}" type="text/css" rel="stylesheet"/>
+{#    <link href="{% static 'css/goodcar.css' %}" type="text/css" rel="stylesheet"/>#}
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="{% static 'common/js/jquery-1.12.0.js' %}"></script>
     <script src="{% static 'common/js/common.js' %}"></script>
+
 {#    <script src="{% static 'js/changeimg.js' %}"></script>#}
 </head>
 <body>
@@ -62,150 +65,29 @@
     </div>
 </div>
 
-<!-----------------------------------顶部搜索+logo---------------------------->
-<div class="header_center">
-	<div class="header_center_box w1100">
-		<!--logo图标-->
-		<div class="header_logo">
-			<img src="{% static 'common/images/logo.jpg' %}">
-		</div>
-		<!--搜索框-->
-		<div class="header_search">
-			<div class="search_box header_searchbox">
-				<form class="clearfix search_form" action="" method="get">
-                    <input class="search_box_text" name="keyword" type="text" value="可莱丝">
-                    <input class="search_box_btn" name="search" type="button" value="搜索">
-                </form>
-                <p>
-            	   <a href="">保湿<span class="item_line">|</span></a>
-            	   <a href="">面膜<span class="item_line">|</span></a>
-            	   <a href="">洗面奶<span class="item_line">|</span></a>
-            	   <a href="">补水<span class="item_line">|</span></a>
-            	   <a href="">香水<span class="item_line">|</span></a>
-            	   <a href="">口红</a>
-                </p>
-			</div>
-		</div>
-		<!--购物车-->
-        <div class="header-shop">
-            <p><a href="">我的购物车</a></p>
-        </div>
-	</div>
-</div>
 
-<!-----------------------首页导航------------------------>
-<div class="header-mainnav">
-    <div class="header-mainnav-box w1100">
-        <!--菜单-->
-        <div class="index-nav">
-            <!--左边-->
-           <div class="nav-left">
-            <ul>
-                <li>
-                    <a class="mainnav" href="/">首页</a>
-                </li>
-                <li class="zhiwo">
-                    <a href="/">知我商城</a>
-
-                    <!--导航条二级菜单-->
-                    <div class="shop-two">
-                        <div class="shop-two-left">
-                            <div class="shop1 shop">
-                                <div class="shop1-intro shop-intro">
-                                    <a href="/">护肤</a>
-                                </div>
-                                <div class="shop-intro-inline"></div>
-                                <a href="">面膜面贴</a>
-                                <a href="">乳液凝露</a>
-                                <a href="">洁面卸妆</a>
-                                <a href="">眼精华/眼霜</a>
-                                <a href="">防晒隔离</a>
-                                <a href="">化妆水爽肤水</a>
-                                <a href="">眼膜/眼贴</a>
-                                <a href="">精华</a>
-                            </div>
-                            <div class="shop2 shop">
-                                <div class="shop2-intro shop-intro">
-                                    <a href="/">药妆</a>
-                                </div>
-                                <div class="shop-intro-inline"></div>
-                                <a href="">乳液面霜</a>
-                                <a href="">洁面卸妆</a>
-                                <a href="">面部精华</a>
-                                <a href="">化妆水爽肤水</a>
-                                <a href="">面膜面贴</a>
-                                <a href="">喷雾</a>
-                                <a href="">眼精华/眼霜</a>
-                                <a href="">防晒隔离</a>
-                            </div>
-                            <div class="shop3 shop">
-                                <div class="shop3-intro shop-intro">
-                                    <a href="/">洗护</a>
-                                </div>
-                                <div class="shop-intro-inline"></div>
-                                <a href="">洗发护发</a>
-                                <a href="">口腔护理</a>
-                                <a href="">沐浴润体</a>
-                                <a href="">身体乳霜</a>
-                                <a href="">手足护理</a>
-                                <a href="">美体瘦身</a>
-                                <a href="">防晒隔离</a>
-                                <a href="">润唇膏</a>
-                            </div>
-                            <div class="shop4 shop">
-                                <div class="shop4-intro shop-intro">
-                                    <a href="/">彩妆香氛</a>
-                                </div>
-                                <div class="shop-intro-inline"></div>
-                                <a href="">唇彩/口红</a>
-                                <a href="">女士香水</a>
-                                <a href="">粉饼/蜜粉</a>
-                                <a href="">男士香水</a>
-                                <a href="">睫毛</a>
-                                <a href="">眼线</a>
-                                <a href="">腮红/胭脂</a>
-                                <a href="">粉底/妆前乳</a>
-                                <a href="">眼影/彩妆盘</a>
-                                <a href="">BB霜/CC霜</a>
-                            </div>
-                        </div>
-                        <div class="shop-two-right">
-                            <a href=""><img src="{% static 'images/index/guoqin.jpg' %}"></a>
-                        </div>
-                    </div>
-
-                </li>
-                <li class="overseas_nav">
-                    <a class="mainnav" href="">
-                        <img class="overseas_nav_img1" style="display: block;" src="{% static 'common/images/overseas_nav_01.gif' %}">
-                        <img class="overseas_nav_img2" style="display: none;" src="{% static 'common/images/overseas_nav_02.gif' %}">
-                    </a>
-                </li>
-            </ul>
-           </div>
-            <!--右边-->
-            <div class="nav-right">
-                <ul class="clearfix">
-                    <li class="fcb_invest"><span>百度投资</span></li>
-                    <li class="fcb_quality"><span>真品保证</span></li>
-                    <li class="fcb_mail"><span>2件包邮</span></li>
-                    <li class="fcb_return"><span>30天无理由退换货</span></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <!-----------------------订单列表------------------------>
 <div class="container">
-    <div class="table_cont cart_products">
-        <table class="table_item" id="cart_products">
-            <tbody class="_tbody">
-            </tbody>
-        </table>
+
+    <div class="orderlist" style="width: 800px; height: 500px; background: gray;  margin: auto">
+
+        <ul>
+            {% for order in orders %}
+                {% for goods in order.ordergoods_set %}
+
+
+
+                {% endfor %}
+
+            {% endfor %}
+
+
+        </ul>
+
+
     </div>
-        
 
 
 </div>

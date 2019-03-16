@@ -3,12 +3,12 @@ import random
 import time
 
 from django.core.cache import cache
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
-from app.models import LoopImg, Goods, User, Cart
+from app.models import LoopImg, Goods, User, Cart, Order, OrderGoods
 
 
 def index(request):
@@ -187,7 +187,6 @@ def subcart(request):
     print(goodsid)
     token = request.session.get('token')
     userid = cache.get(token)
-
     user = User.objects.get(pk=userid)
     carts = user.cart_set.filter(goods=goods).filter(user=user)
     cart = carts.first()
@@ -218,5 +217,71 @@ def removecart(request):
     return JsonResponse(response_data)
 
 
+def generate_identifier():
+    temp = str(time.time()) + str(random.randrange(1000,10000))
+    return temp
+
+
+def generateorder(request):
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+
+    order = Order()
+    order.user = user
+    order.identifier = generate_identifier()
+    order.save()
+
+    carts = user.cart_set.filter(isselect=True)
+    if carts:
+        for cart in carts:
+            orderGoods = OrderGoods()
+            orderGoods.order = order
+            orderGoods.goods = cart.goods
+            orderGoods.number = cart.number
+            orderGoods.save()
+
+            cart.delete()
+
+        return render(request, 'orderdetail.html', context={'order':order})
+    else:
+        print('not_select_goods')
+        return HttpResponse('您没有选择商品')
+
+
+
+
+
+def changeselect(request):
+    response_data={}
+    isselect = request.GET.get('isselect')
+
+    goodsid = request.GET.get('goodsid')
+    goods = Goods.objects.get(pk=int(goodsid))
+
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+
+    carts = user.cart_set.filter(goods=goods).filter(user=user)
+    cart = carts.first()
+    print(cart.isselect)
+    if isselect == '1':
+        cart.isselect = 1
+        cart.save()
+        print('change to 1')
+    elif isselect == '0':
+        cart.isselect = 0
+        cart.save()
+        print('chang to 0')
+    return JsonResponse(response_data)
+
+
 def orderlist(request):
-    return render(request, 'orderlist.html')
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+
+    orders = user.order_set.all()
+
+    return render(request, 'orderlist.html', context={'orders':orders})

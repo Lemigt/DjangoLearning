@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>订单号：{{ order.identifier }}</h2>
+    <h3>
+        {% if order.status == 0 %}
+            未付款
+        {% elif order.status == 1 %}
+            待发货
+        {% elif order.status == 2 %}
+            待收货
+        {% elif order.status == 3 %}
+            待评价
+        {% elif order.status == 4 %}
+            已评价
+        {% endif %}
+    </h3>
+    <h4><a href="{% url 'zwyz:orderlist' %}">查看全部订单</a></h4>
+</body>
+</html>

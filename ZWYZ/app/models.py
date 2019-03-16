@@ -24,7 +24,7 @@ class Goods(models.Model):
     detailid = models.CharField(max_length=10)
     # 满赠
     fullgift = models.CharField(max_length=100, default='')
-    #满减
+    # 满减
     fullminus = models.CharField(max_length=200, default='')
 
     class Meta:
@@ -48,25 +48,25 @@ class Cart(models.Model):
         db_table = 'zwyz_cart'
 
 
-# class Order(models.Model):
-#     user = models.ForeignKey(User)
-#
-#     createtime = models.DateTimeField(auto_now_add=True)
-#
-#     updatetime = models.DateTimeField(auto_now=True)
-#
-#     status = models.IntegerField(default=0)
-#
-#     identifier = models.CharField(max_length=256)
-#     class Meta:
-#         db_table = 'zwyz_order'
+class Order(models.Model):
+    user = models.ForeignKey(User)
+
+    createtime = models.DateTimeField(auto_now_add=True)
+
+    updatetime = models.DateTimeField(auto_now=True)
+
+    status = models.IntegerField(default=0)
+
+    identifier = models.CharField(max_length=256)
+    class Meta:
+        db_table = 'zwyz_order'
 
 
-# class OrderGoods(models.Model):
-#     order = models.ForeignKey(Order)
-#
-#     goods = models.ForeignKey(Goods)
-#
-#     number = models.IntegerField()
-#     class Meta:
-#         db_table = 'zwyz_ordergoods'
+class OrderGoods(models.Model):
+    order = models.ForeignKey(Order)
+
+    goods = models.ForeignKey(Goods)
+
+    number = models.IntegerField()
+    class Meta:
+        db_table = 'zwyz_ordergoods'

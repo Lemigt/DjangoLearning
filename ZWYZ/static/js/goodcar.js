@@ -107,12 +107,28 @@ $(function () {
     $('.table_item_check').click(function () {
         allgoodsnum = 0
         allgoodssum = 0
+        var goodsid = $(this).attr('goods-id')
         if ($(this).is(':checked')){
+
             var request_data = {
-            'isselect':1
+            'isselect':'1',
+            'goodsid':goodsid
             }
+
+            $.get('/changeselect/', request_data, function (response) {
+
+            })
+
+        }else {
+            var request_data = {
+                'isselect':'0',
+                'goodsid':goodsid
+            }
+
+            $.get('/changeselect/', request_data, function (response) {
+
+            })
         }
-        
 
 
         allsum()

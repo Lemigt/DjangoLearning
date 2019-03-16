@@ -149,7 +149,7 @@
                                 {% for cart in carts %}
                                     <tr class="group" goods-id="{{ cart.goods.id }}">
                                 <td class="table_item_name mycart_listpro_show">
-                                    <input class="table_item_check" type="checkbox" >
+                                    <input class="table_item_check" type="checkbox"  goods-id="{{ cart.goods.id }}">
                                     <div class="mycart_selpro">
                                         <p class="selpro_img">
                                             <a target="_blank" href="">
@@ -197,7 +197,7 @@
                             <div class="myallinfo_show_two">
                                 <p class="myallinfo_allamount">共<i>0</i>件商品</p>
                                 <p class="myallinfo_allpay"><span>应付金额（不含运费）：</span><i>￥</i><em id="">0</em></p>
-                                <p class="myallinfo_gopaybtn"><a href="{% url 'zwyz:orderlist' %}" id="go_to_order">去结算</a></p>
+                                <p class="myallinfo_gopaybtn"><a href="{% url 'zwyz:generateorder' %}" id="go_to_order">去结算</a></p>
                             </div>
                         </div>
                     </div>
