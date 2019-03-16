@@ -8,10 +8,9 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
-from app.models import LoopImg, Goods, User
+from app.models import LoopImg, Goods, User, Cart
 
 
-@csrf_exempt
 def index(request):
 
     # for i in range(1,6):
@@ -31,6 +30,12 @@ def index(request):
 
 
 def list(request, sort='0'):
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = None
+    if userid:
+        user = User.objects.get(pk=userid)
+
     goods = Goods.objects.all()
     if sort != '0':
         if sort == '1':
@@ -40,8 +45,7 @@ def list(request, sort='0'):
         elif sort == '3':
             goods = goods.order_by('price')
 
-
-    return render(request, 'list.html', context={'goods': goods})
+    return render(request, 'list.html', context={'goods': goods, 'user':user})
 
 
 def generate_token():
@@ -71,7 +75,10 @@ def login(request):
                 token = generate_token()
                 cache.set(token, user.id, 60 * 60 * 24 * 3)
                 request.session['token'] = token
-                return render(request, 'index.html', context={'user': user})
+                if request.COOKIES.get('back') == 'list':
+                    return  redirect('zwyz:listbase')
+                else:
+                    return render(request, 'index.html', context={'user': user})
             else:
                 return render(request, 'login.html', context={'p_err':'密码错误！'})
         else:
@@ -128,3 +135,88 @@ def xiangqing(request, goodsid='0'):
 #
 #     print(typeid, brandid)
 #     return JsonResponse(response_data)
+def cart(request):
+    token = request.session.get('token')
+    userid = cache.get(token)
+    if userid:
+        user = User.objects.get(pk=userid)
+        carts = user.cart_set.filter(number__gt=0)
+
+        return render(request, 'goodcar.html', context={'carts':carts})
+
+    else:
+        return render(request, 'login.html')
+
+
+def addcart(request):
+    goodsid = request.GET.get('goodsid')
+    goods = Goods.objects.get(pk=goodsid)
+    print(goodsid)
+    token = request.session.get('token')
+    userid = cache.get(token)
+    response_data = {}
+    if userid:
+        user = User.objects.get(pk=userid)
+        carts = user.cart_set.filter(goods=goods).filter(user=user)
+        response_data['status'] = 1
+        if carts:
+            cart = carts.first()
+            print('cart exist')
+            cart.number = cart.number +1
+            cart.save()
+            response_data['goodsnumber'] = cart.number
+            return JsonResponse(response_data)
+        else:
+            print('cart is not exist')
+            cart = Cart()
+            cart.user = user
+            cart.goods = goods
+            cart.number = 1
+            cart.save()
+
+        return JsonResponse(response_data)
+    else:
+        response_data['status'] = 0
+        return JsonResponse(response_data)
+
+
+def subcart(request):
+    response_data = {}
+    goodsid = request.GET.get('goodsid')
+    goods = Goods.objects.get(pk=goodsid)
+    print(goodsid)
+    token = request.session.get('token')
+    userid = cache.get(token)
+
+    user = User.objects.get(pk=userid)
+    carts = user.cart_set.filter(goods=goods).filter(user=user)
+    cart = carts.first()
+
+    if cart.number > 0:
+        cart.number = cart.number - 1
+        cart.save()
+    response_data['goodsnumber'] = cart.number
+    return JsonResponse(response_data)
+
+
+def removecart(request):
+
+    response_data = {
+        'status':1
+    }
+    goodsid = request.GET.get('delgoodsid')
+    print(goodsid)
+    token = request.session.get('token')
+    userid = cache.get(token)
+    user = User.objects.get(pk=userid)
+    goods = Goods.objects.get(pk=goodsid)
+    carts = user.cart_set.filter(goods=goods).filter(user=user)
+    cart = carts.first()
+    cart.number = 0
+    cart.save()
+
+    return JsonResponse(response_data)
+
+
+def orderlist(request):
+    return render(request, 'orderlist.html')

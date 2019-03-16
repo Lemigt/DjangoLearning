@@ -1,16 +1,19 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>知我药妆购物车</title>
-    <link href="css/goodcar.css" type="text/css" rel="stylesheet" />
-    <link href="common/css/common.css" rel="stylesheet" type="text/css"/>
-    <script src="js/jquery-1.12.0.js"></script>
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/goodcar.js"></script>
-    <script src="js/addGoodcar.js"></script>
+    <link href="{% static 'css/goodcar.css' %}" type="text/css" rel="stylesheet" />
+    <link href="{% static 'common/css/common.css' %}" rel="stylesheet" type="text/css"/>
+    <script src="{% static 'js/jquery-1.12.0.js' %}"></script>
+    <script src="{% static 'js/jquery.cookie.js' %}"></script>
+    <script src="{% static 'js/goodcar.js' %}"></script>
+{#    <script src="{% static 'js/addGoodcar.js' %}"></script>#}
 </head>
 <body>
+
 <!---------------------------------------顶部导航---------------------------------->
 <div class="headertop">
     <div class="headertop-box">
@@ -25,12 +28,12 @@
             <li class="item_personal item_btn">
                 <a href=""><span>微信商城</span><i></i></a>
                 <div class="item_personal_two item_cont">
-                    <p class="wechat_ewm_img"><img src="common/images/2.jpg"></p>
+                    <p class="wechat_ewm_img"><img src="{% static 'common/images/2.jpg' %}"></p>
                 </div>
             </li>
             <li class="item_phone"><a href=""><i></i>手机知我</a></li>
             <li class="item_personal item_btn">
-                <a class="" href="" ><span>我的小窝</span><i></i></a>
+                <a class="" href=""><span>我的小窝</span><i></i></a>
                 <div class="item_personal_my item_cont">
                     <ul>
                         <li><a href="">我的订单</a></li>
@@ -43,7 +46,7 @@
             </li>
             <li class="item_line">|</li>
             <li class="item_service item_btn">
-                <a  href="" ><span>客户服务</span><i></i></a>
+                <a href=""><span>客户服务</span><i></i></a>
                 <div class="item_personal_client item_cont">
                     <ul>
                         <li><a href="">帮助中心</a></li>
@@ -61,7 +64,7 @@
 <div class="header_logoimg">
     <div class="header_logoimg_box">
         <div class="logoimg_left">
-            <a href="index.html"><img src="images/rejister/logo.jpg"/></a>
+            <a href="index.html"><img src="{% static 'images/rejister/logo.jpg' %}"></a>
         </div>
         <div class="logoimg_right">
             <ul class="step_img">
@@ -143,6 +146,43 @@
                                 <!--<td class="table_item_integral"><p>42</p></td>-->
                                 <!--<td class="table_item_operate"><p><a class="item-buy-delete"  href="">删除</a><a href="" class="p_favorite">收藏</a></p></td>-->
                             <!--</tr>-->
+                                {% for cart in carts %}
+                                    <tr class="group" goods-id="{{ cart.goods.id }}">
+                                <td class="table_item_name mycart_listpro_show">
+                                    <input class="table_item_check" type="checkbox" >
+                                    <div class="mycart_selpro">
+                                        <p class="selpro_img">
+                                            <a target="_blank" href="">
+                                                <img src="{% static cart.goods.goodsimg %}"/>
+                                            </a>
+                                        </p>
+                                        <div class="selpro_info">
+                                            <p class="selpro_name">
+                                                <a target="_blank" href="">
+                                                    {{ cart.goods.longname }}
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="table_item_price"><p>￥<span>{{ cart.goods.price }}</span></p></td>
+                                <td class="table_item_amount">
+                                    <div class="table_item_amoutbox">
+                                        <p class="header_ginfo_amount">
+                                            <span class="decrease_num h_amout_down" goods-id="{{ cart.goods.id }}"></span>
+                                            <span class="goods-number">{{ cart.number }}</span>
+{#                                            <input class='item-buy-quantity-input' type="text" value="{{ cart.number }}" goods-num="{{ cart.number }}">#}
+                                            <span class="increase_num h_amout_up" goods-id="{{ cart.goods.id }}"></span>
+                                        </p>
+                                    </div>
+                                </td>
+                                <td class="table_item_allpay"><p></p></td>
+                                <td class="table_item_integral"><p></p></td>
+                                <td class="table_item_operate"><p><a class="item-buy-delete"  href="">删除</a><a href="" class="p_favorite">收藏</a></p></td>
+                              </tr>
+                                {% endfor %}
+
+
 
 
                             </tbody>
@@ -156,8 +196,8 @@
                             </div>
                             <div class="myallinfo_show_two">
                                 <p class="myallinfo_allamount">共<i>0</i>件商品</p>
-                                <p class="myallinfo_allpay"><span>应付金额（不含运费）：</span><i>￥</i><em id="">0.00</em></p>
-                                <p class="myallinfo_gopaybtn"><a href="" id="go_to_order">去结算</a></p>
+                                <p class="myallinfo_allpay"><span>应付金额（不含运费）：</span><i>￥</i><em id="">0</em></p>
+                                <p class="myallinfo_gopaybtn"><a href="{% url 'zwyz:orderlist' %}" id="go_to_order">去结算</a></p>
                             </div>
                         </div>
                     </div>
@@ -175,7 +215,7 @@
                         <ul class="recommend_list">
                             <li>
                                 <div class="list_img">
-                                    <img src="images/goodcar/01.jpg"/>
+                                    <img src="{% static 'images/goodcar/01.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>倩碧卓越润肤露30ml（天才黄油+）*2</span>
@@ -189,7 +229,7 @@
                             </li>
                             <li>
                                 <div class="list_img">
-                                    <img src="images/goodcar/02.jpg">
+                                    <img src="{% static 'images/goodcar/02.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>巨型一号丝瓜水美肤液【纯露配方型】巨型一号丝瓜水原液</span>
@@ -203,7 +243,7 @@
                             </li>
                             <li>
                                 <div class="list_img">
-                                    <img src="images/goodcar/03.jpg">
+                                    <img src="{% static 'images/goodcar/03.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>清仓价：马赛兰西碧护手霜-玫瑰香型75ml</span>
@@ -217,7 +257,7 @@
                             </li>
                             <li>
                                 <div class="list_img">
-                                    <img src="images/goodcar/04.jpg">
+                                    <img src="{% static 'images/goodcar/04.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>艾禾美小苏打牙膏 清新洁净25g*3支装</span>
@@ -236,7 +276,7 @@
                         <ul class="recommend_list">
                             <li class="rec-box-list2">
                                 <div class="list_img">
-                                    <img src="images/goodcar/05.jpg">
+                                    <img src="{% static 'images/goodcar/05.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>sexylook极美肌润白精米微浸透隐形面膜5片/盒</span>
@@ -250,7 +290,7 @@
                             </li>
                             <li>
                                 <div class="list_img">
-                                    <img src="images/goodcar/06.jpg">
+                                    <img src="{% static 'images/goodcar/06.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>韩束水嫩亮颜去角质素70g</span>
@@ -264,7 +304,7 @@
                             </li>
                             <li>
                                 <div class="list_img">
-                                    <img src="images/goodcar/07.jpg">
+                                    <img src="{% static 'images/goodcar/07.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>韩束秘蜜水凝乳150ml</span>
@@ -278,7 +318,7 @@
                             </li>
                             <li>
                                 <div class="list_img">
-                                    <img src="images/goodcar/08.jpg">
+                                    <img src="{% static 'images/goodcar/08.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>一叶子植物酵素·多效净肤亮颜粉泥膜150g</span>
@@ -296,7 +336,7 @@
                         <ul class="recommend_list">
                             <li>
                                 <div class="list_img">
-                                    <img src="images/goodcar/09.jpg">
+                                    <img src="{% static 'images/goodcar/09.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>彩虹（莱妃尔）羊羊保湿紧致面膜10片/盒</span>
@@ -310,7 +350,7 @@
                             </li>
                             <li>
                                 <div class="list_img">
-                                    <img src="images/goodcar/10.jpg">
+                                    <img src="{% static 'images/goodcar/10.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>revlon露华浓流光凝彩柔蜜唇膏2.55g 090 玫粉色</span>
@@ -324,7 +364,7 @@
                             </li>
                             <li>
                                 <div class="list_img">
-                                    <img src="images/goodcar/11.jpg">
+                                    <img src="{% static 'images/goodcar/11.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>美宝莲巨遮瑕空气轻垫霜限量版 自然色 14g</span>
@@ -338,7 +378,7 @@
                             </li>
                             <li>
                                 <div class="list_img">
-                                    <img src="images/goodcar/12.jpg">
+                                    <img src="{% static 'images/goodcar/12.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>Hello Kitty金缕梅净护洗衣香皂*2</span>
@@ -356,7 +396,7 @@
                         <ul class="recommend_list">
                             <li>
                                 <div class="list_img">
-                                    <img src="images/goodcar/13.jpg">
+                                    <img src="{% static 'images/goodcar/13.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>韩国九朵云(cloud9)美白祛斑面霜60ml（新款）</span>
@@ -370,7 +410,7 @@
                             </li>
                             <li>
                                 <div class="list_img">
-                                    <img src="images/goodcar/14.jpg">
+                                    <img src="{% static 'images/goodcar/14.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>WHOO/后天气丹华泫套盒</span>
@@ -384,7 +424,7 @@
                             </li>
                             <li>
                                 <div class="list_img">
-                                    <img src="images/goodcar/15.jpg">
+                                    <img src="{% static 'images/goodcar/15.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>【智能彩妆】MZING彩妆套装妩媚派对8+3套装组合</span>
@@ -398,7 +438,7 @@
                             </li>
                             <li>
                                 <div class="list_img">
-                                    <img src="images/goodcar/16.jpg">
+                                    <img src="{% static 'images/goodcar/16.jpg' %}">
                                 </div>
                                 <div class="introduce">
                                     <span>知我药妆化妆棉100片（蓝色）</span>
@@ -415,9 +455,68 @@
 
 
 
+                        <li class="rec-box-list2">
+                        <ul class="recommend_list">
+                            <li>
+                                <div class="list_img">
+                                    <img src="{% static 'images/goodcar/01.jpg' %}">
+                                </div>
+                                <div class="introduce">
+                                    <span>倩碧卓越润肤露30ml（天才黄油+）*2</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥89</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_img">
+                                    <img src="{% static 'images/goodcar/02.jpg' %}">
+                                </div>
+                                <div class="introduce">
+                                    <span>巨型一号丝瓜水美肤液【纯露配方型】巨型一号丝瓜水原液</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥60</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_img">
+                                    <img src="{% static 'images/goodcar/03.jpg' %}">
+                                </div>
+                                <div class="introduce">
+                                    <span>清仓价：马赛兰西碧护手霜-玫瑰香型75ml</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥39</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_img">
+                                    <img src="{% static 'images/goodcar/04.jpg' %}">
+                                </div>
+                                <div class="introduce">
+                                    <span>艾禾美小苏打牙膏 清新洁净25g*3支装</span>
+                                </div>
+                                <div class="recommend_price">
+                                    <span>￥27</span>
+                                </div>
+                                <div class="recommend_car">
+                                    <span>加入购物车</span>
+                                </div>
+                            </li>
                         </ul>
-                    </li>
-                </ul>
+                    </li></ul>
+
+
                 <div class="page-left page-btn">&lt;</div>
                 <div class="page-right page-btn">&gt;</div>
 
@@ -436,7 +535,7 @@
         <div class="footer-center">
             <div class="footer-center-left">
                 <table class="tab-one">
-                    <tr>
+                    <tbody><tr>
                         <th>真品保证</th>
                         <th>30天包退</th>
                         <th>2件包邮</th>
@@ -481,17 +580,17 @@
                         <td><a href=""></a></td>
                         <td><a href=""></a></td>
                     </tr>
-                </table>
+                </tbody></table>
             </div>
             <div class="footer-center-right">
                 <table class="tab-two">
-                    <tr>
+                    <tbody><tr>
                         <th>知我微信商城</th>
                     </tr>
                     <tr>
-                        <th><img src="common/images/2.jpg" style="width: 100px;height: 100px;"/></th>
+                        <th><img src="{% static 'common/images/2.jpg' %}" style="width: 100px;height: 100px;"></th>
                     </tr>
-                </table>
+                </tbody></table>
             </div>
         </div>
     </div>
@@ -525,11 +624,13 @@
             | 网公安备1101054365号 | 营业执照
         </p>
         <p>
-            <img alt="支付特约商家" src="common/images/footer_copy_02.jpg" />
-            <img alt="快捷支付" src="common/images/footer_copy_03.jpg" />
-            <img alt="网上交易保障中心" src="common/images/footer_copy_05.jpg" />
+            <img alt="支付特约商家" src="{% static 'common/images/footer_copy_02.jpg' %}">
+            <img alt="快捷支付" src="{% static 'common/images/footer_copy_03.jpg' %}">
+            <img alt="网上交易保障中心" src="{% static 'common/images/footer_copy_05.jpg' %}">
         </p>
     </div>
 </div>
+
+
 </body>
 </html>

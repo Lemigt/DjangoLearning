@@ -11,4 +11,9 @@ urlpatterns = [
     url(r'^logout/$', views.logout, name='logout'),
     url(r'^xiangqing/(\d+)/$', views.xiangqing, name='xiangqing'),
     # url(r'^classify/$', views.classify, name='classify')
+    url(r'^cart/$', views.cart, name='cart'),
+    url(r'^addcart/$', views.addcart, name='addcart'),
+    url(r'^subcart/$', views.subcart, name='subcart'),
+    url(r'^removecart/$', views.removecart, name='removecart'),
+    url(r'^orderlist/$', views.orderlist, name='orderlist')
 ]

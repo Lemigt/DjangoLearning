@@ -88,23 +88,23 @@ $(function(){
 
 
 //===================侧边栏购物车===========================
-$(function(){
-	$(document).on('click',".put-cart",function(e) {
-        //点击加入购物车侧边栏数量改变
-		var arr = $.cookie("cart") ? JSON.parse( $.cookie("cart") ) : [];
-		var num=0;
-		for(var i=0;i<arr.length;i++){
-			num+=arr[i].num;
-		}
-        $('.sshopcar_amout').text(num);
-	});
-	var arr = $.cookie("cart") ? JSON.parse( $.cookie("cart") ) : [];
-	var num=0;
-	for(var i=0;i<arr.length;i++){
-		num+=arr[i].num;
-	}
-	$('.sshopcar_amout').text(num);
-})
+// $(function(){
+// 	$(document).on('click',".put-cart",function(e) {
+//         //点击加入购物车侧边栏数量改变
+// 		var arr = $.cookie("cart") ? JSON.parse( $.cookie("cart") ) : [];
+// 		var num=0;
+// 		for(var i=0;i<arr.length;i++){
+// 			num+=arr[i].num;
+// 		}
+//         $('.sshopcar_amout').text(num);
+// 	});
+// 	var arr = $.cookie("cart") ? JSON.parse( $.cookie("cart") ) : [];
+// 	var num=0;
+// 	for(var i=0;i<arr.length;i++){
+// 		num+=arr[i].num;
+// 	}
+// 	$('.sshopcar_amout').text(num);
+// })
 
 //=========================点击加入购物车动画效果=============
 $(function(){
@@ -239,6 +239,24 @@ $(function () {
 		$('#goodsnum').html(num)
 	}
 
+	$('.put-cart').click(function () {
+		console.log('addcart-click')
+		goodsid = $(this).attr('goods-id')
+		console.log(goodsid)
+		request_data = {
+			'goodsid':goodsid
+		}
+		$.get('/addcart/', request_data, function (response) {
+			console.log('status'+response.status)
+			if (response.status == 1){
+
+			} else {
+					$.cookie('back', 'list',{expires: 3, path: '/'})
+					window.open('/login/', '_self')
+
+			}
+		})
+	})
 
 
 })

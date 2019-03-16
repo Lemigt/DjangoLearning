@@ -37,3 +37,36 @@ class User(models.Model):
 
     class Meta:
         db_table = 'zwyz_user'
+
+
+class Cart(models.Model):
+    user = models.ForeignKey(User)
+    goods = models.ForeignKey(Goods)
+    number = models.IntegerField()
+    isselect = models.IntegerField(default=0)
+    class Meta:
+        db_table = 'zwyz_cart'
+
+
+# class Order(models.Model):
+#     user = models.ForeignKey(User)
+#
+#     createtime = models.DateTimeField(auto_now_add=True)
+#
+#     updatetime = models.DateTimeField(auto_now=True)
+#
+#     status = models.IntegerField(default=0)
+#
+#     identifier = models.CharField(max_length=256)
+#     class Meta:
+#         db_table = 'zwyz_order'
+
+
+# class OrderGoods(models.Model):
+#     order = models.ForeignKey(Order)
+#
+#     goods = models.ForeignKey(Goods)
+#
+#     number = models.IntegerField()
+#     class Meta:
+#         db_table = 'zwyz_ordergoods'

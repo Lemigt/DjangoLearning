@@ -70,7 +70,7 @@
                 <a class="sitem_btn" href="goodcar.html">
                     <i class="sitem_btnbg"></i>
                     <span class="sshopcar_text">购物车</span>
-                    <span class="sshopcar_amout">0</span>
+{#                    <span class="sshopcar_amout">0</span>#}
                 </a>
             </li>
             <li id="sidebar_collect" class="sidebar_item sidebar_collect">
@@ -248,7 +248,7 @@
         </div>
         <!--购物车-->
         <div class="header-shop">
-            <p><a href="goodcar.html">我的购物车</a></p>
+            <p><a href="{% url 'zwyz:cart' %}">我的购物车</a></p>
         </div>
     </div>
 </div>

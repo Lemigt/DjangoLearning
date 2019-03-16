@@ -8,9 +8,10 @@
     <link href="{% static 'common/css/common.css' %}" type="text/css" rel="stylesheet"/>
     <script src="{% static 'common/js/jquery-1.12.0.js' %}"></script>
     <script src="{% static 'common/js/common.js' %}"></script>
-    <script src="{% static 'js/changeimg.js' %}"></script>
+{#    <script src="{% static 'js/changeimg.js' %}"></script>#}
 </head>
 <body>
+
 <!--顶部图片-->
 <!--<div class="top-img"></div>-->
 
@@ -29,12 +30,12 @@
                 <li class="item_personal item_btn">
                     <a href=""><span>微信商城</span><i></i></a>
                     <div class="item_personal_two item_cont">
-                        <p class="wechat_ewm_img"><img src="common/images/2.jpg"></p>
+                        <p class="wechat_ewm_img"><img src="{% static 'common/images/2.jpg' %}"></p>
                     </div>
                 </li>
                 <li class="item_phone"><a href=""><i></i>手机知我</a></li>
                 <li class="item_personal item_btn">
-                    <a class="" href="" ><span>我的小窝</span><i></i></a>
+                    <a class="" href=""><span>我的小窝</span><i></i></a>
                     <div class="item_personal_my item_cont">
                         <ul>
                             <li><a href="">我的订单</a></li>
@@ -47,7 +48,7 @@
                 </li>
                 <li class="item_line">|</li>
                 <li class="item_service item_btn">
-                    <a  href="" ><span>客户服务</span><i></i></a>
+                    <a href=""><span>客户服务</span><i></i></a>
                     <div class="item_personal_client item_cont">
                         <ul>
                             <li><a href="">帮助中心</a></li>
@@ -66,14 +67,14 @@
 	<div class="header_center_box w1100">
 		<!--logo图标-->
 		<div class="header_logo">
-			<img src="common/images/logo.jpg" />
+			<img src="{% static 'common/images/logo.jpg' %}">
 		</div>
 		<!--搜索框-->
 		<div class="header_search">
 			<div class="search_box header_searchbox">
-				<form class="clearfix search_form"  action="" method="get">
-                    <input class="search_box_text" name="keyword" type="text" value="可莱丝" />
-                    <input class="search_box_btn" name="search" type="button" value="搜索" />
+				<form class="clearfix search_form" action="" method="get">
+                    <input class="search_box_text" name="keyword" type="text" value="可莱丝">
+                    <input class="search_box_btn" name="search" type="button" value="搜索">
                 </form>
                 <p>
             	   <a href="">保湿<span class="item_line">|</span></a>
@@ -104,7 +105,7 @@
                     <a class="mainnav" href="/">首页</a>
                 </li>
                 <li class="zhiwo">
-                    <a  href="/">知我商城</a>
+                    <a href="/">知我商城</a>
 
                     <!--导航条二级菜单-->
                     <div class="shop-two">
@@ -169,15 +170,15 @@
                             </div>
                         </div>
                         <div class="shop-two-right">
-                            <a href=""><img src="images/index/guoqin.jpg"></a>
+                            <a href=""><img src="{% static 'images/index/guoqin.jpg' %}"></a>
                         </div>
                     </div>
 
                 </li>
                 <li class="overseas_nav">
                     <a class="mainnav" href="">
-                        <img class="overseas_nav_img1" style="display: block;" src="common/images/overseas_nav_01.gif" />
-                        <img class="overseas_nav_img2" style="display: none;" src="common/images/overseas_nav_02.gif" />
+                        <img class="overseas_nav_img1" style="display: block;" src="{% static 'common/images/overseas_nav_01.gif' %}">
+                        <img class="overseas_nav_img2" style="display: none;" src="{% static 'common/images/overseas_nav_02.gif' %}">
                     </a>
                 </li>
             </ul>
@@ -195,6 +196,21 @@
     </div>
 </div>
 
+
+<!-----------------------订单列表------------------------>
+<div class="container">
+    <div class="table_cont cart_products">
+        <table class="table_item" id="cart_products">
+            <tbody class="_tbody">
+            </tbody>
+        </table>
+    </div>
+        
+
+
+</div>
+
+
 <!-----------------------------------尾部-------------------->
 <div class="footer">
     <div class="footer-box w1100">
@@ -202,7 +218,7 @@
         <div class="footer-center">
             <div class="footer-center-left">
                <table class="tab-one">
-                <tr>
+                <tbody><tr>
                     <th>真品保证</th>
                     <th>30天包退</th>
                     <th>2件包邮</th>
@@ -247,17 +263,17 @@
                     <td><a href=""></a></td>
                     <td><a href=""></a></td>
                  </tr>
-              </table>
+              </tbody></table>
             </div>
             <div class="footer-center-right">
               <table class="tab-two">
-                <tr>
+                <tbody><tr>
                     <th>知我微信商城</th>
                 </tr>
                 <tr>
-                    <th><img src="common/images/2.jpg" style="width: 100px;height: 100px;"/></th>
+                    <th><img src="{% static 'common/images/2.jpg' %}" style="width: 100px;height: 100px;"></th>
                 </tr>
-              </table>
+              </tbody></table>
             </div>
         </div>
     </div>
@@ -291,15 +307,20 @@
 			| 网公安备1101054365号 | 营业执照
 		</p>
 		<p>
-			<img alt="支付特约商家" src="common/images/footer_copy_02.jpg" />
-			<img alt="快捷支付" src="common/images/footer_copy_03.jpg" />
-			<img alt="网上交易保障中心" src="common/images/footer_copy_05.jpg" />
+			<img alt="支付特约商家" src="{% static 'common/images/footer_copy_02.jpg' %}">
+			<img alt="快捷支付" src="{% static 'common/images/footer_copy_03.jpg' %}">
+			<img alt="网上交易保障中心" src="{% static 'common/images/footer_copy_05.jpg' %}">
 		</p>
   	</div>
 </div>
 
 
+
+
+
+
+
+
 </body>
 </html>
 
-{#container#}

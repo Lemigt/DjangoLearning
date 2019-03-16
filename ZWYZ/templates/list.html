@@ -7,12 +7,14 @@
     <title>知我药妆列表页</title>
     <link href="{% static 'common/css/common.css' %}" type="text/css" rel="stylesheet"/>
     <link href="{% static 'css/list.css' %}" type="text/css" rel="stylesheet"/>
-    <script src="{% static 'common/js/jquery-1.12.0.js' %}"></script>
+    <script src="{% static 'common/js/jquery.js' %}"></script>
     <script src="{% static '1_jquery-fly/jquery.fly.min.js' %}"></script>
-    <script src="{% static 'js/jquery.cookie.js' %}"></script>
+{#    <script src="{% static 'js/jquery.cookie.js' %}"></script>#}
     <script src="{% static 'common/js/common.js' %}"></script>
     <script src="{% static 'js/addGoodcar.js' %}"></script>
     <script src="{% static 'js/list.js' %}"></script>
+{#    <script src="https://cdn.bootcss.com/jquery-cookie/1.1/jquery.cookie.min.js"></script>#}
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.3.1/jquery.cookie.js"></script>
 {#    <script src="{% static 'js/changeimg.js' %}"></script>#}
 </head>
 <body>
@@ -36,7 +38,7 @@
                 <a class="sitem_btn" href="goodcar.html">
                     <i class="sitem_btnbg"></i>
                     <span class="sshopcar_text">购物车</span>
-                    <span class="sshopcar_amout">0</span>
+{#                    <span class="sshopcar_amout">0</span>#}
                 </a>
             </li>
             <li id="sidebar_collect" class="sidebar_item sidebar_collect">
@@ -89,7 +91,11 @@
         <!--左边-->
         <ul class="headertop-left">
             <li>欢迎来到知我！这里，用专业呵护美丽。</li>
-            <li><a href="login.html">请登录</a></li>
+            {% if user %}
+               <li>{{ user.telnumber }}</li>
+            {% else %}
+                <li><a href="{% url 'zwyz:login' %}">请登录</a></li>
+            {% endif %}
             <li><a href="rejister.html">快速注册</a></li>
         </ul>
         <!--右边-->
@@ -155,7 +161,7 @@
         </div>
         <!--购物车-->
         <div class="header-shop">
-            <p><a href="goodcar.html">我的购物车</a></p>
+            <p><a href="{% url 'zwyz:cart' %}">我的购物车</a></p>
         </div>
     </div>
 </div>
@@ -1446,7 +1452,7 @@
                         <del>￥{{ good.marketprice }}</del>
                         </p>
                         <p class="buy_btn">
-                        <a class="put-cart" href="#">加入购物车</a>
+                        <a class="put-cart"  goods-id="{{ good.id}}">加入购物车</a>
                         </p>
                         </div>
                     </li>
