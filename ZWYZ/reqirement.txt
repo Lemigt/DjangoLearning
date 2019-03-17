@@ -5,6 +5,7 @@ django-redis-sessions==0.6.1
 django-tinymce==2.8.0
 markdown2==2.3.7
 Pillow==5.4.1
+pycryptodome==3.7.3
 PyMySQL==0.9.3
 pytz==2018.9
 redis==3.2.0

@@ -17,5 +17,7 @@ urlpatterns = [
     url(r'^changeselect/$',views.changeselect, name='changeselect'),
     url(r'^removecart/$', views.removecart, name='removecart'),
     url(r'^generateorder/$', views.generateorder, name='generateorder'),
-    url(r'^orderlist/$', views.orserlist, name='orderlist')
+    url(r'^orderlist/$', views.orderlist, name='orderlist'),
+    url(r'^orderdetail/(\d+)/$', views.orderdetail, name='orderdetail'),
+    url(r'^pay/$', views.pay, name='pay')
 ]

@@ -234,7 +234,12 @@ def generateorder(request):
 
     carts = user.cart_set.filter(isselect=True)
     if carts:
+        allpay = 0
         for cart in carts:
+            price = cart.goods.price
+            num = cart.number
+            totalprice = price*num
+            allpay += totalprice
             orderGoods = OrderGoods()
             orderGoods.order = order
             orderGoods.goods = cart.goods
@@ -243,12 +248,12 @@ def generateorder(request):
 
             cart.delete()
 
-        return render(request, 'orderdetail.html', context={'order':order})
+        return render(request, 'orderdetail.html', context={'order':order, 'allpay':allpay})
     else:
         print('not_select_goods')
         return HttpResponse('您没有选择商品')
 
-
+    # return render(request, 'orderdetail.html')
 
 
 
@@ -285,3 +290,18 @@ def orderlist(request):
     orders = user.order_set.all()
 
     return render(request, 'orderlist.html', context={'orders':orders})
+
+
+def orderdetail(request, orderid=0):
+    order = Order.objects.get(pk=int(orderid))
+
+    allpay = 0
+    for ordergoods in order.ordergoods_set.all():
+        totalprice = ordergoods.number * ordergoods.goods.price
+        allpay += totalprice
+
+    return render(request, 'orderdetail.html', context={'order':order, 'allpay':allpay})
+
+
+def pay(request):
+    return None
