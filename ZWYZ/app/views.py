@@ -1,6 +1,7 @@
 import hashlib
 import random
 import time
+from urllib.parse import parse_qs
 
 from django.core.cache import cache
 from django.http import JsonResponse, HttpResponse
@@ -9,7 +10,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
 from app.models import LoopImg, Goods, User, Cart, Order, OrderGoods
-
+from app.alipay import alipay
 
 def index(request):
 
@@ -303,5 +304,67 @@ def orderdetail(request, orderid=0):
     return render(request, 'orderdetail.html', context={'order':order, 'allpay':allpay})
 
 
+def returnurl(request):
+    return redirect('zwyz:index')
+
+
+
+@csrf_exempt
+def appnotifyurl(request):
+    # if request.method == 'POST':
+    #     # 获取到参数
+    #     body_str = request.body.decode('utf-8')
+    #
+    #     # 通过parse_qs函数
+    #     post_data = parse_qs(body_str)
+    #
+    #     # 转换为字典
+    #     post_dic = {}
+    #     for k,v in post_data.items():
+    #         post_dic[k] = v[0]
+    #
+    #     # 获取订单号
+    #     out_trade_no = post_dic['out_trade_no']
+    #
+    #     # 更新状态
+    #     Order.objects.filter(identifier=out_trade_no).update(status=1)
+    #
+    #
+    return JsonResponse({'msg':'success'})
+
+
+
 def pay(request):
-    return None
+    # print(request.GET.get('orderid'))
+
+    orderid = request.GET.get('orderid')
+    order = Order.objects.get(pk=orderid)
+
+    goodsnames = ''
+    sum = 0
+    for orderGoods in order.ordergoods_set.all():
+        sum += orderGoods.goods.price * orderGoods.number
+        onegoodsname = orderGoods.goods.longname + 'X' + str(orderGoods.number)
+        goodsnames += onegoodsname
+        goodsnames += '|'
+
+    print(goodsnames)
+    data = alipay.direct_pay(
+
+        subject=goodsnames, # 商品详情
+        out_trade_no=order.identifier,
+        total_amount=str(sum),
+        return_url='http://39.98.84.248/axf/returnurl/'
+    )
+
+
+    alipay_url = 'https://openapi.alipaydev.com/gateway.do?{data}'.format(data=data)
+
+    response_data = {
+        'msg': '发起支付',
+        'alipayurl': alipay_url,
+        'status': 1
+    }
+
+    return JsonResponse(response_data)
+    # return JsonResponse(data)
