@@ -77,8 +77,8 @@ CREATE TABLE `auth_group_permissions` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_group_permissions_group_id_permission_id_0cd325b0_uniq` (`group_id`,`permission_id`),
   KEY `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` (`permission_id`),
-  CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
-  CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`)
+  CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`),
+  CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -194,8 +194,8 @@ CREATE TABLE `auth_user_user_permissions` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_user_user_permissions_user_id_permission_id_14a6b632_uniq` (`user_id`,`permission_id`),
   KEY `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` (`permission_id`),
-  CONSTRAINT `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
-  CONSTRAINT `auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
+  CONSTRAINT `auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
+  CONSTRAINT `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -227,8 +227,8 @@ CREATE TABLE `django_admin_log` (
   PRIMARY KEY (`id`),
   KEY `django_admin_log_content_type_id_c4bce8eb_fk_django_co` (`content_type_id`),
   KEY `django_admin_log_user_id_c564eba6_fk_auth_user_id` (`user_id`),
-  CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
-  CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
+  CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
+  CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -337,7 +337,7 @@ CREATE TABLE `zwyz_cart` (
   KEY `zwyz_cart_user_id_d36fdebe_fk_zwyz_user_id` (`user_id`),
   CONSTRAINT `zwyz_cart_goods_id_a784ad29_fk_zwyz_goods_id` FOREIGN KEY (`goods_id`) REFERENCES `zwyz_goods` (`id`),
   CONSTRAINT `zwyz_cart_user_id_d36fdebe_fk_zwyz_user_id` FOREIGN KEY (`user_id`) REFERENCES `zwyz_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -346,7 +346,7 @@ CREATE TABLE `zwyz_cart` (
 
 LOCK TABLES `zwyz_cart` WRITE;
 /*!40000 ALTER TABLE `zwyz_cart` DISABLE KEYS */;
-INSERT INTO `zwyz_cart` VALUES (14,1,6,1,0);
+INSERT INTO `zwyz_cart` VALUES (25,3,1,1,0),(26,1,3,1,0);
 /*!40000 ALTER TABLE `zwyz_cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -372,7 +372,7 @@ CREATE TABLE `zwyz_goods` (
   `fullminus` varchar(200) NOT NULL,
   `sales` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -381,7 +381,7 @@ CREATE TABLE `zwyz_goods` (
 
 LOCK TABLES `zwyz_goods` WRITE;
 /*!40000 ALTER TABLE `zwyz_goods` DISABLE KEYS */;
-INSERT INTO `zwyz_goods` VALUES (1,'医朵eto咬唇妆口红膏3号4.2g ','images/list/03.jpg','医朵','唇彩/口红','1','1',49,108,'1','医朵品牌团满258送舒德尔玛+口红','贝德玛品牌团 满199减30',23),(2,'医朵eto咬唇妆口红膏2号4.2g ','images/list/04.jpg','医朵','唇彩/口红','1','1',45,99,'2','医朵品牌团满258送舒德尔玛+口红','贝德玛品牌团 满199减30',45),(3,'医朵eto咬唇妆口红膏1号4.2g ','images/list/02.jpg','医朵','唇彩/口红','1','1',59,118,'3','医朵品牌团满258送舒德尔玛+口红','贝德玛品牌团 满199减30',34),(4,'米蔻丰盈炫彩女神款口红 (嫣玫色）','images/list/01.jpg','米蔻','唇彩/口红','2','1',79,121,'4','米蔻品牌团满258送玛莎拉蒂','巴黎欧莱雅品牌团 满199减50000',9999),(5,'医朵exo妖魔鬼怪唇线笔1号3.2g','images/list/list-21.jpg','医朵','唇线笔','1','2',38,59,'5','医朵品牌团满258送舒德尔玛+口红','贝德玛品牌团 满199减30',23),(6,'米蔻缤纷炫彩唇线笔','images/list/list-20.jpg','米蔻','唇线笔','2','2',42,299,'6','米蔻品牌团满258送玛莎拉蒂','巴黎欧莱雅品牌团 满199减50000',9999);
+INSERT INTO `zwyz_goods` VALUES (1,'医朵eto咬唇妆口红膏3号4.2g ','images/list/03.jpg','医朵','唇彩/口红','1','1',49,108,'1','医朵品牌团满258送舒德尔玛+口红','贝德玛品牌团 满199减30',23),(2,'医朵eto咬唇妆口红膏2号4.2g ','images/list/04.jpg','医朵','唇彩/口红','1','1',45,99,'2','医朵品牌团满258送舒德尔玛+口红','贝德玛品牌团 满199减30',45),(3,'医朵eto咬唇妆口红膏1号4.2g ','images/list/02.jpg','医朵','唇彩/口红','1','1',59,118,'3','医朵品牌团满258送舒德尔玛+口红','贝德玛品牌团 满199减30',34),(4,'米蔻丰盈炫彩女神款口红 (嫣玫色）','images/list/01.jpg','米蔻','唇彩/口红','2','1',79,121,'4','米蔻品牌团满258送玛莎拉蒂','巴黎呕来哑品牌团 满199减50000',7895),(5,'医朵exo妖魔鬼怪唇线笔1号3.2g','images/list/list-21.jpg','医朵','唇线笔','1','2',38,59,'5','医朵品牌团满258送舒德尔玛+口红','贝德玛品牌团 满199减30',23),(6,'米蔻缤纷炫彩唇线笔','images/list/list-20.jpg','米蔻','唇线笔','2','2',42,299,'6','米蔻品牌团满258送玛莎拉蒂','巴黎呕来哑品牌团 满199减50000',5463),(7,'森田药妆玻尿酸微导保湿面膜5片','images/xiangqing/020.jpg','森田','面膜面贴','3','3',52,134,'7','森田品牌团满199送苹果笔记本','压死篮戴品牌团 满239减99999',3536),(8,'森田药妆毛孔紧致水洗式面膜3片','images/xiangqing/rank12.jpg','森田','面膜面贴','3','3',42,118,'8','森田品牌团满199送苹果笔记本','压死篮戴品牌团 满239减99999',3241),(9,'森田敏感修复唇膏','images/xiangqing/rank6.jpg','森田','唇彩/口红','3','1',35,89,'9','森田品牌团满199送苹果笔记本','压死篮戴品牌团 满239减99999',2312),(10,'森田超大超爽唇线笔','images/xiangqing/021.jpg','森田','唇线笔','3','2',67,176,'10','森田品牌团满199送苹果笔记本','压死篮戴品牌团 满239减99999',4231),(11,'医朵舒缓提拉额贴10p','images/xiangqing/goods-1.jpg','医朵','面膜面贴','1','3',34,123,'11','医朵品牌团满258送舒德尔玛+口红','贝德玛品牌团 满199减30',34),(12,'米蔻绝对零度保冻面膜','images/xiangqing/rank9.jpg','米蔻','面膜面贴','2','3',119,23,'12','米蔻品牌团满258送玛莎拉蒂','巴黎呕来哑品牌团 满199减50000',1245);
 /*!40000 ALTER TABLE `zwyz_goods` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -402,7 +402,7 @@ CREATE TABLE `zwyz_order` (
   PRIMARY KEY (`id`),
   KEY `zwyz_order_user_id_9ca802ff_fk_zwyz_user_id` (`user_id`),
   CONSTRAINT `zwyz_order_user_id_9ca802ff_fk_zwyz_user_id` FOREIGN KEY (`user_id`) REFERENCES `zwyz_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -411,7 +411,7 @@ CREATE TABLE `zwyz_order` (
 
 LOCK TABLES `zwyz_order` WRITE;
 /*!40000 ALTER TABLE `zwyz_order` DISABLE KEYS */;
-INSERT INTO `zwyz_order` VALUES (23,'2019-03-17 01:44:48.303193','2019-03-17 01:44:48.303227',0,'1552787088.30287152547',1);
+INSERT INTO `zwyz_order` VALUES (23,'2019-03-17 01:44:48.303193','2019-03-17 01:44:48.303227',0,'1552787088.30287152547',1),(24,'2019-03-17 12:14:00.362795','2019-03-17 12:14:00.362828',0,'1552824840.3623733664',1),(25,'2019-03-17 12:16:42.587107','2019-03-17 12:16:42.587167',0,'1552825002.58648567918',1),(26,'2019-03-17 12:17:13.380550','2019-03-17 12:17:13.380595',0,'1552825033.3801218588',1),(27,'2019-03-17 12:17:40.428965','2019-03-17 12:17:40.429015',0,'1552825060.4280251160',1),(28,'2019-03-17 12:19:44.498712','2019-03-17 12:19:44.498754',0,'1552825184.4983742300',1),(29,'2019-03-17 12:20:41.364433','2019-03-17 12:20:41.364474',0,'1552825241.36402829779',1),(30,'2019-03-17 12:20:57.588712','2019-03-17 12:20:57.588753',0,'1552825257.58825029373',1),(31,'2019-03-17 12:22:06.923805','2019-03-17 12:22:06.923870',0,'1552825326.92332586330',1),(32,'2019-03-17 12:22:20.763157','2019-03-17 12:22:20.763211',0,'1552825340.76263572126',1),(33,'2019-03-17 12:31:36.905050','2019-03-17 12:31:36.905186',0,'1552825896.90448672340',1),(34,'2019-03-17 12:32:14.612545','2019-03-17 12:32:14.612583',0,'1552825934.61226443957',1),(35,'2019-03-18 01:39:45.523725','2019-03-18 01:39:45.523767',0,'1552873185.52334888455',1),(36,'2019-03-18 01:53:39.802493','2019-03-18 01:53:39.802534',0,'1552874019.80197364266',1);
 /*!40000 ALTER TABLE `zwyz_order` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -430,9 +430,9 @@ CREATE TABLE `zwyz_ordergoods` (
   PRIMARY KEY (`id`),
   KEY `zwyz_ordergoods_goods_id_9e6f2f38_fk_zwyz_goods_id` (`goods_id`),
   KEY `zwyz_ordergoods_order_id_30dc6b51_fk_zwyz_order_id` (`order_id`),
-  CONSTRAINT `zwyz_ordergoods_order_id_30dc6b51_fk_zwyz_order_id` FOREIGN KEY (`order_id`) REFERENCES `zwyz_order` (`id`),
-  CONSTRAINT `zwyz_ordergoods_goods_id_9e6f2f38_fk_zwyz_goods_id` FOREIGN KEY (`goods_id`) REFERENCES `zwyz_goods` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+  CONSTRAINT `zwyz_ordergoods_goods_id_9e6f2f38_fk_zwyz_goods_id` FOREIGN KEY (`goods_id`) REFERENCES `zwyz_goods` (`id`),
+  CONSTRAINT `zwyz_ordergoods_order_id_30dc6b51_fk_zwyz_order_id` FOREIGN KEY (`order_id`) REFERENCES `zwyz_order` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -441,7 +441,7 @@ CREATE TABLE `zwyz_ordergoods` (
 
 LOCK TABLES `zwyz_ordergoods` WRITE;
 /*!40000 ALTER TABLE `zwyz_ordergoods` DISABLE KEYS */;
-INSERT INTO `zwyz_ordergoods` VALUES (13,1,3,23);
+INSERT INTO `zwyz_ordergoods` VALUES (13,1,3,23),(14,1,6,24),(15,1,1,25),(16,1,5,27),(17,1,1,28),(18,1,3,30),(19,1,2,31),(20,2,1,32),(21,3,4,32),(22,2,1,34),(23,4,2,35),(24,1,4,36);
 /*!40000 ALTER TABLE `zwyz_ordergoods` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -480,4 +480,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-17 11:29:28
+-- Dump completed on 2019-03-18 11:54:29

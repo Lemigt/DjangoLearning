@@ -12,6 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 from app.models import LoopImg, Goods, User, Cart, Order, OrderGoods
 from app.alipay import alipay
 
+
 def index(request):
 
     # for i in range(1,6):
@@ -305,31 +306,31 @@ def orderdetail(request, orderid=0):
 
 
 def returnurl(request):
-    return redirect('zwyz:index')
+    return redirect('zwyz:orderlist')
 
 
 
 @csrf_exempt
 def appnotifyurl(request):
-    # if request.method == 'POST':
-    #     # 获取到参数
-    #     body_str = request.body.decode('utf-8')
-    #
-    #     # 通过parse_qs函数
-    #     post_data = parse_qs(body_str)
-    #
-    #     # 转换为字典
-    #     post_dic = {}
-    #     for k,v in post_data.items():
-    #         post_dic[k] = v[0]
-    #
-    #     # 获取订单号
-    #     out_trade_no = post_dic['out_trade_no']
-    #
-    #     # 更新状态
-    #     Order.objects.filter(identifier=out_trade_no).update(status=1)
-    #
-    #
+    if request.method == 'POST':
+        # 获取到参数
+        body_str = request.body.decode('utf-8')
+
+        # 通过parse_qs函数
+        post_data = parse_qs(body_str)
+
+        # 转换为字典
+        post_dic = {}
+        for k,v in post_data.items():
+            post_dic[k] = v[0]
+
+        # 获取订单号
+        out_trade_no = post_dic['out_trade_no']
+
+        # 更新状态
+        Order.objects.filter(identifier=out_trade_no).update(status=1)
+
+
     return JsonResponse({'msg':'success'})
 
 
@@ -354,7 +355,7 @@ def pay(request):
         subject=goodsnames, # 商品详情
         out_trade_no=order.identifier,
         total_amount=str(sum),
-        return_url='http://39.98.84.248/axf/returnurl/'
+        return_url='http://39.108.174.196/returnurl/'
     )
 
 

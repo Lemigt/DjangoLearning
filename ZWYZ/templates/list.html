@@ -35,7 +35,7 @@
                 </div>
             </li>
             <li id="sidebar_shopcar" class="sidebar_item sidebar_shopcar">
-                <a class="sitem_btn" href="goodcar.html">
+                <a class="sitem_btn" href="{% url 'zwyz:cart' %}">
                     <i class="sitem_btnbg"></i>
                     <span class="sshopcar_text">购物车</span>
 {#                    <span class="sshopcar_amout">0</span>#}
@@ -365,8 +365,7 @@
                             <ul class="iscroll_cont clearfix" id="brandlist">
                                 <li class="brand " brand-id="1">医朵</li>
                                 <li class="brand " brand-id="2">米蔻</li>
-                                <li><a href="/product/search?keyword=口红&amp;brand=528&amp;search=">too cool for
-                                    school </a></li>
+                                <li class="brand " brand-id="3">森田</li>
                                 <li><a href="/product/search?keyword=口红&amp;brand=608&amp;search=">爱茉莉吕</a></li>
                                 <li><a href="/product/search?keyword=口红&amp;brand=597&amp;search=">韩国Bla Bla</a></li>
                                 <li><a href="/product/search?keyword=口红&amp;brand=515&amp;search=">美源</a></li>
@@ -1066,8 +1065,8 @@
                                 <li class="type" type-id="2">
                                    唇线笔
                                 </li>
-                                <li>
-                                    <a href="/product/search?keyword=口红&amp;cat=206&amp;search=">香水套装</a>
+                                <li class="type" type-id="3">
+                                   面膜/面贴
                                 </li>
                                 <li>
                                     <a href="/product/search?keyword=口红&amp;cat=207&amp;search=">身体乳霜</a>

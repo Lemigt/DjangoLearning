@@ -11,6 +11,7 @@
 		<script src="{% static 'js/jquery.cookie.js' %}"></script>
 		<script src="{% static 'common/js/common.js' %}"></script>
 		<script src="{% static 'js/xiangqing.js' %}"></script>
+        <script src="https://cdn.bootcss.com/jquery-cookie/1.3.1/jquery.cookie.js"></script>
 {#        <script src="{% static 'js/changeimg.js' %}"></script>#}
 	</head>
 	<body>
@@ -26,10 +27,9 @@
 					</a>
 				</li>
 				<li id="sidebar_shopcar" class="sidebar_item sidebar_shopcar">
-					<a class="sitem_btn" href="goodcar.html">
+					<a class="sitem_btn" href="{% url 'zwyz:cart' %}">
 						<i class="sitem_btnbg"></i>
 						<span class="sshopcar_text">购物车</span>
-						<span class="sshopcar_amout">0</span>
 					</a>
 				</li>
 				<li id="sidebar_collect" class="sidebar_item sidebar_collect">
@@ -136,7 +136,7 @@
 		</div>
 		<!--购物车-->
         <div class="header-shop">
-            <p><a href="goodcar.html">我的购物车</a></p>
+            <p><a href="{% url 'zwyz:cart' %}">我的购物车</a></p>
         </div>
 	</div>
 </div>
@@ -308,16 +308,17 @@
 					</div>
 					<div class="detail_single_introamout">
 						<div class="detail_single_introamoutbtn">
-							<span class="header_ginfo_price">数&nbsp;量:</span>
-							<p class="header_ginfo_amount">
-								<span class="h_amout_down" id="btn_decrease_num" data="1"></span>
-								<input type="text" id="buy_number" value="1">
-								<span class="h_amout_up" id="btn_increase_num" data="0"></span>
-							</p>
+{#							<span class="header_ginfo_price">数&nbsp;量:</span>#}
+{#							<p class="header_ginfo_amount">#}
+{#								<span class="h_amout_down" id="btn_decrease_num" data="1"></span>#}
+{#								<input type="text" id="buy_number" value="1">#}
+{#								<span class="h_amout_up" id="btn_increase_num" data="0"></span>#}
+{#							</p>#}
 							<p class="look_brand_more">
                                 <a href="">更多eto/医朵产品</a>
                             </p>
 						</div>
+
 						<div class="detail_single_introsales">
 							<div class="dsingle_introsales_tipbox">
 								<p class="dintrotip_one">
@@ -334,7 +335,7 @@
 					<div class="detail_single_introbuy">
 						<div class="dsingle_introbuy_operate">
 							<p class="dsingle_introbuy_operatebtn">
-							   <a href="" id="btn_add_cart" pic="" rel="nofollow">加入购物车</a>
+							   <a  id="btn_add_cart" pic="" rel="nofollow" goods-id="{{ goods.id }}">加入购物车</a>
 							</p>
 							<p class="dsingle_introbuy_operatecang hascang" id="p_favorite">
 								<span id="btn_favorite">收藏</span><i></i>

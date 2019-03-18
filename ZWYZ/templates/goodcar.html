@@ -64,7 +64,7 @@
 <div class="header_logoimg">
     <div class="header_logoimg_box">
         <div class="logoimg_left">
-            <a href="index.html"><img src="{% static 'images/rejister/logo.jpg' %}"></a>
+            <a href="{% url 'zwyz:index' %}"><img src="{% static 'images/rejister/logo.jpg' %}"></a>
         </div>
         <div class="logoimg_right">
             <ul class="step_img">
@@ -96,7 +96,7 @@
     <div class="shopcar_contbox">
         <!--购物车商品列表-->
         <div class="mycart cb_title_h2">
-            <h2><p class="mycart_htitle"><span>我的购物车</span><i>My Cart</i></p><p class="mycart_htip"><span>运费每单<em>5</em>元</span><span>购买<em>任意两件</em>免运费</span></p></h2>
+            <h2><p class="mycart_htitle"><span>我的购物车</span><i>My Cart</i></p><p class="mycart_htip"><a href="{% url 'zwyz:orderlist' %}"><em>查看我的订单</em></a></p></h2>
             <div class="mycart_list_box">
                 <div class="mycart_list_goods">
                     <div class="table_nav">

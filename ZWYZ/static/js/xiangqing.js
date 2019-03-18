@@ -119,3 +119,27 @@ $(function(){
     }
 });
 
+
+$(function () {
+    $('#btn_add_cart').click(function () {
+        var goodsid = $(this).attr('goods-id')
+        console.log(goodsid)
+        var request_data = {
+            'goodsid':goodsid
+        }
+
+        $.get('/addcart/', request_data, function (response) {
+			console.log('status'+response.status)
+			if (response.status == 1){
+
+			} else {
+					$.cookie('back', 'list',{expires: 3, path: '/'})
+					window.open('/login/', '_self')
+
+			}
+		})
+
+    })
+
+})
+

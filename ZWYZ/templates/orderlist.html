@@ -73,7 +73,7 @@
     <div class="shopcar_contbox">
         <!--购物车商品列表-->
         <div class="mycart cb_title_h2">
-            <h2><p class="mycart_htitle"><span>我的购物车</span><i>My Cart</i></p><p class="mycart_htip"><span>运费每单<em>5</em>元</span><span>购买<em>任意两件</em>免运费</span></p></h2>
+            <h2><p class="mycart_htitle"><span>我的订单</span></p><p class="mycart_htip"><span>运费每单<em>5</em>元</span><span>购买<em>任意两件</em>免运费</span></p></h2>
             <div class="mycart_list_box">
                 <div class="mycart_list_goods">
                     <div class="table_nav">
@@ -124,12 +124,12 @@
                                 <!--<td class="table_item_operate"><p><a class="item-buy-delete"  href="">删除</a><a href="" class="p_favorite">收藏</a></p></td>-->
                             <!--</tr>-->
                                 {% for order in orders %}
-                                     <tr class="group" >
+                                     <tr class="group" style="height: 60px;">
 
                                         <td>订单号：{{ order.identifier }}</td>
                                         <td>创建日期：{{ order.createtime }}</td>
                                          <td>{% if order.status == 0 %}
-                                                未付款
+                                                待付款
                                             {% elif order.status == 1 %}
                                                 待发货
                                             {% elif order.status == 2 %}
@@ -140,7 +140,7 @@
                                                 已评价
                                             {% endif %}
                                          </td>
-                                        <td><a href="UR{% url 'zwyz:orderdetail' order.id %}">详情</a></td>
+                                        <td><a href="{% url 'zwyz:orderdetail' order.id %}">详情</a></td>
                                     </tr>
                                 {% endfor %}
                             </tbody>
