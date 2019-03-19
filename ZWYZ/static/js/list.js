@@ -142,6 +142,7 @@ $(function(){
 
 $(function () {
 	$('.brand').click(function () {
+
 		// $that = $(this)
 		$(this).addClass('select')
 		$(this).siblings().removeClass('select')

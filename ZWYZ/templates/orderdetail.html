@@ -126,9 +126,13 @@
                             <div class="ui-entrance" style="margin-left:15px;margin-top:10px;"></div>
 
                             <div class="myallinfo_show_two">
+                                {% if order.status == 0 %}
+                                    <p class="myallinfo_allpay"><span>应付金额（不含运费）：</span><i>￥</i><em id="">{{ allpay }}</em></p>
+                                    <p class="myallinfo_gopaybtn"><a id="go_to_pay" style="background: deepskyblue" order-id="{{ order.id }}">付款</a></p>
+                                {% elif order.status == 1 %}
+                                    <h1>卖家正在发货...</h1>
+                                {% endif %}
 
-                                <p class="myallinfo_allpay"><span>应付金额（不含运费）：</span><i>￥</i><em id="">{{ allpay }}</em></p>
-                                <p class="myallinfo_gopaybtn"><a id="go_to_pay" style="background: deepskyblue" order-id="{{ order.id }}">付款</a></p>
                             </div>
                         </div>
                     </div>

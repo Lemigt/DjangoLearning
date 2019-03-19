@@ -64,7 +64,19 @@
 //     }
 // })
 
+
+
+
+
+
+
 $(function () {
+
+    $('.table_item_check').each(function () {
+        $(this).attr("checked",false)
+    })
+
+
 
     var allgoodssum = 0
     var allgoodsnum = 0
@@ -196,5 +208,6 @@ $(function () {
         })
         console.log(delgoodsid)
     })
+
 
 })

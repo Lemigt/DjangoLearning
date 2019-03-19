@@ -763,3 +763,11 @@
 .hotkey li a span {
 	padding: 10px;
 }
+
+
+/*选中品牌或类别时的样式*/
+.select{
+	background: deeppink;
+	color: white;
+}
+

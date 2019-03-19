@@ -327,3 +327,8 @@ $(function(){
  })
 
 
+$(function () {
+    $('.put-cart').click(function () {
+        alert('晚了一步 (ㄒoㄒ) 该商品已被抢光')
+    })
+})
